@@ -16,4 +16,29 @@ A possible alternative is Apples Swift Package Manager.
 Since CocoaPods is already very established and commonly seen as Best Practice and the Swift Package Manager is still in beta stage CocoaPods is preferred.
 
 
-1.
+1. Install CocoaPods:
+If you havent installed cocoapods already go to the terminal and enter `sudo gem install cocoapods`
+2. in the terminal go to your __working directory__ (Hint: `cd project/Medbrain`)
+3. run `pod init`
+This creates a file named `PodFile` in which you can specify your dependencies.
+4. open the PodFile and change its contents to:
+
+```
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Medbrain' do
+pod 'SMART', '~> 2.1'
+end
+
+target 'MedbrainTests' do
+end
+
+target 'MedbrainUITests' do
+end
+
+```
+The `pod 'SMART'` installs the dependency [Swift-SMART](https://github.com/smart-on-fhir/Swift-SMART) which is a library simplifying the usage of FHIR-Resources within Swift Projects.
+
+
+5. run `pod install`
