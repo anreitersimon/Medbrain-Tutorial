@@ -1,0 +1,49 @@
+# Step 3 - FHIR-Resources
+
+#### Prerequisites
+- None
+
+#### Goals
+- Get a understanding of the resources used in this app.
+- Specify assumptions about the dataset.
+
+## Overview
+
+A quick overview of the important resources used.
+
+Each resource will be explained more in depth in the following section.
+FHIR-Resources has very few required properties since it tries to support many healthcare-standards which may have different requirement
+
+It is up to the developer to refine the definition of a sufficiently defined resource for the specific context it is used in.
+
+As an orientation the `ELGA Implementierungsleitfaden` was used.
+
+### [Patient](FHIR-Resources/Patient.md)
+
+This is the central since all data shown in the app is specific to __one__ patient which represents the user of the app.
+
+[more information](FHIR-Resources/Patient.md)
+
+### [Medication](FHIR-Resources/Medication.md)
+Represents a medication.
+
+In the context of the app most medications are intended for the patient to consume.
+
+[more information](FHIR-Resources/Medication.md)
+
+### [MedicationOrder](FHIR-Resources/Medication.md)
+Represents a prescription in FHIR.
+Expresses the order for the administration of a medication
+it also includes specific `DosageInstructions`
+
+[more information](FHIR-Resources/Medication.md)
+
+### [DosageInstructions](FHIR-Resources/Medication.md)
+Contains information on timing, quantity and additional instructions on how to administer medications.
+
+[more information](FHIR-Resources/Medication.md)
+
+### [MedicationAdministration](FHIR-Resources/Medication.md)
+Represents the administration of a medication.
+
+[more information](FHIR-Resources/Medication.md)
