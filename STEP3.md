@@ -11,8 +11,9 @@
 
 A quick overview of the important resources used.
 
-Each resource will be explained more in depth in the following section.
-FHIR-Resources has very few required properties since it tries to support many healthcare-standards which may have different requirement
+Each resource will be explained more in depth in the corresponding section.
+
+FHIR-Resources have very few required properties since it tries to support many healthcare-standards which may have different requirement
 
 It is up to the developer to refine the definition of a sufficiently defined resource for the specific context it is used in.
 
@@ -38,10 +39,10 @@ it also includes specific `DosageInstructions`
 
 [more information](FHIR-Resources/MedicationOrder/MedicationOrder.md)
 
-### [DosageInstructions](FHIR-Resources/Medication.md)
+### DosageInstructions
 Contains information on timing, quantity and additional instructions on how to administer medications.
 
-[more information](FHIR-Resources/Medication.md)
+[more information](FHIR-Resources/DosageInstructions/DosageInstructions.md)
 
 ### [MedicationAdministration](FHIR-Resources/Medication.md)
 Represents the administration of a medication.
