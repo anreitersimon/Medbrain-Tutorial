@@ -1,94 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Patient xmlns="http://hl7.org/fhir">
-   <identifier>
-      <system value="urn:oid:1.2.40.0.34.99.111.1.2"/>
-      <value value="abcefg"/>
-      <assigner>
-         <display value="Heilsapotheke"/>
-      </assigner>
-   </identifier>
-   <identifier>
-      <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
-      <value value="1111241261"/>
-      <assigner>
-         <display value="Österreichische Sozialversicherung"/>
-      </assigner>
-   </identifier>
-   <identifier>
-      <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
-      <value value="xxxyyyzzz"/>
-      <assigner>
-         <display value="Österreichische Stammzahlenregisterbehörde"/>
-      </assigner>
-   </identifier>
-   <name>
-      <family value="Mustermann"/>
-      <family value="VorDerHeirat"/>
-      <given value="Herbert"/>
-      <given value="Hannes"/>
-      <prefix value="Dipl.Ing."/>
-      <prefix value="Hofrat"/>
-      <suffix value="BSc"/>
-      <suffix value="MBA"/>
-   </name>
-   <telecom>
-      <system value="phone"/>
-      <value value="+43.2682.40400"/>
-   </telecom>
-   <telecom>
-      <system value="phone"/>
-      <value value="+43.664.1234567"/>
-   </telecom>
-   <telecom>
-      <system value="email"/>
-      <value value="herberthannes.mustermann@provider.at"/>
-   </telecom>
-   <gender value="male"/>
-   <birthDate value="1961-12-24"/>
-   <address>
-      <use value="temp"/>
-      <line value="Musterstraße 13a"/>
-      <city value="Eisenstadt"/>
-      <state value="Burgenland"/>
-      <postalCode value="7000"/>
-      <country value="Österreich"/>
-   </address>
-   <maritalStatus>
-      <coding>
-         <system value="http://hl7.org/fhir/v3/MaritalStatus"/>
-         <code value="M"/>
-         <display value="Married"/>
-      </coding>
-   </maritalStatus>
-   <contact>
-      <relationship>
-         <coding>
-            <system value="http://hl7.org/fhir/patient-contact-relationship"/>
-            <code value="guardian"/>
-            <display value="Guardian"/>
-         </coding>
-      </relationship>
-      <name>
-         <family value="Sorgenvoll"/>
-         <given value="Susi"/>
-      </name>
-      <telecom>
-         <system value="phone"/>
-         <value value="+43.676.1234567"/>
-      </telecom>
-      <telecom>
-         <system value="phone"/>
-         <value value="+43.316.717.653.9939"/>
-      </telecom>
-      <telecom>
-         <system value="phone"/>
-         <value value="+43.316.608.271.9000"/>
-      </telecom>
-      <address>
-         <line value="Musterstraße 1234"/>
-         <city value="Graz"/>
-         <state value="Steiermark"/>
-         <postalCode value="8011"/>
-         <country value="Österreich"/>
-      </address>
-   </contact>
+    <id value="587"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2016-07-31T15:26:00Z"/>
+    </meta>
+    <identifier>
+        <system value="urn:oid:1.2.40.0.34.99.111.1.2"/>
+        <value value="abcefg"/>
+        <assigner>
+            <display value="Heilsapotheke"/>
+        </assigner>
+    </identifier>
+    <identifier>
+        <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+        <value value="1111241261"/>
+        <assigner>
+            <display value="Österreichische Sozialversicherung"/>
+        </assigner>
+    </identifier>
+    <identifier>
+        <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+        <value value="xxxyyyzzz"/>
+        <assigner>
+            <display value="Österreichische Stammzahlenregisterbehörde"/>
+        </assigner>
+    </identifier>
+    <name>
+        <family value="Mustermann"/>
+        <family value="VorDerHeirat"/>
+        <given value="Herbert"/>
+        <given value="Hannes"/>
+        <prefix value="Dipl.Ing."/>
+        <prefix value="Hofrat"/>
+        <suffix value="BSc"/>
+        <suffix value="MBA"/>
+    </name>
+    <telecom>
+        <system value="phone"/>
+        <value value="+43.2682.40400"/>
+    </telecom>
+    <telecom>
+        <system value="phone"/>
+        <value value="+43.664.1234567"/>
+    </telecom>
+    <telecom>
+        <system value="email"/>
+        <value value="herberthannes.mustermann@provider.at"/>
+    </telecom>
+    <gender value="male"/>
+    <birthDate value="1961-12-24"/>
+    <address>
+        <use value="temp"/>
+        <line value="Musterstraße 13a"/>
+        <city value="Eisenstadt"/>
+        <state value="Burgenland"/>
+        <postalCode value="7000"/>
+        <country value="Österreich"/>
+    </address>
+    <maritalStatus>
+        <coding>
+            <system value="http://hl7.org/fhir/v3/MaritalStatus"/>
+            <code value="M"/>
+            <display value="Married"/>
+        </coding>
+    </maritalStatus>
+    <contact>
+        <relationship>
+            <coding>
+                <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+                <code value="guardian"/>
+                <display value="Guardian"/>
+            </coding>
+        </relationship>
+        <name>
+            <family value="Sorgenvoll"/>
+            <given value="Susi"/>
+        </name>
+        <telecom>
+            <system value="phone"/>
+            <value value="+43.676.1234567"/>
+        </telecom>
+        <telecom>
+            <system value="phone"/>
+            <value value="+43.316.717.653.9939"/>
+        </telecom>
+        <telecom>
+            <system value="phone"/>
+            <value value="+43.316.608.271.9000"/>
+        </telecom>
+        <address>
+            <line value="Musterstraße 1234"/>
+            <city value="Graz"/>
+            <state value="Steiermark"/>
+            <postalCode value="8011"/>
+            <country value="Österreich"/>
+        </address>
+    </contact>
 </Patient>
