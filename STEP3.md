@@ -44,7 +44,7 @@ Contains information on timing, quantity and additional instructions on how to a
 
 [more information](FHIR-Resources/DosageInstructions/DosageInstructions.md)
 
-## [MedicationAdministration](FHIR-Resources/Medication.md)
+## MedicationAdministration
 Represents the administration of a medication.
 
-[more information](FHIR-Resources/Medication.md)
+[more information](FHIR-Resources/MedicationAdministration/MedicationAdministration.md)
