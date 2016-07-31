@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+    <id value="55"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2016-07-31T13:57:19Z"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">Coldistop Nasenöl</div>
+    </text>
+    <code>
+        <coding>
+            <system value="urn:oid:1.2.40.0.34.4.16"/>
+            <code value="9876543"/>
+            <display value="Coldistop"/>
+        </coding>
+    </code>
+    <package>
+        <content>
+            <item>
+                <reference value="0257f047-4907-41b8-a419-1e92c21d5fef"/>
+            </item>
+            <amount>
+                <system value="urn:oid:1.2.40.0.34.10.32"/>
+            </amount>
+        </content>
+    </package>
+</Medication>

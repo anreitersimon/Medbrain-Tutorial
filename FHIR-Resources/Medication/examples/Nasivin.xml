@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+    <id value="52"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2016-07-31T13:51:54Z"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">Nasivin Nasentropfen</div>
+    </text>
+    <code>
+        <coding>
+            <system value="urn:oid:1.2.40.0.34.4.16"/>
+            <code value="112233"/>
+            <display value="Nasivin"/>
+        </coding>
+    </code>
+    <package>
+        <content>
+            <item>
+                <reference value="a35a6d34-935c-456f-ae8d-58bd8cbe4244"/>
+            </item>
+            <amount>
+                <system value="urn:oid:1.2.40.0.34.10.32"/>
+            </amount>
+        </content>
+    </package>
+</Medication>

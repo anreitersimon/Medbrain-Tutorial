@@ -2,12 +2,11 @@
 ## MedicationOrder
 https://www.hl7.org/fhir/medicationorder.html
 
-The patient-resource has a central role in this app.
-It contains basic information about the person.
+An order for supply and administration of the medication to a patient.
 
->__Note:__ a patient in FHIR is not necessarily human.
->but in the context of the app it is assumed that the patient is human.
+A `MedicationOrder` can only be created by a `Practitioner` and never by a `Patient`.
 
+Therefore the app only requires read-only access to a patients medication-orders
 
 ### UML
 
@@ -17,7 +16,7 @@ It contains basic information about the person.
 
  requirement                    | expression                                      | required
 --------------------------------|-------------------------------------------------|-------------
-exactly one dosageInstruction  | `medicationOrder.dosageInstructions.count == 1`  | yes
+at least one dosageInstruction  | `medicationOrder.dosageInstructions[0] != null` | yes
 prescribed for a patient        | `medicationOrder.patient != null`               | yes
 has medication                  | `medicationOrder.medication != null`            | yes
 
