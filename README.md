@@ -1,6 +1,12 @@
 # Medbrain
 
-1. [Step 1](STEP1.md)
-2. [Step 2](STEP2.md)
-3. [Step 3](STEP3.md)
-4. [Step 4](STEP4.md)
+##### [Step 1 - Project Setup](STEP1.md)
+##### [Step 2 - Managing Dependencies with CocoaPods](STEP2.md)
+##### [Step 3 - Overview of used FHIR-Resources](STEP3.md)
+  - [Patient](FHIR-Resources/Patient/Patient.md)
+  - [Medication](FHIR-Resources/Medication/Medication.md)
+  - [MedicationOrder](FHIR-Resources/MedicationOrder/MedicationOrder.md)
+  - [DosageInstructions](FHIR-Resources/DosageInstructions/DosageInstructions.md)
+  - [MedicationAdministration](FHIR-Resources/MedicationAdministration/MedicationAdministration.md)
+
+##### [Step 4 - Building the Application Flow](STEP4.md)

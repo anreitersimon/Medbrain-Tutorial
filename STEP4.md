@@ -1,4 +1,4 @@
-# Step 4 - Building the Application Flow
+# Step 4 - Building the Application Structure
 
 ## Prerequisites
 Finished [Step 2](STEP2.md) of this Tutorial.
@@ -21,34 +21,32 @@ It contains a single `ViewController`.
 We start of by deleting the `ViewController` and its corresponding ViewController implementation.
 
 1. Delete the file `ViewController.swift`
-- Select file `Main.storyboard` in the project navigator.
-- Select the empty ViewController and delete it.
+2. Select file `Main.storyboard` in the project navigator.
+3. Select the empty ViewController and delete it.
 
 
 #### Adding the TabBarController
 1. From the Interface-Builders Object library drag a `Tab Bar Controller` object onto the storyboard.
-
-- Delete the to ChildControllers.
-- Select the newly added controller and in the `Attributes Inspector` select the checkbox `Is Initial ViewController`
+2. Delete the to ChildControllers.
+3. Select the newly added controller and in the `Attributes Inspector` select the checkbox `Is Initial ViewController`
 
 ![](resources/step4/add_tabbar.gif)
 
 
 #### Building the Navigation-flow
-- Select a `Navigation Controller`from the object-library and drag it onto the storyboard.
+1. Select a `Navigation Controller`from the object-library and drag it onto the storyboard.
 >__Note:__ this also adds a empty `Table View Controller`
 >
 > the added `Table View Controller` will later show a list of the patients medications and will be referred to as `PatientMedicationsViewController`
 
-- Drag a `Table View Controller` from the object-library onto the storyboard.
+2. Drag a `Table View Controller` from the object-library onto the storyboard.
 >__Note:__ This controller will show a single medication in more detail and will be referred to as `MedicationDetailViewController`
 
-- `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added  `MedicationDetailViewController`
-- select `show` in the `Manual-Segue` section
+3. `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added  `MedicationDetailViewController`
+4. select `show` in the `Manual-Segue` section
 
-- `ctrl` + drag from the `Tab Bar Controller` to the `Navigation Controller`
-- select `viewcontrollers` in the `Relationship-Segue` section
-
+5. `ctrl` + drag from the `Tab Bar Controller` to the `Navigation Controller`
+6. select `viewcontrollers` in the `Relationship-Segue` section
 
 ![](resources/step4/build_navigation.gif)
 
@@ -61,10 +59,10 @@ This controller will be shown every time the user reaches the `PatientMedication
 
 1. From the object-library drag a `View Controller` object on to the storyboard.
 
-- `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added
+2. `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added
 `PatientSignInViewController`.
 
-- select `present modally` in the `Manual-Segue` section.
+3. select `present modally` in the `Manual-Segue` section.
 
 ![](resources/step4/add_signin.gif)
 
@@ -76,14 +74,13 @@ After signing in the user should have the optionto review his information (i.e.:
 This functionality will be implemented in the `PatientDetailViewController`.
 
 1. From the object-library drag a `View Controller` object on to the storyboard.
-- `ctrl` + drag from the `Tab Bar Controller` to the `PatientDetailViewController`
-- select `viewcontrollers` in the `Relationship-Segue` section
+2. `ctrl` + drag from the `Tab Bar Controller` to the `PatientDetailViewController`
+3. select `viewcontrollers` in the `Relationship-Segue` section
 
 
-#### Creating the ViewController classes
-The viewcontrollers which where added to the storyboard are empty t
+When you are finished the end result should look similar to this:
 
-
+![](resources/step4/end-result.png)
 
 Create a view which shows a list of all patients prescriptions.
 
@@ -106,13 +103,10 @@ For the implementation we will introduce following classes:
 ##### SessionManager
 - Implemented as a singleton.
 - Its responsibility is to manage the currently signed in patient.
-- handle log-out
+- handle log-in and log-out
 
 ##### SignInViewController
--
-
-
-in addition a new dependency will be introduced.
+- in addition a new dependency will be introduced.
 
 
 A prescription is modelled in FHIR as [MedicationOrder](https://www.hl7.org/fhir/medicationorder.html).
@@ -120,7 +114,6 @@ A prescription is modelled in FHIR as [MedicationOrder](https://www.hl7.org/fhir
 Each list-item corresponds to one prescription.
 The information in each list-item is very limited, upon clicking a item a detail-view
 showing more detailed information is shown (this will be implemented in the next step).
-
 
 ## Assumptions
 - each `Medication` has a display-name: at keypath: `$(medication).code.coding.display`
