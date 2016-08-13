@@ -1,0 +1,461 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="cda-transform"/>
+  <type value="transaction"/>
+  <entry>
+     <fullUrl value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+     <resource>
+        <Patient xmlns="http://hl7.org/fhir">
+          <placeholderId value="patient-1">
+           <!--
+            ids are assigned by the backend
+            batch transaction rules: https://www.hl7.org/fhir/http.html#2.1.0.16.1
+            Patient has to exist before MedicationOrders can reference it
+
+             <id value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+           -->
+           <identifier>
+              <system value="urn:oid:1.2.40.0.34.99.111.1.2"/>
+              <value value="abcefg"/>
+              <assigner>
+                 <display value="Heilsapotheke"/>
+              </assigner>
+           </identifier>
+           <identifier>
+              <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+              <value value="1111241261"/>
+              <assigner>
+                 <display value="Österreichische Sozialversicherung"/>
+              </assigner>
+           </identifier>
+           <identifier>
+              <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+              <value value="xxxyyyzzz"/>
+              <assigner>
+                 <display value="Österreichische Stammzahlenregisterbehörde"/>
+              </assigner>
+           </identifier>
+           <name>
+              <family value="Mustermann"/>
+              <family value="VorDerHeirat"/>
+              <given value="Herbert"/>
+              <given value="Hannes"/>
+              <prefix value="Dipl.Ing."/>
+              <prefix value="Hofrat"/>
+              <suffix value="BSc"/>
+              <suffix value="MBA"/>
+           </name>
+           <telecom>
+              <system value="phone"/>
+              <value value="+43.2682.40400"/>
+           </telecom>
+           <telecom>
+              <system value="phone"/>
+              <value value="+43.664.1234567"/>
+           </telecom>
+           <telecom>
+              <system value="email"/>
+              <value value="herberthannes.mustermann@provider.at"/>
+           </telecom>
+           <gender value="m"/>
+           <birthDate value="1961-12-24"/>
+           <address>
+              <use value="temp"/>
+              <line value="Musterstraße 13a"/>
+              <city value="Eisenstadt"/>
+              <state value="Burgenland"/>
+              <postalCode value="7000"/>
+              <country value="Österreich"/>
+           </address>
+           <maritalStatus>
+              <coding>
+                 <system value="1"/>
+                 <code value="1"/>
+                 <display value="Married"/>
+              </coding>
+           </maritalStatus>
+           <contact>
+              <relationship>
+                 <coding>
+                    <system value="http://hl7.org/fhir/patient-contact-relationship"/>
+                    <code value="guardian"/>
+                    <display value="Guardian"/>
+                 </coding>
+              </relationship>
+              <name>
+                 <family value="Sorgenvoll"/>
+                 <given value="Susi"/>
+              </name>
+              <telecom>
+                 <system value="phone"/>
+                 <value value="+43.676.1234567"/>
+              </telecom>
+              <telecom>
+                 <system value="phone"/>
+                 <value value="+43.316.717.653.9939"/>
+              </telecom>
+              <telecom>
+                 <system value="phone"/>
+                 <value value="+43.316.608.271.9000"/>
+              </telecom>
+              <address>
+                 <line value="Musterstraße 1234"/>
+                 <city value="Graz"/>
+                 <state value="Steiermark"/>
+                 <postalCode value="8011"/>
+                 <country value="Österreich"/>
+              </address>
+           </contact>
+        </Patient>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Patient"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="ec0fbb08-7d09-4aef-afa0-6c9c38179e92"/>
+     <resource>
+        <Substance xmlns="http://hl7.org/fhir">
+           <placeholderId value="substance-1">
+           <id value="ec0fbb08-7d09-4aef-afa0-6c9c38179e92"/>
+           <text>
+              <status value="generated"/>
+              <div xmlns="http://www.w3.org/1999/xhtml">Ciprofloxacin Hydrochlorid</div>
+           </text>
+           <code>
+              <coding>
+                 <system value="urn:oid:2.16.840.1.113883.6.73"/>
+                 <code value="J01MA02"/>
+                 <display value="Ciprofloxacin hydrochloride"/>
+              </coding>
+           </code>
+        </Substance>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Substance"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="0d535240-86c4-4c2d-8991-fc265017e72c"/>
+     <resource>
+        <Substance xmlns="http://hl7.org/fhir">
+           <placeholderId value="substance-2">
+           <id value="0d535240-86c4-4c2d-8991-fc265017e72c"/>
+           <text>
+              <status value="generated"/>
+              <div xmlns="http://www.w3.org/1999/xhtml">Inotyol Salbe 30,0</div>
+           </text>
+        </Substance>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Substance"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="55c3ecae-45bd-455c-8d42-ade59dddc3c5"/>
+     <resource>
+        <Substance xmlns="http://hl7.org/fhir">
+           <placeholderId value="substance-3">
+           <id value="55c3ecae-45bd-455c-8d42-ade59dddc3c5"/>
+           <text>
+              <status value="generated"/>
+              <div xmlns="http://www.w3.org/1999/xhtml">Canesten Creme 30,0</div>
+           </text>
+        </Substance>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Substance"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="d10b6b19-ee41-4040-a3d4-1196c6e52e73"/>
+     <resource>
+        <Medication xmlns="http://hl7.org/fhir">
+           <placeholderId value="medication-1">
+           <id value="d10b6b19-ee41-4040-a3d4-1196c6e52e73"/>
+           <text>
+              <div xmlns="http://www.w3.org/1999/xhtml">Novalgin Tropfen</div>
+           </text>
+           <code>
+              <coding>
+                 <system value="urn:oid:1.2.40.0.34.4.16"/>
+                 <code value="889900"/>
+                 <display value="Novalgin"/>
+              </coding>
+           </code>
+           <package>
+              <content>
+                 <amount>
+                    <system value="urn:oid:1.2.40.0.34.10.32"/>
+                 </amount>
+              </content>
+           </package>
+        </Medication>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Medication"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="a35a6d34-935c-456f-ae8d-58bd8cbe4244"/>
+     <resource>
+        <Medication xmlns="http://hl7.org/fhir">
+           <placeholderId value="medication-2">
+           <id value="a35a6d34-935c-456f-ae8d-58bd8cbe4244"/>
+           <text>
+              <div xmlns="http://www.w3.org/1999/xhtml">Nasivin Nasentropfen</div>
+           </text>
+           <code>
+              <coding>
+                 <system value="urn:oid:1.2.40.0.34.4.16"/>
+                 <code value="112233"/>
+                 <display value="Nasivin"/>
+              </coding>
+           </code>
+           <package>
+              <content>
+                 <item>
+                    <reference value="a35a6d34-935c-456f-ae8d-58bd8cbe4244"/>
+                 </item>
+                 <amount>
+                    <system value="urn:oid:1.2.40.0.34.10.32"/>
+                 </amount>
+              </content>
+           </package>
+        </Medication>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Medication"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="12eeced2-aa32-45d7-a4fc-3917c2bbb1c0"/>
+     <resource>
+        <Medication xmlns="http://hl7.org/fhir">
+           <id value="12eeced2-aa32-45d7-a4fc-3917c2bbb1c0"/>
+           <text>
+              <div xmlns="http://www.w3.org/1999/xhtml">Ciproxin 400mg</div>
+           </text>
+           <code>
+              <coding>
+                 <system value="urn:oid:1.2.40.0.34.4.16"/>
+                 <code value="1592830"/>
+                 <display value="Ciproxin"/>
+              </coding>
+              <coding>
+                 <system value="urn:oid:1.2.40.0.34.4.17"/>
+                 <code value="0815"/>
+                 <display value="Ciproxin"/>
+              </coding>
+           </code>
+           <product>
+              <form>
+                 <coding>
+                    <system value="http://hl7.org/fhir/ValueSet/medication-form-codes"/>
+                    <code value="385057009"/>
+                    <display value="Film-coated tablet"/>
+                 </coding>
+              </form>
+              <ingredient>
+                 <item>
+                    <reference value="ec0fbb08-7d09-4aef-afa0-6c9c38179e92"/>
+                    <display value="contained substance"/>
+                 </item>
+              </ingredient>
+           </product>
+           <package>
+              <content>
+                 <item>
+                    <reference value="12eeced2-aa32-45d7-a4fc-3917c2bbb1c0"/>
+                 </item>
+                 <amount>
+                    <value value="30"/>
+                    <system value="urn:oid:1.2.40.0.34.10.32"/>
+                 </amount>
+              </content>
+           </package>
+        </Medication>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Medication"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="6aa1706d-38f5-4e25-a3c7-77756200ad34"/>
+     <resource>
+        <Medication xmlns="http://hl7.org/fhir">
+           <id value="6aa1706d-38f5-4e25-a3c7-77756200ad34"/>
+           <product>
+              <ingredient>
+                 <item>
+                    <display value="contained substance"/>
+                 </item>
+              </ingredient>
+              <ingredient>
+                 <item>
+                    <display value="contained substance"/>
+                 </item>
+              </ingredient>
+           </product>
+           <package>
+              <content>
+                 <item>
+                    <reference value="6aa1706d-38f5-4e25-a3c7-77756200ad34"/>
+                 </item>
+                 <amount>
+                    <system value="urn:oid:1.2.40.0.34.10.32"/>
+                 </amount>
+              </content>
+           </package>
+        </Medication>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Medication"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="0257f047-4907-41b8-a419-1e92c21d5fef"/>
+     <resource>
+        <Medication xmlns="http://hl7.org/fhir">
+           <id value="0257f047-4907-41b8-a419-1e92c21d5fef"/>
+           <text>
+              <div xmlns="http://www.w3.org/1999/xhtml">Coldistop Nasenöl</div>
+           </text>
+           <code>
+              <coding>
+                 <system value="urn:oid:1.2.40.0.34.4.16"/>
+                 <code value="9876543"/>
+                 <display value="Coldistop"/>
+              </coding>
+           </code>
+           <package>
+              <content>
+                 <item>
+                    <reference value="0257f047-4907-41b8-a419-1e92c21d5fef"/>
+                 </item>
+                 <amount>
+                    <system value="urn:oid:1.2.40.0.34.10.32"/>
+                 </amount>
+              </content>
+           </package>
+        </Medication>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Medication"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="73df4110-63a6-4b1c-8dca-928f8668689a"/>
+     <resource>
+        <MedicationOrder xmlns="http://hl7.org/fhir">
+           <id value="73df4110-63a6-4b1c-8dca-928f8668689a"/>
+           <identifier>
+              <system value="urn:oid:1.2.40.0.10.1.4.3.4.2.2"/>
+              <value value="2b4x6qA2p40La53i4dyt_4733"/>
+           </identifier>
+           <dateWritten value="2013-03-24T08:20:15+01:00"/>
+           <status value="completed"/>
+           <patient>
+              <reference value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+           </patient>
+           <prescriber>
+              <reference value="98c06510-0d7e-4411-8d77-14fff3321af6"/>
+           </prescriber>
+           <medicationReference>
+              <reference value="d10b6b19-ee41-4040-a3d4-1196c6e52e73"/>
+              <display value="prescribed medication"/>
+           </medicationReference>
+           <dosageInstruction>
+              <timing>
+                 <repeat>
+                    <boundsPeriod>
+                       <start value="2013-03-26T11:00:00+01:00"/>
+                       <end value="2013-03-30T10:59:59+01:00"/>
+                    </boundsPeriod>
+                    <duration value="1"/>
+                    <durationUnits value="d"/>
+                 </repeat>
+              </timing>
+           </dosageInstruction>
+           <dispenseRequest>
+              <numberOfRepeatsAllowed value="0"/>
+              <quantity>
+                 <value value="1"/>
+              </quantity>
+           </dispenseRequest>
+        </MedicationOrder>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="MedicationOrder"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="e041c477-d1c5-4fe1-992e-1b2eb418cedb"/>
+     <resource>
+        <MedicationOrder xmlns="http://hl7.org/fhir">
+           <id value="e041c477-d1c5-4fe1-992e-1b2eb418cedb"/>
+           <identifier>
+              <system value="urn:oid:1.2.40.0.10.1.4.3.4.2.2"/>
+              <value value="2b4x6qA2p40La53i4dyt_4744"/>
+           </identifier>
+           <dateWritten value="2013-03-24T08:20:15+01:00"/>
+           <status value="completed"/>
+           <patient>
+              <reference value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+           </patient>
+           <prescriber>
+              <reference value="98c06510-0d7e-4411-8d77-14fff3321af6"/>
+           </prescriber>
+           <medicationReference>
+              <reference value="a35a6d34-935c-456f-ae8d-58bd8cbe4244"/>
+              <display value="prescribed medication"/>
+           </medicationReference>
+           <dispenseRequest>
+              <numberOfRepeatsAllowed value="0"/>
+              <quantity>
+                 <value value="1"/>
+              </quantity>
+           </dispenseRequest>
+        </MedicationOrder>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="MedicationOrder"/>
+     </request>
+  </entry>
+  <entry>
+     <fullUrl value="e991625d-502a-446b-bef6-cdd36cb848f8"/>
+     <resource>
+        <Composition xmlns="http://hl7.org/fhir">
+           <id value="e991625d-502a-446b-bef6-cdd36cb848f8"/>
+           <date value="2013-04-04T09:20:15+02:00"/>
+           <type>
+              <coding>
+                 <system value="urn:oid:2.16.840.1.113883.6.1"/>
+                 <code value="56445-0"/>
+                 <display value="Medication summary Document"/>
+              </coding>
+           </type>
+           <title value="Medikationsliste"/>
+           <status value="final"/>
+           <confidentiality value="N"/>
+           <subject>
+              <reference value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+           </subject>
+        </Composition>
+     </resource>
+     <request>
+        <method value="POST"/>
+        <url value="Composition"/>
+     </request>
+  </entry>
+</Bundle>
