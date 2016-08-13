@@ -5,7 +5,7 @@ Finished [Step 2](STEP2.md) of this Tutorial.
 
 If you want to start here you just run `git checkout step4`.
 
-The Project is located `project/` of the git repository root.
+The Project is located at `project/` of the git repository root.
 
 ## Goals
 In this step the each of the apps screens will be added as a placeholder implementation.
@@ -82,38 +82,10 @@ When you are finished the end result should look similar to this:
 
 ![](resources/step4/end-result.png)
 
-Create a view which shows a list of all patients prescriptions.
 
-A prescription is modelled in FHIR as [MedicationOrder](https://www.hl7.org/fhir/medicationorder.html).
+## Conclusion
+You setup a storyboard showing the apps intended flow.
 
-Each list-item corresponds to one prescription.
-The information in each list-item is very limited, upon clicking a item a detail-view
-showing more detailed information is shown (this will be implemented in the next step).
+Next-up is implementing the sign-in.
 
-
-so the first priority is to sign-in.
-
-For the implementation we will introduce following classes:
-
-- SessionManager
-- SignInViewController
-- PatientDetailViewController
-
-
-##### SessionManager
-- Implemented as a singleton.
-- Its responsibility is to manage the currently signed in patient.
-- handle log-in and log-out
-
-##### SignInViewController
-- in addition a new dependency will be introduced.
-
-
-A prescription is modelled in FHIR as [MedicationOrder](https://www.hl7.org/fhir/medicationorder.html).
-
-Each list-item corresponds to one prescription.
-The information in each list-item is very limited, upon clicking a item a detail-view
-showing more detailed information is shown (this will be implemented in the next step).
-
-## Assumptions
-- each `Medication` has a display-name: at keypath: `$(medication).code.coding.display`
+[Continue to Step5 of the Tutorial](STEP5.md)
