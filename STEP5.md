@@ -58,7 +58,7 @@ struct LogInCredentials {
 enum Result<ExpectedResultType> {
     //the task completed successfully and produced a result
     //if no actual result is produced use Void as ExpectedResultType
-    case Success(_: ExpectedResultType
+    case Success(_: ExpectedResultType)
 
     //the task failed and optionally provides an error which contains more information what went wrong.
     case Error(_: ErrorType?)
@@ -100,9 +100,14 @@ extension SessionManager {
     //Note: completing the log-in does NOT mean it was successful
     typealias LogInCompletionHandler = (result: Result<Patient>) -> Void
 
-    static let UserChangedNotification = "SessionManager.UserChangedNotification"
-    static let UserChangedNotificationOldKey = "SessionManager.UserChangedNotification.Old"
-    static let UserChangedNotificationNewKey = "SessionManager.UserChangedNotification.New"
+    ///Name of the notification sent to observers when the patient changes
+    static let PatientChangedNotification = "SessionManager.PatientChangedNotification"
+
+    ///User-info dictionary key for the old patient value
+    static let PatientChangedNotificationOldKey = "SessionManager.PatientChangedNotification.Old"
+
+    ///User-info dictionary key for the new patient value
+    static let PatientChangedNotificationNewKey = "SessionManager.PatientChangedNotification.New"
 }
 
 
@@ -113,11 +118,11 @@ extension SessionManager {
     ///When the patient changes notify all observers about this change
     func patientDidChange(old: Patient?, new: Patient?) {
         var info = [NSObject:AnyObject]()
-        info[SessionManager.UserChangedNotificationOldKey] = old
-        info[SessionManager.UserChangedNotificationNewKey] = new
+        info[SessionManager.PatientChangedNotificationOldKey] = old
+        info[SessionManager.PatientChangedNotificationNewKey] = new
 
         //Notify obvservers that the current patient did change
-        NSNotificationCenter.defaultCenter().postNotificationName(SessionManager.UserChangedNotification, object: self, userInfo: info)
+        NSNotificationCenter.defaultCenter().postNotificationName(SessionManager.PatientChangedNotification, object: self, userInfo: info)
     }
 
     ///attempts to log in the user whith the specified credentials asynchronously
