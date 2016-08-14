@@ -37,23 +37,52 @@ For the implementation we will introduce following classes:
 1. create a new file named `SessionManager.swift` (File->New->File)
 2. When prompted for the template for the file select `Swift File`
 
-3. Create a singleton class and import the `SMART` framework:
+3. Create a singleton class and import the `SMART` framework
 ```swift
 
 import Foundation
 import SMART
 
-///credentials should provide enough data to uniquely identifiy a patient
+
+class SessionManager {
+    ///singleton instance
+    static let shared = SessionManager()
+
+    private init() {
+        //private initializer to avoid this class being instantiated anywhere else than the singleton instance
+    }
+
+    ///The server against which requests are executed
+    var server = Server(base: "http://fhir2.healthintersections.com.au/open/")
+
+    ///The currently logged in patient (defaults to nil)
+    var patient: Patient?
+
+    ///convenience property is `true` if a patient is signed in
+    var signedIn: Bool {
+        return patient != nil
+    }
+}
+```
+4. Create an accompanying object `LogInCredentials`. This object is passed to the `SessionManger` when initiating the login.
+
+```swift
+///credentials should provide enough data to uniquely identify a patient
 struct LogInCredentials {
 
-    ///
+    ///credentials which identify a test_user on the server
     static var defaultCredentials: LogInCredentials {
         return LogInCredentials(queryParamters: ["_id": ["$exact": "f001"]])
     }
 
     var queryParamters: [NSObject:AnyObject] = [:]
 }
+```
 
+4. Create an accompanying enum `Result`.
+This object represents the result of a task which might fail.
+
+```swift
 //when performing a task which might fail the result of this task can be modelled like this.
 enum Result<ExpectedResultType> {
     //the task completed successfully and produced a result
@@ -63,36 +92,9 @@ enum Result<ExpectedResultType> {
     //the task failed and optionally provides an error which contains more information what went wrong.
     case Error(_: ErrorType?)
 }
+```
 
-
-//MARK: - Properties
-class SessionManager {
-
-    //singleton instance
-    static let shared = SessionManager()
-
-    private init() {
-        //private initializer to avoid this class being instantiated anywhere else than the singleton instance
-    }
-
-    //The server against which requests are executed
-    var server = Server(base: "http://fhir2.healthintersections.com.au/open/")
-
-    ///The currently logged in patient
-    var patient: SMART.Patient? {
-        didSet {
-            guard oldValue !== patient else { return }
-
-            patientDidChange(oldValue, new: patient)
-        }
-    }
-
-    ///convenience property is `true` if a patient is signed in
-    var signedIn: Bool {
-        return patient != nil
-    }
-}
-
+```swift
 
 //MARK: - Definitions
 extension SessionManager {
@@ -138,9 +140,11 @@ extension SessionManager {
                     print("warning: multiple patients found. using first")
                 }
 
+                let oldPatient = self.patient
                 self.patient = patients.first
-                result = .Success(patients.first!)
+                self.patientDidChange(oldPatient, new: self.patient)
 
+                result = .Success(patients.first!)
 
             } else {
                 result = .Error(error)
@@ -151,7 +155,9 @@ extension SessionManager {
     }
 
     func logout() {
+        let oldPatient = self.patient
         patient = nil
+        patientDidChange(oldPatient, new: nil)
     }
 }
 
