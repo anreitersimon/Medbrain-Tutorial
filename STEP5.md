@@ -28,8 +28,7 @@ For the implementation we will introduce following classes:
 ##### PatientSignInViewController
 - displays a screen in which the user can enter his credentials. (i.e. username and password)
 - displays loading indicator while the log-in is in progress
-- displays a message if a error occured
-
+- displays a message if a error occurred
 
 
 ### Implementing the SessionManager
@@ -160,6 +159,6 @@ extension SessionManager {
         patientDidChange(oldPatient, new: nil)
     }
 }
-
-
 ```
+
+[Continue with Step5 of the Tutorial](STEP5-2.md)
