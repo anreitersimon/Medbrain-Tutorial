@@ -113,9 +113,9 @@ In the `submitButtonPressed` method these methods will be used
     SessionManager.shared.logIn(credentials) { (result) in
 
       //reenable textfields
-      self.emailTextfield.userInteractionEnabled = false
-      self.passwordTextfield.userInteractionEnabled = false
-      self.submitButton.enabled = false
+      self.emailTextfield.userInteractionEnabled = true
+      self.passwordTextfield.userInteractionEnabled = true
+      self.submitButton.enabled = true
       self.activityIndicator.stopAnimating()
 
       //check result
@@ -130,3 +130,12 @@ In the `submitButtonPressed` method these methods will be used
     }
 }
 ```
+
+The finished `PatientSignInViewController` implementation can be found [here](resources/step5/PatientSignInViewController.swift)
+
+
+## Conclusion
+You built a Log-In Interface and functionality and implemented the SessionManager
+Next-Up is building the `PatientMedicationsViewController`
+
+[Continue with Step6 of the Tutorial](STEP6.md)
