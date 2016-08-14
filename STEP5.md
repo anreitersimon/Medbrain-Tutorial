@@ -161,7 +161,7 @@ extension SessionManager {
 }
 ```
 
-The finished `SessionManager` implementation can be found [here](resources/step5/SessionManger.swift)
+The finished `SessionManager` implementation can be found [here](resources/step5/SessionManager.swift)
 
 
 [Continue with Step5 of the Tutorial](STEP5-2.md)
