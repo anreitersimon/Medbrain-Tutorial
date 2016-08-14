@@ -29,7 +29,7 @@ for this purpose we have to define `outlets` in the class-implementation.
 The creation and configuration could also be done programmatically.
 
 ##### 1. add the outlets to the class
-add the following to your
+add the following to the `PatientSignInViewController` implementation
 ```swift
 @IBOutlet var emailTextfield: UITextField!
 @IBOutlet var passwordTextfield: UITextField!
