@@ -54,7 +54,7 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         //set isSigninIn flag to true
         isSigninIn = true
-
+        
         //Set the completionHandler
         signInController.completionHandler = { (patient) in
             //Dismiss the signInController and wait for the animation to finish
@@ -68,3 +68,6 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     }
 }
 ```
+
+
+[Continue with Part 3 of this Step](STEP6-3.md)

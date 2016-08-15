@@ -15,7 +15,7 @@ Additionally if the user is not signed in the Log-in Screen should be shown.
 This Step is split up into 4 parts:
 - Creating the `PatientMedicationsViewController` interface
 - Ensuring the user is logged-in
-- Creating and configuring a `MedicationTableViewCell`
+- Generating instructions for prescriptions
 - Loading all `MedicationOrders` for the logged-in user.
 
 [Continue with Part-1](STEP6-1.md)
