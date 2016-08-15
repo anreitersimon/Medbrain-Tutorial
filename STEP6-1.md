@@ -168,4 +168,4 @@ override func viewDidLoad() {
 }
 ```
 
-[Continue with Part 2 of this Step](STEP6-2.md)
+[Continue with Step 6.2 of the Tutorial](STEP6-2.md)

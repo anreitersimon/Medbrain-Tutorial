@@ -18,4 +18,4 @@ This Step is split up into 4 parts:
 - Generating instructions for prescriptions
 - Loading and displaying all `MedicationOrders` for the logged-in user
 
-[Continue with Part-1](STEP6-1.md)
+[Continue with Step 6.1 of the Tutorial](STEP6-1.md)

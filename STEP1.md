@@ -27,4 +27,4 @@ You completed the basic setup for a iOS-App
 
 Next-up is installing dependencies via cocoa-pods
 
-[Continue to Step2 of the Tutorial](STEP2.md)
+[Continue to Step 2 of the Tutorial](STEP2.md)

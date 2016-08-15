@@ -1,51 +1,140 @@
-### Implementing SignIn - PatientSignInViewController Interface
+### Implementing SignIn -  PatientSignInViewController functionality
 
-1. create a new file named `PatientSignInViewController.swift` (`File->New->File`)
-  - When prompted for a template for the file choose `iOS->Cocoa Touch Class`
-  - in the next step choose `PatientSignInViewController`
-  - make it a subclass of `UIViewController`
+------------
 
-2. in the `Main.storyboard` we created the `PatientSignInViewController` but it is not linked to its implementation.
-  - go to the `Main.storyboard` and select the `PatientSignInViewController`
-  - in the `Identity-Inspector` under the `Custom-Class` enter `PatientSignInViewController`
+### Import `SMART` framework
+add `import SMART` statement to the top of the `PatientSignInViewController`
 
 
-![](resources/step5/set_signin_class.png)
+### Add a completionHandler
+First define a typealias for the `completionHandler`
 
-### Building the Interface
-
->__Note:__ In this tutorial the design will not be handled.
-Instead the required UI-elements will be defined and shown how they need to be linked.
-
-
-The `PatientSignInViewController` requires the following elements:
-- TextField for entering e-mail
-- TextField for entering password
-- Button for submitting the entered information
-- Activity indicator being displayed while the log-in is in process
-
-for this purpose we have to define `outlets` in the class-implementation.
->__Note:__ Outlets are a way of connecting elements in the Interface-Builder to the implementation.
-The creation and configuration could also be done programmatically.
-
-##### 1. add the outlets to the class
-add the following to the `PatientSignInViewController` implementation
 ```swift
-@IBOutlet var emailTextfield: UITextField!
-@IBOutlet var passwordTextfield: UITextField!
-@IBOutlet var submitButton: UIButton!
-@IBOutlet var activityIndicator: UIActivityIndicatorView!
+typealias SignInCompletionHandler = (patient: Patient) -> Void
+```
+This will be called after the user has successfully signed in
 
+Add a optional property named `completionHandler` of type `SignInCompletionHandler`
+
+```swift
+///Will be called after the Sign-In successfully finished
+///Note: user cannot leave screen without successfully signing in
+var completionHandler: SignInCompletionHandler?
+```
+
+### Implement `submitButtonPressed` action
+This method gets called when the `submitButton` is pressed and will perform 3 steps:
+- generate `LogInCredentials` from the entered information
+- log-in using `SessionManager`
+- Verify result and if successful call `completionHandler` if failed show error
+
+```swift
 @IBAction func submitButtonPressed(sender: AnyObject?) {
-    //will be implemented later
+    //1. generate `LogInCredentials` from the entered information
+    //2. log-in using `SessionManager`
+    //3. Verify result and if successful call `completionHandler` if failed show error
+  }
+```
+
+##### 1. Generating and verifying credentials
+Two helper-methods are introduced
+```swift
+///generate `LogInCredentials` from the information entered
+///- returns: nil if the entered credentials are incomplete or invalid
+func generateCredentials() -> LogInCredentials? {
+    //when sign-in is implemented properly this has to be adjusted
+
+    //Always return the default credentials for the test-user
+    return LogInCredentials.defaultCredentials
+}
+```
+```swift
+///displays an alert with the specified message
+func showError(message message: String) {
+    let alertController = UIAlertController(title: message, message: nil, preferredStyle: .Alert)
+    alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+
+    presentViewController(alertController, animated: true, completion: nil)
 }
 ```
 
-##### 2. In the storyboard add the elements.
-The end result can look like this:
-![](resources/step5/signin_interface.png)
+In the `submitButtonPressed` method these methods will be used
+```swift
+@IBAction func submitButtonPressed(sender: AnyObject?) {
+    //verify that the entered information is valid
+    guard let credentials = generateCredentials() else {
+        showError(message: "Entered Information is incomplete or invalid")
+        return
+    }
 
-##### 3. Connect the storyboard-elements to the outlets and actions.
-![](resources/step5/connect_outlets.gif)
+    //2. log-in using `SessionManager`
+    //3. Verify result and if successful call `completionHandler` if failed show error
+}
+```
 
-[Continue with Step5 of the Tutorial](STEP5-3.md)
+##### 2. Performing the log-in
+```swift
+@IBAction func submitButtonPressed(sender: AnyObject?) {
+    //verify that the entered information is valid
+    guard let credentials = generateCredentials() else {
+        showError(message: "Entered Information is incomplete or invalid")
+        return
+    }
+
+    //disable textFields so user cannot edit information while it is being submitted
+    emailTextfield.userInteractionEnabled = false
+    passwordTextfield.userInteractionEnabled = false
+    submitButton.enabled = false
+
+    //attempt sign-in using the verified credentials
+    SessionManager.shared.logIn(credentials) { (result) in
+      //3. Verify result and if successful call `completionHandler` if failed show error
+    }
+}
+```
+
+##### 3. Handling the result
+```swift
+@IBAction func submitButtonPressed(sender: AnyObject?) {
+    //verify that the entered information is valid
+    guard let credentials = generateCredentials() else {
+        showError(message: "Entered Information is incomplete or invalid")
+        return
+    }
+
+    //disable controls so user cannot edit information while it is being submitted
+    emailTextfield.userInteractionEnabled = false
+    passwordTextfield.userInteractionEnabled = false
+    submitButton.enabled = false
+    activityIndicator.startAnimating()
+
+    //attempt sign-in using the verified credentials
+    SessionManager.shared.logIn(credentials) { (result) in
+
+      //reenable controls
+      self.emailTextfield.userInteractionEnabled = true
+      self.passwordTextfield.userInteractionEnabled = true
+      self.submitButton.enabled = true
+      self.activityIndicator.stopAnimating()
+
+      //check result
+      switch result {
+      case .Success(let patient):
+          //Was successful call completionHandler
+          self.completionHandler?(patient: patient)
+      case .Error(_):
+          //Failed show Error Message
+          self.showError(message: "Something went wrong")
+      }
+    }
+}
+```
+
+The finished `PatientSignInViewController` implementation can be found [here](resources/step5/PatientSignInViewController.swift)
+
+## Conclusion
+You built a Log-In Interface and functionality and implemented the SessionManager.
+
+Next-Up is building the `PatientMedicationsViewController`
+
+[Continue with Step 6 of the Tutorial](STEP6.md)

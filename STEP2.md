@@ -51,4 +51,4 @@ You learned how to setup cocoapods in a ios-project and install dependencies.
 
 Next-up is a overview of the used FHIR-Resources
 
-[Continue to Step3 of the Tutorial](STEP3.md)
+[Continue to Step 3 of the Tutorial](STEP3.md)

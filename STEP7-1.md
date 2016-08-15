@@ -64,4 +64,4 @@ Set its identifier to `MedicationAdministrationTableViewCell` in the `Attributes
 Set its style to `Subtitle` in the `Attributes Inspector`
 
 
-[Continue to Part 2](STEP7-2.md)
+[Continue with Step 7.2 of the Tutorial](STEP7-2.md)

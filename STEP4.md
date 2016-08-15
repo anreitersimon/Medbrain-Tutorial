@@ -88,4 +88,4 @@ You setup a storyboard showing the apps intended flow.
 
 Next-up is implementing the sign-in.
 
-[Continue to Step5 of the Tutorial](STEP5.md)
+[Continue to Step 5 of the Tutorial](STEP5.md)

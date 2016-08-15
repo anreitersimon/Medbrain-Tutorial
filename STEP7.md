@@ -40,4 +40,4 @@ This Step will be split up into parts
 - Loading result and displaying a list of all administrations
 - Rendering a chart visualizing the timeline of the administrations
 
-[Continue to Part 1](STEP7-1.md)
+[Continue with Step 7.1 of the Tutorial](STEP7-1.md)

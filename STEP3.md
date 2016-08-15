@@ -55,4 +55,4 @@ Represents the administration of a medication.
 
 Next-up is building the Navigation-flow
 
-[Continue to Step4 of the Tutorial](STEP4.md)
+[Continue to Step 4 of the Tutorial](STEP4.md)

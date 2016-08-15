@@ -309,4 +309,4 @@ extension SMART.MedicationOrder {
 }
 ```
 
-[Continue with Part 4 of this Step](STEP6-4.md)
+[Continue with Step 6.3 of the Tutorial](STEP6-4.md)

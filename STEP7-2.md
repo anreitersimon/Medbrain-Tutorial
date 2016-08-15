@@ -176,5 +176,3 @@ func loadContent() {
 }
 
 ```
-
-[Continue to Part 3](STEP7-3.md)
