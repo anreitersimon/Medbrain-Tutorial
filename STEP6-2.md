@@ -1,4 +1,4 @@
-### Implementing PatientMedicationsViewController - Ensuring the user is logged in
+# Step 6.2 - Implementing PatientMedicationsViewController - Ensuring the user is logged in
 
 When the user navigates to the `PatientMedicationsViewController` it is possible that the user hasnt logged in yet.
 

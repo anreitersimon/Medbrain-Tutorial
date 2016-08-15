@@ -1,4 +1,4 @@
-### Implementing PatientMedicationsViewController - PatientMedicationsViewController Interface
+# Step 6.1 Implementing PatientMedicationsViewController - PatientMedicationsViewController Interface
 
 
 Similar to creating  the `PatientSignInViewController` interface:

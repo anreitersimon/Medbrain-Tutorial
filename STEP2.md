@@ -9,7 +9,7 @@ If you want to start here you just run `git checkout step2`.
 The Project is located at `project/` of the git repository root.
 
 ## Getting Started
-[CocoaPods](https://cocoapods.org) is a tool for managing dependencies in iOS/Mac Applications.
+[CocoaPods](https://cocoapods.org) is a tool for managing dependencies in iOS and Mac Applications.
 
 A possible alternative is Apples Swift Package Manager.
 
@@ -23,7 +23,7 @@ If you havent installed cocoapods already go to the terminal and enter `sudo gem
 This creates a file named `Podfile` in which you can specify your dependencies.
 4. open the Podfile and change its contents to:
 
-```
+```ruby
 platform :ios, '8.0'
 use_frameworks!
 
@@ -43,11 +43,10 @@ The `pod 'SMART'` installs the dependency [Swift-SMART](https://github.com/smart
 
 5. run `pod install`
 
-This downloads all specified libraries and integrates them into the x-code project.
-
+This downloads all libraries specified in the Podfile and integrates them into the XCode project.
 
 ## Conclusion
-You learned how to setup cocoapods in a ios-project and install dependencies.
+You learned how to setup cocoapods in a iOS-project and install dependencies.
 
 Next-up is a overview of the used FHIR-Resources
 

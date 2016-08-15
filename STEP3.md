@@ -15,13 +15,13 @@ Each resource will be explained more in depth in the corresponding section.
 
 FHIR-Resources have very few required properties since it tries to support many healthcare-standards which may have different requirement
 
-It is up to the developer to refine the definition of a sufficiently defined resource for the specific context it is used in.
+It is up to the developer to refine the definition of a sufficiently specified resource for the context it is used in.
 
 As an orientation the `ELGA Implementierungsleitfaden` was used.
 
 #### Patient
 
-This is the central since all data shown in the app is specific to __one__ patient which represents the user of the app.
+This is the central resource since all data shown in the app is specific to __one__ patient which represents the user of the app.
 
 [more information](FHIR-Resources/Patient/Patient.md)
 
@@ -53,6 +53,6 @@ Represents the administration of a medication.
 -------------
 
 
-Next-up is building the Navigation-flow
+Next-up is Building the Application Structure
 
 [Continue to Step 4 of the Tutorial](STEP4.md)

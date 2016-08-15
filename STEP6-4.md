@@ -1,4 +1,4 @@
-### Implementing PatientMedicationsViewController -  Loading and displaying all `MedicationOrders` for the logged-in user
+# Step 6.4 - Implementing PatientMedicationsViewController -  Loading and displaying all prescriptions for the logged-in user
 
 The ViewController needs to display a list of `MedicationOrders`
 

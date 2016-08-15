@@ -1,10 +1,9 @@
-### Implementing SignIn -  PatientSignInViewController functionality
+# Step 5.2 - Implementing SignIn -  PatientSignInViewController functionality
 
 ------------
 
 ### Import `SMART` framework
 add `import SMART` statement to the top of the `PatientSignInViewController`
-
 
 ### Add a completionHandler
 First define a typealias for the `completionHandler`

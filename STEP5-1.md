@@ -1,4 +1,4 @@
-### Implementing SignIn - PatientSignInViewController Interface
+# Step 5.1 - Implementing SignIn - PatientSignInViewController Interface
 
 1. create a new file named `PatientSignInViewController.swift` (`File->New->File`)
   - When prompted for a template for the file choose `iOS->Cocoa Touch Class`

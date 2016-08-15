@@ -1,4 +1,4 @@
-# Implementing `PatientMedicationsViewController`
+# Step 6 - Implementing PatientMedicationsViewController
 
 ## Prerequisites
 Finished [Step 5](STEP5.md) of this Tutorial.

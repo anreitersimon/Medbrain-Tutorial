@@ -1,4 +1,4 @@
-# Implementing `MedicationDetailViewController`
+# Step 7 - Implementing MedicationDetailViewController
 
 When selecting a item in the `PatientMedicationsViewController` a view should be shown showing further details about the Medication.
 

@@ -1,4 +1,4 @@
-### Implementing PatientMedicationsViewController -  Generating instructions for prescriptions
+# Step 6.3 - Implementing PatientMedicationsViewController - Generating instructions for prescriptions
 
 When displaying a list-item in the `PatientMedicationsViewController` as well as in the `MedicationDetailViewController` instructions should be shown.
 
