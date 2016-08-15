@@ -1,4 +1,4 @@
-### Implementing `MedicationDetailViewController` - Building the Interface
+### Implementing `MedicationDetailViewController` - MedicationDetailViewController Interface
 
 ### Create the implementation class
 

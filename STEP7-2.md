@@ -1,4 +1,4 @@
-### Implementing `MedicationDetailViewController` - Loading results
+### Implementing `MedicationDetailViewController` - Loading and displaying all administrations for a prescription
 
 
 #### Defining properties
