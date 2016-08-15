@@ -241,5 +241,67 @@ The sentence built by a `MedicationOrder` follows the following pattern.
 5. TimingBounds
 
 Since there are many possible combinations a playground was implemented generating all required keys.
-it can be found at `resources/step6/implementations/MedicationOrderInstructions.playground`
+
+It can be found at `resources/step6/implementations/MedicationOrderInstructions.playground`
 [MedicationOrderInstructions.playground](resources/step6/implementations/MedicationOrderInstructions.playground)
+
+
+Since the generated instructions will be used in various places in the app it does not make sense to implement this in the `PatientMedicationsViewController`
+
+As a reusable solution the instructions will be exposed as a computed property on the `MedicationOrder` class.
+
+Create a new file named `MedicationOrder+Instructions.swift`
+>__Note:__ It is Swift Convention when adding a extension to a existing class/struct to place the implementation in a File named `ExtendedClass+ExtensionName.swift`
+
+```swift
+import SMART
+
+extension SMART.MedicationOrder {
+
+    var localizedInstructions: String {
+        //No instructions to generate
+        guard let repeat_fhir = dosageInstruction?.first?.timing?.repeat_fhir else {
+            return "no instructions"
+        }
+
+
+        let optionalSentenceParts: [LocalizedSentenceBuildingSupport?] = [
+            Frequency(repeat_fhir),
+            Period(repeat_fhir.period, valueMax: repeat_fhir.periodMax, unit: repeat_fhir.periodUnits),
+            EventTiming(repeat_fhir.when),
+            Duration(repeat_fhir.duration, valueMax: repeat_fhir.durationMax, unit: repeat_fhir.durationUnits),
+            TimingBounds(repeat_fhir)
+        ]
+
+        //eliminiate all items which are nil
+        let sentenceParts = optionalSentenceParts.flatMap { $0 }
+
+        //builder string for sentence
+        var sentence = "timing"
+        //arguments to use
+        var arguments = [CVarArgType]()
+
+
+        //combine all sentence parts and arguments
+        sentenceParts.forEach {
+            sentence += $0.formatString
+            arguments.appendContentsOf($0.localizedArguments)
+        }
+
+        //Lookup string in Localizable.stringsdict and return result
+        return String(format: NSLocalizedString(sentence, comment: ""), locale: NSLocale.currentLocale(), arguments: arguments)
+    }
+
+    var medicationName: String {
+        if let medname = medicationCodeableConcept?.coding?.first?.display {
+            return medname
+        }
+
+        if let display = medicationReference?.display {
+            return display
+        }
+
+        return "No medicationname"
+    }
+}
+```
