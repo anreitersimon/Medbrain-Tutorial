@@ -75,6 +75,15 @@ in the `MedicationAdministrationTableViewCell` implementation import the `SMART`
 add a method called `configure(administration: MedicationAdministration)` with the following contents.
 
 ```swift
+
+static let dateFormatter: NSDateFormatter = {
+
+    let formatter = NSDateFormatter()
+    formatter.dateStyle = .LongStyle
+
+    return formatter
+}()
+
 func configure(administration: MedicationAdministration) {
   //set transparent color to the contentView
   contentView.backgroundColor = UIColor.clearColor()
@@ -97,3 +106,75 @@ func configure(administration: MedicationAdministration) {
   }
 }
 ```
+
+Now that the `configure` method is implemented it needs to be called.
+
+Navigate to the MedicationDetailViewController and add the call to configure the cell.
+
+```swift
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  //dequeue cell with the identifier specified in the storyboard
+  let cell = tableView.dequeueReusableCellWithIdentifier("MedicationAdministrationTableViewCell", forIndexPath: indexPath) as! MedicationAdministrationTableViewCell
+
+  //find the medicationOrder at the index
+  let medicationAdministration = administrations[indexPath.row]
+
+  cell.configure(medicationAdministration)
+
+  return cell
+}
+```
+
+### Implement loading of administrations
+
+A user can only reach this screen if he has signed in already.
+So the content can be loaded immediately when the screen has appeared.
+
+Next the `loadContent()` method will be implemented and called from `viewDidAppear(animated: Bool)`
+```swift
+
+override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    loadContent()
+}
+
+func loadContent() {
+
+    //ensure the medicationOrder has an id (this should always be the case)
+    guard let id = medicationOrder.id else {
+        state = .Error
+        return
+    }
+
+    //transition to the loading state
+    state = .LoadingResults
+
+
+    //Perform a search of MedicationAdministrations for the medicationOrder
+    MedicationAdministration.search(["prescription": id]).perform(SessionManager.shared.server) { [weak self](bundle, error) in
+
+        dispatch_async(dispatch_get_main_queue()) {
+            guard let strongSelf = self else {
+                return
+            }
+
+            //if a error occurred reset the administrations and transition to the error state
+            guard error == nil else {
+                strongSelf.administrations = []
+                strongSelf.state = .Error
+                return
+            }
+
+
+            let administrations = bundle?.entry?.flatMap { $0.resource as? MedicationAdministration} ?? []
+
+            strongSelf.administrations = administrations
+            strongSelf.state = administrations.isEmpty ? .Empty : .Loaded
+
+        }
+    }
+}
+
+```
+
+[Continue to Part 3](STEP7-3.md)

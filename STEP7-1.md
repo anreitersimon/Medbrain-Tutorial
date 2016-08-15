@@ -27,6 +27,7 @@ First import `ResearchKit`
 ```swift
 @IBOutlet var titleLabel: UILabel!
 @IBOutlet var subtitleLabel: UILabel!
+@IBOutlet var segmentedControl: UISegmentedControl!
 @IBOutlet var activityIndicator: UIActivityIndicatorView!
 @IBOutlet var chartView: ORKLineGraphChartView!
 

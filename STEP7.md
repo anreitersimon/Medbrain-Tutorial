@@ -37,8 +37,7 @@ end
 
 This Step will be split up into parts
 - Building the interface
-- Loading result
-- Displaying a list of all administrations
+- Loading result and displaying a list of all administrations
 - Rendering a chart visualizing the timeline of the administrations
 
 [Continue to Part 1](STEP7-1.md)
