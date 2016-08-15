@@ -36,7 +36,7 @@ This method gets called when the `submitButton` is pressed and will perform 3 st
   }
 ```
 
-##### 1. Genrating and verifying credentials
+##### 1. Generating and verifying credentials
 Two helper-methods are introduced
 ```swift
 ///generate `LogInCredentials` from the information entered
@@ -72,7 +72,7 @@ In the `submitButtonPressed` method these methods will be used
 }
 ```
 
-##### 2. Preforming the log-in
+##### 2. Performing the log-in
 ```swift
 @IBAction func submitButtonPressed(sender: AnyObject?) {
     //verify that the entered information is valid
@@ -90,11 +90,10 @@ In the `submitButtonPressed` method these methods will be used
     SessionManager.shared.logIn(credentials) { (result) in
       //3. Verify result and if successful call `completionHandler` if failed show error
     }
-
 }
 ```
 
-##### 3. Handle the result
+##### 3. Handling the result
 ```swift
 @IBAction func submitButtonPressed(sender: AnyObject?) {
     //verify that the entered information is valid
@@ -103,7 +102,7 @@ In the `submitButtonPressed` method these methods will be used
         return
     }
 
-    //disable textFields so user cannot edit information while it is being submitted
+    //disable controls so user cannot edit information while it is being submitted
     emailTextfield.userInteractionEnabled = false
     passwordTextfield.userInteractionEnabled = false
     submitButton.enabled = false
@@ -112,7 +111,7 @@ In the `submitButtonPressed` method these methods will be used
     //attempt sign-in using the verified credentials
     SessionManager.shared.logIn(credentials) { (result) in
 
-      //reenable textfields
+      //reenable controls
       self.emailTextfield.userInteractionEnabled = true
       self.passwordTextfield.userInteractionEnabled = true
       self.submitButton.enabled = true
@@ -133,9 +132,9 @@ In the `submitButtonPressed` method these methods will be used
 
 The finished `PatientSignInViewController` implementation can be found [here](resources/step5/PatientSignInViewController.swift)
 
-
 ## Conclusion
-You built a Log-In Interface and functionality and implemented the SessionManager
+You built a Log-In Interface and functionality and implemented the SessionManager.
+
 Next-Up is building the `PatientMedicationsViewController`
 
 [Continue with Step6 of the Tutorial](STEP6.md)

@@ -1,4 +1,4 @@
-# Step 5 - Implementing SignIn
+# Implementing SignIn
 
 ## Prerequisites
 Finished [Step 4](STEP4.md) of this Tutorial.
