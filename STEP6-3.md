@@ -216,8 +216,8 @@ elements which adopt this protocol provide a part of a sentence.
 ```swift
 protocol LocalizedSentenceBuildingSupport {
     ///return all possibilities
+    ///Note: this is not necessarily required for building the sentence but is useful for generating all possible sentences of a combination of sentenceParts
     static var allFormatStrings: [String] { get }
-
 
     var formatString: String { get }
     var localizedArguments: [CVarArgType] { get }
@@ -249,6 +249,8 @@ It can be found at `resources/step6/implementations/MedicationOrderInstructions.
 Since the generated instructions will be used in various places in the app it does not make sense to implement this in the `PatientMedicationsViewController`
 
 As a reusable solution the instructions will be exposed as a computed property on the `MedicationOrder` class.
+
+Additionally a convenience accessor for the medicationName will be implemented
 
 Create a new file named `MedicationOrder+Instructions.swift`
 >__Note:__ It is Swift Convention when adding a extension to a existing class/struct to place the implementation in a File named `ExtendedClass+ExtensionName.swift`
@@ -292,6 +294,7 @@ extension SMART.MedicationOrder {
         return String(format: NSLocalizedString(sentence, comment: ""), locale: NSLocale.currentLocale(), arguments: arguments)
     }
 
+    ///The name of the prescribed medication
     var medicationName: String {
         if let medname = medicationCodeableConcept?.coding?.first?.display {
             return medname
@@ -305,3 +308,5 @@ extension SMART.MedicationOrder {
     }
 }
 ```
+
+[Continue with Part 4 of this Step](STEP6-4.md)

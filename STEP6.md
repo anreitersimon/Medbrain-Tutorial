@@ -16,6 +16,6 @@ This Step is split up into 4 parts:
 - Creating the `PatientMedicationsViewController` interface
 - Ensuring the user is logged-in
 - Generating instructions for prescriptions
-- Loading all `MedicationOrders` for the logged-in user.
+- Loading and displaying all `MedicationOrders` for the logged-in user
 
 [Continue with Part-1](STEP6-1.md)
