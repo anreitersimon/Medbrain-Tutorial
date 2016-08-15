@@ -11,9 +11,9 @@ First define a typealias for the `completionHandler`
 ```swift
 typealias SignInCompletionHandler = (patient: Patient) -> Void
 ```
-This will be called after the user has successfully signed in
+This will be called after the user has successfully signed in.
 
-Add a optional property named `completionHandler` of type `SignInCompletionHandler`
+Add a optional property named `completionHandler` of type `SignInCompletionHandler`:
 
 ```swift
 ///Will be called after the Sign-In successfully finished
@@ -23,8 +23,8 @@ var completionHandler: SignInCompletionHandler?
 
 ### Implement `submitButtonPressed` action
 This method gets called when the `submitButton` is pressed and will perform 3 steps:
-- generate `LogInCredentials` from the entered information
-- log-in using `SessionManager`
+- Generate `LogInCredentials` from the entered information
+- Log-in using `SessionManager`
 - Verify result and if successful call `completionHandler` if failed show error
 
 ```swift
@@ -57,7 +57,7 @@ func showError(message message: String) {
 }
 ```
 
-In the `submitButtonPressed` method these methods will be used
+In the `submitButtonPressed` method the above methods will be used
 ```swift
 @IBAction func submitButtonPressed(sender: AnyObject?) {
     //verify that the entered information is valid

@@ -1,17 +1,16 @@
 # Step 6.1 Implementing PatientMedicationsViewController - PatientMedicationsViewController Interface
 
-
-Similar to creating  the `PatientSignInViewController` interface:
+Creating the `PatientMedicationsViewController` is very similar to creating  the `PatientSignInViewController` interface:
 - Create a `UITableViewController` subclass named `PatientMedicationsViewController`
 - In the `Main.storyboard` select the `PatientMedicationsViewController` and set its class to `PatientMedicationsViewController`
 
 #### Creating the StatusView
-This ViewController loads data from a remote source.
+This `View Controller` loads data from a remote source.
 While performing such a task its common practice to do this asynchronously. (While performing this task the user can still interact with the app.)
 
 To inform the user that the app is fetching data it displays a StatusView.
 
-This StatusView has responsibility for displaying:
+The StatusView has responsibility for displaying:
 - loading states
 - error states
 - empty states
@@ -22,7 +21,7 @@ The StatusView consists of two elements:
 - loading-indicator
 - title-label
 
-for these and the StatusView itself outlets are declared.
+For these and the StatusView itself outlets are declared.
 
 Add the following to the `PatientMedicationsViewController`
 
@@ -32,7 +31,7 @@ Add the following to the `PatientMedicationsViewController`
 @IBOutlet weak var statusTitleLabel: UILabel!
 ```
 
-drag a view object from the object-library onto the `PatientMedicationsViewController`
+drag a view object from the `object-library` onto the `PatientMedicationsViewController`
 
 ![](resources/step6/add_statusview.gif)
 
@@ -47,11 +46,7 @@ Connect the storyboard-elements to the outlets.
 
 ![](resources/step6/connect_status_outlets.gif)
 
-To actually show the statusView it has to be set to be the tableViews backgroundView.
-
-To do so the `viewDidLoad` is overridden.
-This method gets called after the view is created.
-At this point all storyboard-elements have been linked up.
+To actually show the statusView this has to be set to be the tableViews backgroundView. In order to accomplish this the `viewDidLoad()` method is overridden. Once the `ViewControllers`view is created the `viewDidLoad()` method gets called. At this point all storyboard-elements have been linked up.
 
 ```swift
 override func viewDidLoad() {
@@ -60,7 +55,7 @@ override func viewDidLoad() {
     tableView.backgroundView = statusView
 }
 ```
-To keep track of the state a `State` enum is and an corresponding property introduced:
+To keep track of the state a `State` enum and a corresponding property are introduced:
 ```swift
 enum State {
     //Starting state show nothing
@@ -82,7 +77,7 @@ enum State {
 var state: State = .Initial
 ```
 
-Additionally thre convenience accessors are added to the `State` enum
+Additionally 3 convenience accessors are added to the `State` enum:
 
 ```swift
 ///does the statusView need to be shown
@@ -123,8 +118,7 @@ var title: String? {
 ```
 
 
-the ViewController has to be able to display every state.
-For this purpose an new method is added.
+The `View Controller` has to be able to display every state which is why a new method `configure(forState state: State)` is added:
 
 ```swift
 func configure(forState state: State) {
@@ -144,9 +138,8 @@ func configure(forState state: State) {
     }
 }
 ```
-This method should be called every time the controllers `state` changes.
+The above mentioned method should be executed every time the controllers `state` changes. This can be achieved by adding a `property observer` to the `state` property.
 
-This can be achieved by adding a `property observer` to the state property.
 ```swift
 var state: State = .Initial {
     didSet {
@@ -155,7 +148,7 @@ var state: State = .Initial {
 }
 ```
 
-Additionally to initially configure the statusView the following should be modified as follows:
+To initially configure the `statusView` the `viewDidLoad()` has to be modified as follows:
 
 ```swift
 override func viewDidLoad() {

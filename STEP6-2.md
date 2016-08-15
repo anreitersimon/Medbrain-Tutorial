@@ -1,21 +1,21 @@
 # Step 6.2 - Implementing PatientMedicationsViewController - Ensuring the user is logged in
 
-When the user navigates to the `PatientMedicationsViewController` it is possible that the user hasnt logged in yet.
+When the user navigates to the `PatientMedicationsViewController` it is possible that the user hasn't logged in yet.
 
 
 `UIViewController` (and its subclasses) have methods that are invoked by the framework for specific lifecycle events.
 
 of particular interest is the `viewDidAppear(animated: Bool)` method.
 
-This method gets called after the view-controller has appeared.
+This method gets called after the `View Controller` has appeared.
 
 
-Before overriding this method the `PatientMedicationsViewController` needs a way to show the `PatientSignInViewController`
+Before overriding this method the `PatientMedicationsViewController` needs a way to show the `PatientSignInViewController`.
 
 This is done via a `StoryboardSegue`.
 
-In a previous step we set up a segue from `PatientMedicationsViewController` to the `PatientSignInViewController`
-But to invoke this segue it hast to be assigned an identifier.
+In a previous step we set up a segue from `PatientMedicationsViewController` to the `PatientSignInViewController`.
+But to invoke this segue it has to be assigned an identifier.
 
 - In the `Main.storyboard` select the `PatientMedicationsViewController` and in the `Attributes Inspector` assign `showSignIn` as identifier.
 
@@ -36,15 +36,11 @@ Add the following to the `PatientMedicationsViewController` implementation.
     }
 ```
 
-Now the `PatientSignInViewController` is shown but after the user signs-in successfully the `PatientSignInViewController` never is dismissed.
+Now the `PatientSignInViewController` is shown but after the user signs-in successfully the `PatientSignInViewController` is never dismissed. For this purpose the `completionHandler` property on the `PatientSignInViewController` was introduced.
 
-for this purpose the `completionHandler` property on the `PatientSignInViewController` was introduced.
+To set this property we need to acquire a reference to the signInController.
 
-To set this property we need a reference to the signInController.
-
-This can be achieved by overriding `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`
-
-This method gets called before a segue is executed.
+This can be achieved by overriding `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)` which gets called before a segue is executed.
 ```swift
 override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 

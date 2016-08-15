@@ -8,10 +8,10 @@ If you want to start here you just run `git checkout step4`.
 The Project is located at `project/` of the git repository root.
 
 ## Goals
-In this step the each of the apps screens will be added as a placeholder implementation.
+In this step each of the apps screens will be added as a placeholder implementation.
 Each screens functionality will be implemented later on.
 
-Learn about building UserInterfaces utilizing X-Codes Interface-Builder and Storyboards.
+Learn about building User Interfaces utilizing X-Codes Interface-Builder and Storyboards.
 
 ## Getting started
 By default X-Code creates a storyboard name `Main.storyboard`.
@@ -22,11 +22,11 @@ We start of by deleting the `ViewController` and its corresponding ViewControlle
 
 1. Delete the file `ViewController.swift`
 2. Select file `Main.storyboard` in the project navigator.
-3. Select the empty ViewController and delete it.
+3. Select the empty `ViewController` and delete it.
 
 
-#### Adding the TabBarController
-1. From the Interface-Builders Object library drag a `Tab Bar Controller` object onto the storyboard.
+#### Adding a TabBarController
+1. From the Interface-Builders `object-library` drag a `Tab Bar Controller` object onto the storyboard.
 2. Delete the to ChildControllers.
 3. Select the newly added controller and in the `Attributes Inspector` select the checkbox `Is Initial ViewController`
 
@@ -34,18 +34,18 @@ We start of by deleting the `ViewController` and its corresponding ViewControlle
 
 
 #### Building the Navigation-flow
-1. Select a `Navigation Controller`from the object-library and drag it onto the storyboard.
->__Note:__ this also adds a empty `Table View Controller`
+1. Select a `Navigation Controller` from the `object-library` and drag it onto the storyboard.
+>__Note:__ This also adds an empty `Table View Controller`
 >
-> the added `Table View Controller` will later show a list of the patients medications and will be referred to as `PatientMedicationsViewController`
+> The added `Table View Controller` will later show a list of the patients medications and will be referred to as `PatientMedicationsViewController`.
 
 2. Drag a `Table View Controller` from the object-library onto the storyboard.
->__Note:__ This controller will show a single medication in more detail and will be referred to as `MedicationDetailViewController`
+>__Note:__ This controller will show a single medication in more detail and will be referred to as `MedicationDetailViewController`.
 
-3. `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added  `MedicationDetailViewController`
+3. `ctrl+drag` from the first `PatientMedicationsViewController` to the newly added  `MedicationDetailViewController`
 4. select `show` in the `Manual-Segue` section
 
-5. `ctrl` + drag from the `Tab Bar Controller` to the `Navigation Controller`
+5. `ctrl+drag` from the `Tab Bar Controller` to the `Navigation Controller`
 6. select `viewcontrollers` in the `Relationship-Segue` section
 
 ![](resources/step4/build_navigation.gif)
@@ -53,28 +53,28 @@ We start of by deleting the `ViewController` and its corresponding ViewControlle
 #### Adding the SignInViewController
 To be able to determine which medications to show the patient has to sign-in.
 
-In order to sign-in a new viewcontroller named `PatientSignInViewController` will be introduced.
+In order to sign-in a new `View Controller` named `PatientSignInViewController` will be introduced.
 
 This controller will be shown every time the user reaches the `PatientMedicationsViewController` and is not signed-in.
 
-1. From the object-library drag a `View Controller` object on to the storyboard.
+1. From the `object-library` drag a `View Controller` object on to the storyboard.
 
-2. `ctrl` +  drag from the first `PatientMedicationsViewController` to the newly added
+2. `ctrl+drag` from the first `PatientMedicationsViewController` to the newly added
 `PatientSignInViewController`.
 
-3. select `present modally` in the `Manual-Segue` section.
+3. select `Present Modally` in the `Manual-Segue` section.
 
 ![](resources/step4/add_signin.gif)
 
 
 #### Adding the PatientDetailViewController
 
-After signing in the user should have the optionto review his information (i.e.: email-adress, phone-number, etc.)
+After signing in the user should have the option to review his information (i.e.: email-address, phone-number, etc.)
 
 This functionality will be implemented in the `PatientDetailViewController`.
 
-1. From the object-library drag a `View Controller` object on to the storyboard.
-2. `ctrl` + drag from the `Tab Bar Controller` to the `PatientDetailViewController`
+1. From the `object-library` drag a `View Controller` object on to the storyboard.
+2. `ctrl+drag` from the `Tab Bar Controller` to the `PatientDetailViewController`
 3. select `viewcontrollers` in the `Relationship-Segue` section
 
 

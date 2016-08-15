@@ -8,7 +8,7 @@ If you want to start here you just run `git checkout step6`.
 The Project is located at `project/` of the git repository root.
 
 ## Goals
-Build a ViewController which shows a list of prescriptions for a specific patient.
+Build a `View Controller` which shows a list of prescriptions for a specific patient.
 Additionally if the user is not signed in the Log-in Screen should be shown.
 
 ## Getting started

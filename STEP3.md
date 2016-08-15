@@ -10,11 +10,13 @@ A quick overview of the important resources used.
 
 Each resource will be explained more in depth in the corresponding section.
 
-FHIR-Resources have very few required properties since it tries to support many healthcare-standards which may have different requirement
+FHIR-Resources have very few required properties since it tries to support many healthcare-standards which may have different requirements.
 
 It is up to the developer to refine the definition of a sufficiently specified resource for the context it is used in.
 
 As an orientation the `ELGA Implementierungsleitfaden` was used.
+
+-------------
 
 ## Patient
 
@@ -32,7 +34,7 @@ In the context of the app most medications are intended for the patient to consu
 ## MedicationOrder
 Represents a prescription in FHIR.
 Expresses the order for the administration of a medication
-it also includes specific `DosageInstructions`
+it also includes specific `DosageInstructions`.
 
 [more information](FHIR-Resources/MedicationOrder/MedicationOrder.md)
 
@@ -46,9 +48,7 @@ Represents the administration of a medication.
 
 [more information](FHIR-Resources/MedicationAdministration/MedicationAdministration.md)
 
-
 -------------
-
 
 Next-up is Building the Application Structure
 

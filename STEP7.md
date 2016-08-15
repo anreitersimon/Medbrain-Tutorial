@@ -1,16 +1,14 @@
 # Step 7 - Implementing MedicationDetailViewController
 
-When selecting a item in the `PatientMedicationsViewController` a view should be shown showing further details about the Medication.
+When selecting a item in the `PatientMedicationsViewController` a `View` should be shown showing further details about the medication.
 
-This view will be implemented in the `MedicationDetailViewController`.
-
-The view should show a graph with administrations for the specified medication.
+This view will be implemented in the `MedicationDetailViewController`. The view should show a graph with administrations for the specified medication.
 
 Additionally a list of all administrations should be displayed.
 
 In order to display the graph a new dependency will be introduced.
 
-`ResearchKit` contains classes which can be used to render graphs
+`ResearchKit` contains classes which can be used to render graphs:
 
 ### Adding the dependency
 

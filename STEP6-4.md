@@ -2,10 +2,10 @@
 
 The ViewController needs to display a list of `MedicationOrders`
 
-Therefore the ViewController needs to store the list of medications somewhere.
+Therefore the `View Controller` needs to store the list of medications somewhere.
 
 A new property called `medicationOrders` is introduced.
-Each time the medicationOrders are changed the tableView needs to be reloaded.
+Each time the `medicationOrders` are changed the tableView needs to be reloaded.
 ```swift
 
 ///medicationOrders to display in the list
@@ -30,9 +30,7 @@ var medicationOrders: [MedicationOrder] = [] {
 ### Configuring the MedicationOrderTableViewCell
 The `MedicationOrderTableViewCell` represents a single item in the list.
 
-Each cell is configured for a single `MedicationOrder`
-
-in the `MedicationOrderTableViewCell` implementation import the `SMART` framework and add the following method
+Each cell is configured for a single `MedicationOrder`. In the `MedicationOrderTableViewCell` implementation import the `SMART` framework and add the following method
 
 ```swift
 func configure(medicationOrder: MedicationOrder) {
@@ -47,7 +45,7 @@ func configure(medicationOrder: MedicationOrder) {
 
 the `UITableViewController` conforms to the `UITableViewDataSource` protocol.
 
-The tableView requires the dataSource to implement the following methods
+The tableView requires the dataSource to implement the following methods:
 
 ```swift
 func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -58,7 +56,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 
 ```
 
-These methods should be implemented as follows
+These methods should be implemented as follows:
 
 ```swift
 override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,7 +83,7 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
 }
 ```
 
-Now the tableView is able to display the medicationOrders
+Now the tableView is able to display the `medicationOrders`.
 
 ### Loading the results
 

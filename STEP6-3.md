@@ -10,9 +10,9 @@ To address this issue these descriptions are built using LocalizedStrings.
 
 Strings are not used directly but are stored in a file (`Localizable.stringsdict`) and are referred to by keys.
 
-There should exist a file for each supported language.
+Multiple languages can be supported by providing a file for each desired language.
 
-for instance when describing a duration in seconds:
+For instance when describing a duration in seconds in english:
 ```xml
 <key>for %d second(s)</key>
 <dict>
@@ -36,7 +36,7 @@ In this example the key is `"for %d seconds"`
 Additionally a pluralization rule is defined.
 So for instance when the duration is 1 (singular) the result is `"for one second"` as in all other cases it is `"for x seconds"`
 
-To simplify the generation `DosageInstructions` some convenience classes/structs were introduced.
+To simplify the generation `DosageInstructions` some convenience classes/structs were introduced:
 
 #### TimingUnit
 String enum wrapping the units of time used by FHIR.
@@ -156,7 +156,7 @@ extension Frequency {
 ```
 
 #### Period
-Encapsulates a Period of time
+Encapsulates a period of time
 >__Note:__ The period may also be defined as a range. (`valueMax != nil`)
 
 ```swift
@@ -180,7 +180,7 @@ struct Period {
 #### TimingBounds
 Describes timing bounds used in FHIR.
 
-This is modelled as an enum which wraps a value as enums are mutually exclusive. (Either a `Duration` or a `Period` but never both)
+This is modeled as an enum which wraps a value as enums are mutually exclusive. (Either a `Duration` or a `Period` but never both)
 
 
 ```swift
@@ -204,7 +204,7 @@ enum TimingBounds {
 ```
 ## Bringing it together
 
-The generated instruction is a "sentence" where every of the items described above  may contribute a part of that sentence.
+The generated instruction is a "sentence" where each of the items described above may contribute a part of that sentence.
 
 Each "sentence" should be a key in the `Localizable.stringsdict` file.
 
@@ -240,7 +240,7 @@ The sentence built by a `MedicationOrder` follows the following pattern.
 4. Duration
 5. TimingBounds
 
-Since there are many possible combinations a playground was implemented generating all required keys.
+Since there are many possible combinations a playground was implemented generating all required keys. A playground is a file where specific code snippets can be tested easily in order to see if they are implemented correctly.
 
 It can be found at `resources/step6/implementations/MedicationOrderInstructions.playground`
 [MedicationOrderInstructions.playground](resources/step6/implementations/MedicationOrderInstructions.playground)
@@ -250,7 +250,7 @@ Since the generated instructions will be used in various places in the app it do
 
 As a reusable solution the instructions will be exposed as a computed property on the `MedicationOrder` class.
 
-Additionally a convenience accessor for the medicationName will be implemented
+Additionally a convenience accessor for the `medicationName` will be implemented
 
 Create a new file named `MedicationOrder+Instructions.swift`
 >__Note:__ It is Swift Convention when adding a extension to a existing class/struct to place the implementation in a File named `ExtendedClass+ExtensionName.swift`

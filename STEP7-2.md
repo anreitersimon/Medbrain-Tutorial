@@ -3,7 +3,7 @@
 
 #### Defining properties
 
-The administrations in this view are loaded for a specific `MedicationOrder`
+The administrations in this `View` are loaded for a specific `MedicationOrder`
 
 Add a new property called `medicationOrder`
 ```swift
@@ -71,7 +71,7 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
 ```
 
 #### Configure the MedicationAdministrationTableViewCell
-in the `MedicationAdministrationTableViewCell` implementation import the `SMART` framework
+In the `MedicationAdministrationTableViewCell` implementation import the `SMART` framework
 add a method called `configure(administration: MedicationAdministration)` with the following contents.
 
 ```swift
@@ -107,9 +107,9 @@ func configure(administration: MedicationAdministration) {
 }
 ```
 
-Now that the `configure` method is implemented it needs to be called.
+Now that the `configure(administration: MedicationAdministration)` method is implemented it needs to be called.
 
-Navigate to the MedicationDetailViewController and add the call to configure the cell.
+Navigate to the `MedicationDetailViewController` and add the call to configure the cell.
 
 ```swift
 override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -130,7 +130,7 @@ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:
 A user can only reach this screen if he has signed in already.
 So the content can be loaded immediately when the screen has appeared.
 
-Next the `loadContent()` method will be implemented and called from `viewDidAppear(animated: Bool)`
+Next the `loadContent()` method will be implemented and called from `viewDidAppear(animated: Bool)`:
 ```swift
 
 override func viewDidAppear(animated: Bool) {
