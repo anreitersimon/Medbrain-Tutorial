@@ -241,4 +241,5 @@ The sentence built by a `MedicationOrder` follows the following pattern.
 5. TimingBounds
 
 Since there are many possible combinations a playground was implemented generating all required keys.
+it can be found at `resources/step6/implementations/MedicationOrderInstructions.playground`
 [MedicationOrderInstructions.playground](resources/step6/implementations/MedicationOrderInstructions.playground)
