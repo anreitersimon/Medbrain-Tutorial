@@ -136,4 +136,4 @@ func loadContent() {
 }
 ```
 
-[Continue with Part 4 of this Step](STEP6-4.md)
+[Continue to Step 7](STEP7.md)
