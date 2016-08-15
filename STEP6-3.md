@@ -225,11 +225,11 @@ protocol LocalizedSentenceBuildingSupport {
 ```
 Each of the items described above adopt this protocol.
 The implementations can be found here.
-- [Frequency](resources/step6/Frequency.swift)
-- [Period](resources/step6/Period.swift)
-- [EventTiming](resources/step6/EventTiming.swift)
-- [Duration](resources/step6/Duration.swift)
-- [TimingBounds](resources/step6/TimingBounds.swift)
+- [Frequency](resources/step6/implementations/Frequency.swift)
+- [Period](resources/step6/implementations/Period.swift)
+- [EventTiming](resources/step6/implementations/EventTiming.swift)
+- [Duration](resources/step6/implementations/Duration.swift)
+- [TimingBounds](resources/step6/implementations/TimingBounds.swift)
 
 The sentence built by a `MedicationOrder` follows the following pattern.
 >__Note:__ Each element is optional
