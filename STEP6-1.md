@@ -47,5 +47,125 @@ Connect the storyboard-elements to the outlets.
 
 ![](resources/step6/connect_status_outlets.gif)
 
+To actually show the statusView it has to be set to be the tableViews backgroundView.
+
+To do so the `viewDidLoad` is overridden.
+This method gets called after the view is created.
+At this point all storyboard-elements have been linked up.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    tableView.backgroundView = statusView
+}
+```
+To keep track of the state a `State` enum is and an corresponding property introduced:
+```swift
+enum State {
+    //Starting state show nothing
+    case Initial
+
+    //Fetching medications from the server
+    case LoadingResults
+
+    //Fetching medications failed
+    case Error
+
+    //Fetching medications succeeded but list was empty
+    case Empty
+
+    //Fetching medications succeeded
+    case Loaded
+}
+
+var state: State = .Initial
+```
+
+Additionally thre convenience accessors are added to the `State` enum
+
+```swift
+///does the statusView need to be shown
+var showsStatusView: Bool {
+    switch self {
+    case .Initial, .LoadingResults, .Error, .Empty:
+        return true
+    case .Loaded:
+        return false
+    }
+}
+
+///when the statusView is show should the loading-indicator be displayed
+var showsLoadingIndicator: Bool {
+    switch self {
+    case .LoadingResults:
+        return true
+    case .Initial, .Error, .Empty, .Loaded:
+        return false
+    }
+}
+
+///The text displayed in the statusView
+var title: String? {
+    switch self {
+    case .Initial:
+        return nil
+    case .LoadingResults:
+        return "Loading..."
+    case .Error:
+        return "Error"
+    case .Empty:
+        return "No Prescriptions"
+    case .Loaded:
+        return nil
+    }
+}
+```
+
+
+the ViewController has to be able to display every state.
+For this purpose an new method is added.
+
+```swift
+func configure(forState state: State) {
+    //Hide/show the statusView
+    statusView.hidden = !state.showsStatusView
+
+    //Hide show the titleLable
+    statusTitleLabel.hidden = state.title?.isEmpty ?? true
+    statusTitleLabel.text = state.title ?? " "
+
+
+    //Start/Stop Animating the activityIndicator
+    if activityIndicator.isAnimating() && !state.showsLoadingIndicator {
+        activityIndicator.stopAnimating()
+    } else if !activityIndicator.isAnimating() && state.showsLoadingIndicator {
+        activityIndicator.startAnimating()
+    }
+}
+```
+This method should be called every time the controllers `state` changes.
+
+This can be achieved by adding a `property observer` to the state property.
+```swift
+var state: State = .Initial {
+    didSet {
+        configure(forState: state)
+    }
+}
+```
+
+Additionally to initially configure the statusView the following should be modified as follows:
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    tableView.backgroundView = statusView
+
+    //configure the statusView for the current state
+    configure(forState: state)
+}
+```
 
 [Continue with Part 2 of this Step](STEP6-2.md)
