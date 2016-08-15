@@ -10,7 +10,7 @@
   - [MedicationAdministration](FHIR-Resources/MedicationAdministration/MedicationAdministration.md)
 
 ##### [Step 4 - Building the Application Flow](STEP4.md)
-##### [Step 5 - Building the Application Flow](STEP5.md)
+##### [Step 5 - Implementing SignIn](STEP5.md)
   - [Step 5.2 - PatientSignInViewController Interface](STEP5-2.md)
   - [Step 5.3 - PatientSignInViewController functionality](STEP5-3.md)
 
