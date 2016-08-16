@@ -26,6 +26,55 @@ extension MedicationAdministration {
     }
 }
 
+struct GraphData {
+
+    struct GroupData {
+        let identifier: String
+
+        let countTaken: Int
+        let countNotTaken: Int
+    }
+
+    //each item represents a group the values represent the count of administrations
+    let content: [GroupData]
+
+    init(_ administrations: [MedicationAdministration], groupingMode mode: DateGroupingMode, maxGroups: Int = 7) {
+        var takenIdentifierToCounts = [String:Int]()
+        var missedIdentifierToCounts = [String:Int]()
+
+        //Start with the current date
+        var current = NSDate()
+
+        var identifiers = [String]()
+
+        for _ in 0...maxGroups {
+            let identifier = current.identifier(groupingMode: mode)
+
+            identifiers.append(identifier)
+
+            current = current.predecessor(groupingMode: mode)
+        }
+
+        for administration in administrations {
+            guard let date = administration._date else { continue }
+
+            let identifier = date.identifier(groupingMode: mode)
+
+            if !(administration.wasNotGiven ?? false) {
+
+                takenIdentifierToCounts[identifier] = (takenIdentifierToCounts[identifier] ?? 0) + 1
+            } else {
+
+                missedIdentifierToCounts[identifier] = (missedIdentifierToCounts[identifier] ?? 0) + 1
+            }
+
+        }
+
+
+        content = identifiers.map { GroupData(identifier: $0, countTaken: takenIdentifierToCounts[$0] ?? 0, countNotTaken:  missedIdentifierToCounts[$0] ?? 0) }.reverse()
+    }
+
+}
 
 class MedicationDetailViewController: UITableViewController {
 
@@ -51,8 +100,18 @@ class MedicationDetailViewController: UITableViewController {
     }
 
     func updateGraphData() {
+        graphData = GraphData(administrations, groupingMode: groupingMode)
     }
 
+    var graphData: GraphData =  GraphData([], groupingMode: DateGroupingMode.Day) {
+        didSet {
+            //WORKAROUND: - ORKLineGraphChartView has no explicit reloadData() method setting its dataSource property triggers a reload
+            chartView.dataSource = self
+
+            //animated the change
+            chartView.animateWithDuration(0.4)
+        }
+    }
 
     var state: State = .Initial {
         didSet {
