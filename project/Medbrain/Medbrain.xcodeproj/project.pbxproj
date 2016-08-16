@@ -30,6 +30,7 @@
 		3C0FD51E1D639C54009427EE /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5141D639C54009427EE /* Frequency.swift */; };
 		3C0FD51F1D639C54009427EE /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5151D639C54009427EE /* Combinations.swift */; };
 		3C0FD5201D639C54009427EE /* TimingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5161D639C54009427EE /* TimingUnit.swift */; };
+		3C0FD5221D63A018009427EE /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */; };
 		5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		3C0FD5141D639C54009427EE /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		3C0FD5151D639C54009427EE /* Combinations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combinations.swift; sourceTree = "<group>"; };
 		3C0FD5161D639C54009427EE /* TimingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingUnit.swift; sourceTree = "<group>"; };
+		3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3C0FD5041D638ED5009427EE /* PatientSignInViewController.swift */,
 				3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */,
 				3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */,
+				3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */,
 				3C0FD5061D638FCB009427EE /* SeparatorView.swift */,
 				3C0FD4D81D6385E2009427EE /* Main.storyboard */,
 				3C0FD4DB1D6385E2009427EE /* Assets.xcassets */,
@@ -492,6 +495,7 @@
 				3C0FD5191D639C54009427EE /* EventTiming.swift in Sources */,
 				3C0FD51D1D639C54009427EE /* Period.swift in Sources */,
 				3C0FD51E1D639C54009427EE /* Frequency.swift in Sources */,
+				3C0FD5221D63A018009427EE /* MedicationDetailViewController.swift in Sources */,
 				3C0FD5181D639C54009427EE /* MedicationOrder+Instructions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
