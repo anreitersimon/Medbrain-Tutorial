@@ -56,6 +56,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="dKO-bH-ftp" kind="show" identifier="showMedication" id="qVu-co-nn1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -68,7 +71,6 @@
                         <outlet property="activityIndicator" destination="k26-wz-kFL" id="8Zr-1k-PJs"/>
                         <outlet property="statusTitleLabel" destination="4zl-NB-d6n" id="PhC-7R-hEs"/>
                         <outlet property="statusView" destination="GQK-DI-9JT" id="6lx-yz-oyC"/>
-                        <segue destination="dKO-bH-ftp" kind="show" id="Wdl-pB-akW"/>
                         <segue destination="XgQ-l2-xjE" kind="presentation" identifier="showSignIn" id="zl8-XI-Arg"/>
                     </connections>
                 </tableViewController>

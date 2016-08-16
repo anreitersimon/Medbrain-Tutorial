@@ -187,6 +187,12 @@ class PatientMedicationsViewController: UITableViewController {
                     self.loadContent() //NOTE: This function will be implemented later
                 }
             }
+        } else if segue.identifier == "showMedication" {
+            let detailController = segue.destinationViewController as! MedicationDetailViewController
+
+            let selectedMedication = medicationOrders[tableView.indexPathForSelectedRow!.row]
+
+            detailController.medicationOrder = selectedMedication
         }
     }
 }
