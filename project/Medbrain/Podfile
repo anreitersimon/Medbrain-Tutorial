@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'Medbrain' do
 pod 'SMART', '~> 2.1'
+pod 'ResearchKit', '~> 1.3'
 end
 
 target 'MedbrainTests' do

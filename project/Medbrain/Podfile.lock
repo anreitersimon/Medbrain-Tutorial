@@ -1,12 +1,15 @@
 PODS:
+  - ResearchKit (1.3.1)
   - SMART (2.2.3)
 
 DEPENDENCIES:
+  - ResearchKit (~> 1.3)
   - SMART (~> 2.1)
 
 SPEC CHECKSUMS:
+  ResearchKit: badba0340dd71d1cbab4789a0bf01b26022b8f94
   SMART: b70f53bad246ce97da8549ad58640657b50e15e3
 
-PODFILE CHECKSUM: c2c7beaa14ea6a7b7d0c363de71395c6b68f9ae6
+PODFILE CHECKSUM: effe3bc73e2a5b864ef56add9c914e5b7f339717
 
 COCOAPODS: 1.0.1
