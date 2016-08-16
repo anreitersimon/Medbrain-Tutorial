@@ -374,7 +374,7 @@ Before performing the `Segue` the `prepareForSegue(segue: UIStoryboardSegue, sen
 You...
 - added a new dependency (`ResearchKit`)
 - implemented a list showing all `MedicationAdministrations`
-- loaded all `Medications` for a specific prescription from a remote server
+- loaded all `MedicationAdministrations` for a specific prescription from a remote server
 - implemented a graph visualizing the timeline of administrations
 
 Next-up is Creating a `MedicationAdministration`
