@@ -286,7 +286,7 @@ extension MedicationDetailViewController: ORKGraphChartViewDataSource {
         return 2
     }
 
-    
+
     func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
         return graphData.content.count
     }
@@ -301,7 +301,7 @@ extension MedicationDetailViewController: ORKGraphChartViewDataSource {
         }
     }
 
-    
+
     func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
 
         if plotIndex == 1 {
@@ -313,3 +313,68 @@ extension MedicationDetailViewController: ORKGraphChartViewDataSource {
     }
 }
 ```
+
+Now the `MedicationDetailViewController` is able to fully display the administrations for the `medicationOrder` thats is set.
+
+But the link from the `PatientMedicationsViewController` is not yet established.
+
+
+#### Connecting MedicationDetailViewController and PatientMedicationsViewController
+
+Navigate to the `Main.storyboard` and select the `Segue` going from the `PatientMedicationsViewController` to the `MedicationDetailViewController`. In the `Attributes Inspector` assign it the identifier `showMedication`.
+
+Go to the `PatientMedicationsViewController`.
+
+The `MedicationDetailViewController` should be shown when the user selects a item in the list.
+The item that should be shown is the one the user tapped on.
+
+`UITableView` can be assigned a `delegate` which must conform to the `UITableViewDelegate` protocol.
+The delegate can be used to modify certain aspects of how the `tableView` displays its content. (for instance: the height of cells).
+Additionally the delegate is informed when a cell is selected.
+
+To receive these notifications the `func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)` method must be implemented.
+
+When a cell is selected the previously added segue with identifier `showMedication` is executed.
+
+```swift
+override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    performSegueWithIdentifier("showMedication", sender: nil)
+}
+```
+
+Before performing the `Segue` the `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)` function is invoked. In this function the selected `medicationOrder` is passed to the `MedicationDetailViewController`
+
+```swift
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        if segue.identifier == "showSignIn" {
+             let signInController = segue.destinationViewController as! PatientSignInViewController
+
+            isSigninIn = true
+
+            signInController.completionHandler = { (patient) in
+                self.dismissViewControllerAnimated(true) {
+                    self.isSigninIn = false
+
+                    self.loadContent()
+                }
+            }
+        } else if segue.identifier == "showMedication" {
+            let detailController = segue.destinationViewController as! MedicationDetailViewController
+
+            let selectedMedication = medicationOrders[tableView.indexPathForSelectedRow!.row]
+
+            detailController.medicationOrder = selectedMedication
+        }
+    }
+```
+
+## Conclusion
+You...
+- added a new dependency (`ResearchKit`)
+- implemented a list showing all `MedicationAdministrations`
+- loaded all `Medications` for a specific prescription from a remote server
+- implemented a graph visualizing the timeline of administrations
+
+Next-up is Creating a `MedicationAdministration`
