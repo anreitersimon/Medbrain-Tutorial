@@ -1,5 +1,14 @@
 # Step 7 - Implementing MedicationDetailViewController
 
+## Prerequisites
+Finished [Step 6](STEP6.md) of this Tutorial.
+
+If you want to start here you just run `git checkout step7`.
+
+The Project is located at `project/` of the git repository root.
+
+## Getting Started
+
 When selecting a item in the `PatientMedicationsViewController` a `View` should be shown showing further details about the medication.
 
 This view will be implemented in the `MedicationDetailViewController`. The view should show a graph with administrations for the specified medication.
