@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SMART
 
 enum State {
     //Starting state show nothing
@@ -116,8 +117,36 @@ class PatientMedicationsViewController: UITableViewController {
     }
 
     func loadContent() {
-    }
+        state = .LoadingResults
 
+        guard let patient = SessionManager.shared.patient, patientId = patient.id else {
+            state = .Error
+            return
+        }
+
+        MedicationOrder.search(["patient": patientId]).perform(SessionManager.shared
+            .server) { [weak self](bundle, error) in
+
+                dispatch_async(dispatch_get_main_queue()) {
+
+                    guard let strongSelf = self else {
+                        return
+                    }
+                    guard error == nil else {
+                        strongSelf.medicationOrders = []
+                        strongSelf.state = .Error
+                        return
+                    }
+
+                    let meds = bundle?.entry?.flatMap { $0.resource as? MedicationOrder } ?? []
+
+                    strongSelf.refreshControl?.endRefreshing()
+                    strongSelf.state = meds.isEmpty ? .Empty : .Loaded
+
+                    strongSelf.medicationOrders = meds
+                }
+        }
+    }
 
     // MARK: - Table view data source
 
