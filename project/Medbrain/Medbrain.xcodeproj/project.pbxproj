@@ -33,6 +33,7 @@
 		3C0FD5221D63A018009427EE /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */; };
 		3C0FD5241D63A178009427EE /* MedicationAdministrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5231D63A178009427EE /* MedicationAdministrationTableViewCell.swift */; };
 		3C0FD5261D63A290009427EE /* NSDate+DateGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5251D63A290009427EE /* NSDate+DateGrouping.swift */; };
+		3C54926D1D63BF1B0099D634 /* CreateMedicationAdmistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54926C1D63BF1B0099D634 /* CreateMedicationAdmistrationViewController.swift */; };
 		5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		3C0FD5231D63A178009427EE /* MedicationAdministrationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationAdministrationTableViewCell.swift; sourceTree = "<group>"; };
 		3C0FD5251D63A290009427EE /* NSDate+DateGrouping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+DateGrouping.swift"; sourceTree = "<group>"; };
+		3C54926C1D63BF1B0099D634 /* CreateMedicationAdmistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMedicationAdmistrationViewController.swift; sourceTree = "<group>"; };
 		5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				3C0FD5231D63A178009427EE /* MedicationAdministrationTableViewCell.swift */,
 				3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */,
 				3C0FD5211D63A018009427EE /* MedicationDetailViewController.swift */,
+				3C54926C1D63BF1B0099D634 /* CreateMedicationAdmistrationViewController.swift */,
 				3C0FD5061D638FCB009427EE /* SeparatorView.swift */,
 				3C0FD4D81D6385E2009427EE /* Main.storyboard */,
 				3C0FD4DB1D6385E2009427EE /* Assets.xcassets */,
@@ -503,6 +506,7 @@
 				3C0FD5191D639C54009427EE /* EventTiming.swift in Sources */,
 				3C0FD51D1D639C54009427EE /* Period.swift in Sources */,
 				3C0FD51E1D639C54009427EE /* Frequency.swift in Sources */,
+				3C54926D1D63BF1B0099D634 /* CreateMedicationAdmistrationViewController.swift in Sources */,
 				3C0FD5221D63A018009427EE /* MedicationDetailViewController.swift in Sources */,
 				3C0FD5181D639C54009427EE /* MedicationOrder+Instructions.swift in Sources */,
 			);
