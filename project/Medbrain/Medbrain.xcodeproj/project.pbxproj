@@ -15,6 +15,7 @@
 		3C0FD4DF1D6385E2009427EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0FD4DD1D6385E2009427EE /* LaunchScreen.storyboard */; };
 		3C0FD4EA1D6385E2009427EE /* MedbrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4E91D6385E2009427EE /* MedbrainTests.swift */; };
 		3C0FD4F51D6385E2009427EE /* MedbrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4F41D6385E2009427EE /* MedbrainUITests.swift */; };
+		3C0FD5031D638E81009427EE /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5021D638E81009427EE /* SessionManager.swift */; };
 		5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3C0FD4F01D6385E2009427EE /* MedbrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedbrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0FD4F41D6385E2009427EE /* MedbrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedbrainUITests.swift; sourceTree = "<group>"; };
 		3C0FD4F61D6385E2009427EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C0FD5021D638E81009427EE /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				3C0FD4D41D6385E2009427EE /* AppDelegate.swift */,
+				3C0FD5021D638E81009427EE /* SessionManager.swift */,
 				3C0FD4D81D6385E2009427EE /* Main.storyboard */,
 				3C0FD4DB1D6385E2009427EE /* Assets.xcassets */,
 				3C0FD4DD1D6385E2009427EE /* LaunchScreen.storyboard */,
@@ -424,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0FD5031D638E81009427EE /* SessionManager.swift in Sources */,
 				3C0FD4D51D6385E2009427EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
