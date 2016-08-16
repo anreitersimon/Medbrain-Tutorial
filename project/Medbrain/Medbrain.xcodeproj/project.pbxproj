@@ -20,6 +20,16 @@
 		3C0FD5071D638FCB009427EE /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5061D638FCB009427EE /* SeparatorView.swift */; };
 		3C0FD5091D639486009427EE /* PatientMedicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */; };
 		3C0FD50B1D639BE1009427EE /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 3C0FD50A1D639BE1009427EE /* Localizable.stringsdict */; };
+		3C0FD5171D639C54009427EE /* MedicationOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */; };
+		3C0FD5181D639C54009427EE /* MedicationOrder+Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD50E1D639C54009427EE /* MedicationOrder+Instructions.swift */; };
+		3C0FD5191D639C54009427EE /* EventTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD50F1D639C54009427EE /* EventTiming.swift */; };
+		3C0FD51A1D639C54009427EE /* LocalizedSentenceBuildingSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5101D639C54009427EE /* LocalizedSentenceBuildingSupport.swift */; };
+		3C0FD51B1D639C54009427EE /* TimingBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5111D639C54009427EE /* TimingBounds.swift */; };
+		3C0FD51C1D639C54009427EE /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5121D639C54009427EE /* Duration.swift */; };
+		3C0FD51D1D639C54009427EE /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5131D639C54009427EE /* Period.swift */; };
+		3C0FD51E1D639C54009427EE /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5141D639C54009427EE /* Frequency.swift */; };
+		3C0FD51F1D639C54009427EE /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5151D639C54009427EE /* Combinations.swift */; };
+		3C0FD5201D639C54009427EE /* TimingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD5161D639C54009427EE /* TimingUnit.swift */; };
 		5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +72,16 @@
 		3C0FD5061D638FCB009427EE /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientMedicationsViewController.swift; sourceTree = "<group>"; };
 		3C0FD50A1D639BE1009427EE /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationOrderTableViewCell.swift; sourceTree = "<group>"; };
+		3C0FD50E1D639C54009427EE /* MedicationOrder+Instructions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MedicationOrder+Instructions.swift"; sourceTree = "<group>"; };
+		3C0FD50F1D639C54009427EE /* EventTiming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTiming.swift; sourceTree = "<group>"; };
+		3C0FD5101D639C54009427EE /* LocalizedSentenceBuildingSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedSentenceBuildingSupport.swift; sourceTree = "<group>"; };
+		3C0FD5111D639C54009427EE /* TimingBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingBounds.swift; sourceTree = "<group>"; };
+		3C0FD5121D639C54009427EE /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		3C0FD5131D639C54009427EE /* Period.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		3C0FD5141D639C54009427EE /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
+		3C0FD5151D639C54009427EE /* Combinations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Combinations.swift; sourceTree = "<group>"; };
+		3C0FD5161D639C54009427EE /* TimingUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingUnit.swift; sourceTree = "<group>"; };
 		5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +155,7 @@
 		3C0FD4D31D6385E2009427EE /* Medbrain */ = {
 			isa = PBXGroup;
 			children = (
+				3C0FD50C1D639C1F009427EE /* Convenience */,
 				3C0FD50A1D639BE1009427EE /* Localizable.stringsdict */,
 				3C0FD4D41D6385E2009427EE /* AppDelegate.swift */,
 				3C0FD5021D638E81009427EE /* SessionManager.swift */,
@@ -165,6 +186,23 @@
 				3C0FD4F61D6385E2009427EE /* Info.plist */,
 			);
 			path = MedbrainUITests;
+			sourceTree = "<group>";
+		};
+		3C0FD50C1D639C1F009427EE /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */,
+				3C0FD50E1D639C54009427EE /* MedicationOrder+Instructions.swift */,
+				3C0FD50F1D639C54009427EE /* EventTiming.swift */,
+				3C0FD5101D639C54009427EE /* LocalizedSentenceBuildingSupport.swift */,
+				3C0FD5111D639C54009427EE /* TimingBounds.swift */,
+				3C0FD5121D639C54009427EE /* Duration.swift */,
+				3C0FD5131D639C54009427EE /* Period.swift */,
+				3C0FD5141D639C54009427EE /* Frequency.swift */,
+				3C0FD5151D639C54009427EE /* Combinations.swift */,
+				3C0FD5161D639C54009427EE /* TimingUnit.swift */,
+			);
+			path = Convenience;
 			sourceTree = "<group>";
 		};
 		7E9B2FA8E88B3BB974BF0538 /* Frameworks */ = {
@@ -441,10 +479,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0FD5051D638ED5009427EE /* PatientSignInViewController.swift in Sources */,
+				3C0FD51C1D639C54009427EE /* Duration.swift in Sources */,
+				3C0FD5171D639C54009427EE /* MedicationOrderTableViewCell.swift in Sources */,
+				3C0FD51A1D639C54009427EE /* LocalizedSentenceBuildingSupport.swift in Sources */,
 				3C0FD5091D639486009427EE /* PatientMedicationsViewController.swift in Sources */,
 				3C0FD5031D638E81009427EE /* SessionManager.swift in Sources */,
+				3C0FD5201D639C54009427EE /* TimingUnit.swift in Sources */,
 				3C0FD5071D638FCB009427EE /* SeparatorView.swift in Sources */,
+				3C0FD51F1D639C54009427EE /* Combinations.swift in Sources */,
+				3C0FD51B1D639C54009427EE /* TimingBounds.swift in Sources */,
 				3C0FD4D51D6385E2009427EE /* AppDelegate.swift in Sources */,
+				3C0FD5191D639C54009427EE /* EventTiming.swift in Sources */,
+				3C0FD51D1D639C54009427EE /* Period.swift in Sources */,
+				3C0FD51E1D639C54009427EE /* Frequency.swift in Sources */,
+				3C0FD5181D639C54009427EE /* MedicationOrder+Instructions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
