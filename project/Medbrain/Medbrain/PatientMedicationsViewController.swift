@@ -10,4 +10,7 @@ import UIKit
 
 class PatientMedicationsViewController: UITableViewController {
 
+    @IBOutlet var statusView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var statusTitleLabel: UILabel!
 }
