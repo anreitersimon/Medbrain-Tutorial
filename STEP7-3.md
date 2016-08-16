@@ -93,6 +93,13 @@ func updateChartData() {
 }
 ```
 
+Add the following to the `segmentedControlChanged(sender: AnyObject?)` implementation:
+```swift
+@IBAction func segmentedControlChanged(sender: AnyObject?) {
+    groupingMode = DateGroupingMode(rawValue: segmentedControl.selectedSegmentIndex)!
+}
+```
+
 #### Implementing the Chart
 The charts data is dependent on the `MedicationDetailViewControllers` `administrations` and `groupingMode` and has to perform some processing to group the administrations.
 Two helper-functions which extend `NSDate` are introduced.
@@ -258,4 +265,51 @@ var graphData: GraphData =  GraphData([], groupingMode: DateGroupingMode.Day) {
 
 
 #### Implementing the `updateChartData()` function
-Above the `updateChartData()` method was defined which gets called every time the `administrations` or the `groupingMode`
+Above the `updateChartData()` method was defined which gets called every time the `administrations` or the `groupingMode` changes. In this method the `graphData` should be recomputed.
+
+```swift
+func updateChartData() {
+    graphData = GraphData(administrations, groupingMode: groupingMode)
+}
+```
+
+#### Implementing the `ORKGraphChartViewDataSource` protocol methods
+The `chartView` expects the data to be rendered to be provided by a object conforming to the `ORKGraphChartViewDataSource`.
+
+The `MedicationDetailViewController` will implement these methods in a extension:
+
+```swift
+extension MedicationDetailViewController: ORKGraphChartViewDataSource {
+
+    ///Display two lines one for the medications which were taken, one for the medications which were not taken
+    func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+        return 2
+    }
+
+    
+    func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
+        return graphData.content.count
+    }
+
+    //The line representing medications which were not taken should be red
+    //The other line should use the views tintColor
+    func graphChartView(graphChartView: ORKGraphChartView, colorForPlotIndex plotIndex: Int) -> UIColor {
+        if plotIndex == 1 {
+            return view.tintColor
+        } else {
+            return UIColor.redColor()
+        }
+    }
+
+    
+    func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
+
+        if plotIndex == 1 {
+            return ORKRangedPoint(value: CGFloat(graphData.content[pointIndex].countTaken))
+        } else {
+            return ORKRangedPoint(value: CGFloat(graphData.content[pointIndex].countNotTaken))
+        }
+
+    }
+}
+```
