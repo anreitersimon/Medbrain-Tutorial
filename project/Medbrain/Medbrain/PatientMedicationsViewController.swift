@@ -71,6 +71,15 @@ class PatientMedicationsViewController: UITableViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.backgroundView = statusView
+
+        //configure the statusView for the current state
+        configure(forState: state)
+    }
+
     func configure(forState state: State) {
         statusView.hidden = !state.showsStatusView
 
