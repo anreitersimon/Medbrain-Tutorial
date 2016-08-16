@@ -222,3 +222,32 @@ class MedicationDetailViewController: UITableViewController {
     }
 
 }
+
+extension MedicationDetailViewController: ORKGraphChartViewDataSource {
+
+    func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
+        return graphData.content.count
+    }
+
+    func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+        return 2
+    }
+
+    func graphChartView(graphChartView: ORKGraphChartView, colorForPlotIndex plotIndex: Int) -> UIColor {
+        if plotIndex == 1 {
+            return view.tintColor
+        } else {
+            return UIColor.redColor()
+        }
+    }
+
+    func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
+
+        if plotIndex == 1 {
+            return ORKRangedPoint(value: CGFloat(graphData.content[pointIndex].countTaken))
+        } else {
+            return ORKRangedPoint(value: CGFloat(graphData.content[pointIndex].countNotTaken))
+        }
+
+    }
+}
