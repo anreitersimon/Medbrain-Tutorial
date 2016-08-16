@@ -1,4 +1,4 @@
-# Step 7.1 - Implementing `MedicationDetailViewController` - MedicationDetailViewController Interface
+# Step 7.1 - Implementing MedicationDetailViewController - MedicationDetailViewController Interface
 
 ### Create the implementation class
 

@@ -176,3 +176,5 @@ func loadContent() {
 }
 
 ```
+
+[Continue with Step 7.3 of the Tutorial](STEP7-3.md)
