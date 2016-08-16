@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="2700" y="-400"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Administration-->
         <scene sceneID="uAo-Y9-Cfs">
             <objects>
-                <viewController id="NUD-2Q-xkX" sceneMemberID="viewController">
+                <viewController id="NUD-2Q-xkX" customClass="CreateMedicationAdmistrationViewController" customModule="Medbrain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L6w-wu-Alv"/>
                         <viewControllerLayoutGuide type="bottom" id="trK-Fj-crp"/>
@@ -346,6 +346,9 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhp-0l-cNg">
                                                                 <rect key="frame" x="535" y="7" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="switchChanged:" destination="NUD-2Q-xkX" eventType="valueChanged" id="Tvo-gX-URf"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                         <constraints>
@@ -410,7 +413,24 @@
                             <constraint firstItem="iLE-dk-yE9" firstAttribute="width" secondItem="IyS-cB-j1V" secondAttribute="width" id="htC-ci-gnl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HzC-f0-isx"/>
+                    <navigationItem key="navigationItem" title="Create Administration" id="0Nn-ed-QER">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Di9-kA-LaI">
+                            <connections>
+                                <action selector="cancelPressed:" destination="NUD-2Q-xkX" id="edD-G0-hqD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0db-WH-Dn0">
+                            <connections>
+                                <action selector="saveAdministration:" destination="NUD-2Q-xkX" id="MjD-TH-2Xy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="iLE-dk-yE9" id="rGi-aC-QIc"/>
+                        <outlet property="datePicker" destination="MZ7-C7-3WO" id="zxW-VI-p5L"/>
+                        <outlet property="saveBarButtonItem" destination="0db-WH-Dn0" id="cTT-E1-bDc"/>
+                        <outlet property="switchControl" destination="xhp-0l-cNg" id="Yfm-vu-KqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEn-FY-bEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
