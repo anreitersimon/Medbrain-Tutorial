@@ -65,6 +65,8 @@ class PatientMedicationsViewController: UITableViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var statusTitleLabel: UILabel!
 
+    var isSigninIn: Bool = false
+
     var state: State = .Initial {
         didSet {
             configure(forState: state)
@@ -78,6 +80,15 @@ class PatientMedicationsViewController: UITableViewController {
 
         //configure the statusView for the current state
         configure(forState: state)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if SessionManager.shared.patient == nil && !isSigninIn {
+            performSegueWithIdentifier("showSignIn", sender: nil)
+            return
+        }
     }
 
     func configure(forState state: State) {
@@ -95,5 +106,30 @@ class PatientMedicationsViewController: UITableViewController {
 
         statusView.setNeedsLayout()
         statusView.layoutIfNeeded()
+    }
+
+    func loadContent() {
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        if segue.identifier == "showSignIn" {
+            //Get a reference to the signInController
+            let signInController = segue.destinationViewController as! PatientSignInViewController
+
+            //set isSigninIn flag to true
+            isSigninIn = true
+
+            //Set the completionHandler
+            signInController.completionHandler = { (patient) in
+                //Dismiss the signInController and wait for the animation to finish
+                self.dismissViewControllerAnimated(true) {
+                    self.isSigninIn = false
+
+                    //Now that the patient is signed in it the prescriptions can be loaded
+                    self.loadContent() //NOTE: This function will be implemented later
+                }
+            }
+        }
     }
 }
