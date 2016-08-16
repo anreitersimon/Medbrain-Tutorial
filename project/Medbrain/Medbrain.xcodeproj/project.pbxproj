@@ -160,12 +160,13 @@
 				3C0FD4D41D6385E2009427EE /* AppDelegate.swift */,
 				3C0FD5021D638E81009427EE /* SessionManager.swift */,
 				3C0FD5041D638ED5009427EE /* PatientSignInViewController.swift */,
+				3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */,
+				3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */,
 				3C0FD5061D638FCB009427EE /* SeparatorView.swift */,
 				3C0FD4D81D6385E2009427EE /* Main.storyboard */,
 				3C0FD4DB1D6385E2009427EE /* Assets.xcassets */,
 				3C0FD4DD1D6385E2009427EE /* LaunchScreen.storyboard */,
 				3C0FD4E01D6385E2009427EE /* Info.plist */,
-				3C0FD5081D639486009427EE /* PatientMedicationsViewController.swift */,
 			);
 			path = Medbrain;
 			sourceTree = "<group>";
@@ -191,7 +192,6 @@
 		3C0FD50C1D639C1F009427EE /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
-				3C0FD50D1D639C54009427EE /* MedicationOrderTableViewCell.swift */,
 				3C0FD50E1D639C54009427EE /* MedicationOrder+Instructions.swift */,
 				3C0FD50F1D639C54009427EE /* EventTiming.swift */,
 				3C0FD5101D639C54009427EE /* LocalizedSentenceBuildingSupport.swift */,
