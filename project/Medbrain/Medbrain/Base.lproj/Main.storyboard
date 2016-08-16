@@ -109,6 +109,9 @@
                                 <rect key="frame" x="267" y="150" width="65" height="45"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="LogIn"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="XgQ-l2-xjE" eventType="touchUpInside" id="Rq6-FK-JfW"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W76-tI-7DC">
                                 <rect key="frame" x="239" y="162.5" width="20" height="20"/>
@@ -125,6 +128,12 @@
                             <constraint firstItem="xCF-Vg-fbn" firstAttribute="top" secondItem="wCh-ia-xcb" secondAttribute="bottom" id="z8r-FI-2e4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="W76-tI-7DC" id="0Tr-q4-xW4"/>
+                        <outlet property="emailTextfield" destination="tEd-2R-t0k" id="DYE-rh-9i5"/>
+                        <outlet property="passwordTextfield" destination="SZ8-cH-Ivx" id="ALI-CM-qON"/>
+                        <outlet property="submitButton" destination="yHf-We-A94" id="Ph8-ry-dNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKC-3B-eFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
