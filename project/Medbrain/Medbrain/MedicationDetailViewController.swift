@@ -221,6 +221,20 @@ class MedicationDetailViewController: UITableViewController {
         return "Administrations"
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "createAdministration" {
+            let createController = (segue.destinationViewController as! UINavigationController).topViewController as! CreateMedicationAdmistrationViewController
+
+            createController.medicationOrder = medicationOrder
+            createController.completionHandler = { (cancelled) in
+                self.dismissViewControllerAnimated(true, completion: {
+                    if !cancelled {
+                        self.loadContent()
+                    }
+                })
+            }
+        }
+    }
 }
 
 extension MedicationDetailViewController: ORKGraphChartViewDataSource {
