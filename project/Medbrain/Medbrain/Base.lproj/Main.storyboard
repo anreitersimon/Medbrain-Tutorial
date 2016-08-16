@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yHz-fI-2E5">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,11 +24,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Prescriptions-->
         <scene sceneID="5CD-iy-fRk">
             <objects>
-                <tableViewController id="ddw-EG-K8v" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nj7-Hq-ZpL">
+                <tableViewController id="ddw-EG-K8v" customClass="PatientMedicationsViewController" customModule="Medbrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nj7-Hq-ZpL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,13 +47,45 @@
                             <outlet property="delegate" destination="ddw-EG-K8v" id="DtM-Or-9ve"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Aup-wg-N0p"/>
+                    <navigationItem key="navigationItem" title="Prescriptions" id="Aup-wg-N0p"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="k26-wz-kFL" id="8Zr-1k-PJs"/>
+                        <outlet property="statusTitleLabel" destination="4zl-NB-d6n" id="PhC-7R-hEs"/>
+                        <outlet property="statusView" destination="GQK-DI-9JT" id="6lx-yz-oyC"/>
                         <segue destination="dKO-bH-ftp" kind="show" id="Wdl-pB-akW"/>
                         <segue destination="XgQ-l2-xjE" kind="presentation" id="zl8-XI-Arg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRa-sn-77X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="GQK-DI-9JT">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="170"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rvF-kT-7e0">
+                            <rect key="frame" x="0.0" y="53" width="200" height="65"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="k26-wz-kFL">
+                                    <rect key="frame" x="82" y="0.0" width="37" height="37"/>
+                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-NB-d6n">
+                                    <rect key="frame" x="84" y="45" width="34" height="20"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rvF-kT-7e0" firstAttribute="centerX" secondItem="GQK-DI-9JT" secondAttribute="centerX" id="ch2-1l-hj0"/>
+                        <constraint firstItem="rvF-kT-7e0" firstAttribute="centerY" secondItem="GQK-DI-9JT" secondAttribute="centerY" id="diT-lW-nz9"/>
+                        <constraint firstItem="rvF-kT-7e0" firstAttribute="width" secondItem="GQK-DI-9JT" secondAttribute="width" id="eBD-ob-sD6"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1800" y="-400"/>
         </scene>
@@ -139,11 +171,11 @@
             </objects>
             <point key="canvasLocation" x="2700" y="-1200"/>
         </scene>
-        <!--Patient Medications View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="P0V-dy-KhO">
             <objects>
-                <tableViewController id="dKO-bH-ftp" customClass="PatientMedicationsViewController" customModule="Medbrain" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bY2-BJ-J3m">
+                <tableViewController id="dKO-bH-ftp" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bY2-BJ-J3m">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,42 +194,8 @@
                             <outlet property="delegate" destination="dKO-bH-ftp" id="b99-ai-QlX"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="activityIndicator" destination="k26-wz-kFL" id="ma7-gu-Uh0"/>
-                        <outlet property="statusTitleLabel" destination="4zl-NB-d6n" id="kHc-V6-Gku"/>
-                        <outlet property="statusView" destination="GQK-DI-9JT" id="LFc-P4-kdk"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bb0-1C-tGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="GQK-DI-9JT">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="170"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rvF-kT-7e0">
-                            <rect key="frame" x="0.0" y="52" width="200" height="65"/>
-                            <subviews>
-                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="k26-wz-kFL">
-                                    <rect key="frame" x="82" y="0.0" width="37" height="37"/>
-                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </activityIndicatorView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zl-NB-d6n">
-                                    <rect key="frame" x="84" y="45" width="34" height="20"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="rvF-kT-7e0" firstAttribute="centerX" secondItem="GQK-DI-9JT" secondAttribute="centerX" id="ch2-1l-hj0"/>
-                        <constraint firstItem="rvF-kT-7e0" firstAttribute="centerY" secondItem="GQK-DI-9JT" secondAttribute="centerY" id="diT-lW-nz9"/>
-                        <constraint firstItem="rvF-kT-7e0" firstAttribute="width" secondItem="GQK-DI-9JT" secondAttribute="width" id="eBD-ob-sD6"/>
-                    </constraints>
-                </view>
             </objects>
             <point key="canvasLocation" x="2700" y="-400"/>
         </scene>
