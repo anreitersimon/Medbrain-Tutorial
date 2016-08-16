@@ -67,6 +67,12 @@ class PatientMedicationsViewController: UITableViewController {
 
     var isSigninIn: Bool = false
 
+    var medicationOrders: [MedicationOrder] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     var state: State = .Initial {
         didSet {
             configure(forState: state)
@@ -110,6 +116,27 @@ class PatientMedicationsViewController: UITableViewController {
     }
 
     func loadContent() {
+    }
+
+
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return medicationOrders.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MedicationOrderTableViewCell", forIndexPath: indexPath) as! MedicationOrderTableViewCell
+
+        let medicationOrder = medicationOrders[indexPath.row]
+
+        cell.configure(medicationOrder)
+
+        return cell
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
