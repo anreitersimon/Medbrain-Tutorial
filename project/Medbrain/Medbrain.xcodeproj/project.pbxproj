@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7AC07E6C5B415B79087556 /* Pods_MedbrainUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */; };
+		20B41655D6E2DC47AAF9FACD /* Pods_MedbrainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B82A7D99F4C16191DE740A0 /* Pods_MedbrainTests.framework */; };
 		3C0FD4D51D6385E2009427EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4D41D6385E2009427EE /* AppDelegate.swift */; };
 		3C0FD4D71D6385E2009427EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4D61D6385E2009427EE /* ViewController.swift */; };
 		3C0FD4DA1D6385E2009427EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0FD4D81D6385E2009427EE /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		3C0FD4DF1D6385E2009427EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0FD4DD1D6385E2009427EE /* LaunchScreen.storyboard */; };
 		3C0FD4EA1D6385E2009427EE /* MedbrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4E91D6385E2009427EE /* MedbrainTests.swift */; };
 		3C0FD4F51D6385E2009427EE /* MedbrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FD4F41D6385E2009427EE /* MedbrainUITests.swift */; };
+		5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01D8EA6EF9CEE663EADB39D1 /* Pods-Medbrain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medbrain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Medbrain/Pods-Medbrain.debug.xcconfig"; sourceTree = "<group>"; };
+		0B82A7D99F4C16191DE740A0 /* Pods_MedbrainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medbrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D90A1F7B4FA425700B44F9 /* Pods-MedbrainUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0FD4D11D6385E2009427EE /* Medbrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medbrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0FD4D41D6385E2009427EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C0FD4D61D6385E2009427EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,11 @@
 		3C0FD4F01D6385E2009427EE /* MedbrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedbrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0FD4F41D6385E2009427EE /* MedbrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedbrainUITests.swift; sourceTree = "<group>"; };
 		3C0FD4F61D6385E2009427EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedbrainUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1AA7BE4E716D70824CD75C1 /* Pods-Medbrain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medbrain.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medbrain/Pods-Medbrain.release.xcconfig"; sourceTree = "<group>"; };
+		F027E28364FBFDFD8493BDF9 /* Pods-MedbrainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedbrainTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D708BB02912ECC28116083D /* Pods_Medbrain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B41655D6E2DC47AAF9FACD /* Pods_MedbrainTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7AC07E6C5B415B79087556 /* Pods_MedbrainUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F9B9F8B1273FE23C655289E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01D8EA6EF9CEE663EADB39D1 /* Pods-Medbrain.debug.xcconfig */,
+				A1AA7BE4E716D70824CD75C1 /* Pods-Medbrain.release.xcconfig */,
+				F027E28364FBFDFD8493BDF9 /* Pods-MedbrainTests.debug.xcconfig */,
+				8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */,
+				27D90A1F7B4FA425700B44F9 /* Pods-MedbrainUITests.debug.xcconfig */,
+				8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3C0FD4C81D6385E2009427EE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				3C0FD4E81D6385E2009427EE /* MedbrainTests */,
 				3C0FD4F31D6385E2009427EE /* MedbrainUITests */,
 				3C0FD4D21D6385E2009427EE /* Products */,
+				1F9B9F8B1273FE23C655289E /* Pods */,
+				7E9B2FA8E88B3BB974BF0538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +155,16 @@
 			path = MedbrainUITests;
 			sourceTree = "<group>";
 		};
+		7E9B2FA8E88B3BB974BF0538 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12F04E2FC5FD3A7349DADC81 /* Pods_Medbrain.framework */,
+				0B82A7D99F4C16191DE740A0 /* Pods_MedbrainTests.framework */,
+				5B539FAF00C6AAE67CA0493D /* Pods_MedbrainUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C0FD4F91D6385E2009427EE /* Build configuration list for PBXNativeTarget "Medbrain" */;
 			buildPhases = (
+				60E743D2D3AB2E19DDF47E71 /* [CP] Check Pods Manifest.lock */,
 				3C0FD4CD1D6385E2009427EE /* Sources */,
 				3C0FD4CE1D6385E2009427EE /* Frameworks */,
 				3C0FD4CF1D6385E2009427EE /* Resources */,
+				F4179289BE0FF9EBF2C8C1C0 /* [CP] Embed Pods Frameworks */,
+				4ED6AC690283A0ABCF4B0F7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C0FD4FC1D6385E2009427EE /* Build configuration list for PBXNativeTarget "MedbrainTests" */;
 			buildPhases = (
+				09AA076FD8AC07621F55585E /* [CP] Check Pods Manifest.lock */,
 				3C0FD4E11D6385E2009427EE /* Sources */,
 				3C0FD4E21D6385E2009427EE /* Frameworks */,
 				3C0FD4E31D6385E2009427EE /* Resources */,
+				EE57D45A0F3063013A9E389E /* [CP] Embed Pods Frameworks */,
+				9CE630EF93B7FC6774B20D23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C0FD4FF1D6385E2009427EE /* Build configuration list for PBXNativeTarget "MedbrainUITests" */;
 			buildPhases = (
+				185645F031DD9CC5975C4346 /* [CP] Check Pods Manifest.lock */,
 				3C0FD4EC1D6385E2009427EE /* Sources */,
 				3C0FD4ED1D6385E2009427EE /* Frameworks */,
 				3C0FD4EE1D6385E2009427EE /* Resources */,
+				521559EF5298A7E5112C31F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +298,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09AA076FD8AC07621F55585E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		185645F031DD9CC5975C4346 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4ED6AC690283A0ABCF4B0F7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Medbrain/Pods-Medbrain-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		521559EF5298A7E5112C31F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedbrainUITests/Pods-MedbrainUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60E743D2D3AB2E19DDF47E71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CE630EF93B7FC6774B20D23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE57D45A0F3063013A9E389E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedbrainTests/Pods-MedbrainTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4179289BE0FF9EBF2C8C1C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Medbrain/Pods-Medbrain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C0FD4CD1D6385E2009427EE /* Sources */ = {
@@ -399,6 +570,7 @@
 		};
 		3C0FD4FA1D6385E2009427EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01D8EA6EF9CEE663EADB39D1 /* Pods-Medbrain.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Medbrain/Info.plist;
@@ -410,6 +582,7 @@
 		};
 		3C0FD4FB1D6385E2009427EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AA7BE4E716D70824CD75C1 /* Pods-Medbrain.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Medbrain/Info.plist;
@@ -421,6 +594,7 @@
 		};
 		3C0FD4FD1D6385E2009427EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F027E28364FBFDFD8493BDF9 /* Pods-MedbrainTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MedbrainTests/Info.plist;
@@ -433,6 +607,7 @@
 		};
 		3C0FD4FE1D6385E2009427EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D837D47BFF4B1921426FC5A /* Pods-MedbrainTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MedbrainTests/Info.plist;
@@ -445,6 +620,7 @@
 		};
 		3C0FD5001D6385E2009427EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27D90A1F7B4FA425700B44F9 /* Pods-MedbrainUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MedbrainUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -456,6 +632,7 @@
 		};
 		3C0FD5011D6385E2009427EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8453BDB2F7066F3B8F9CED95 /* Pods-MedbrainUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MedbrainUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +661,7 @@
 				3C0FD4FB1D6385E2009427EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C0FD4FC1D6385E2009427EE /* Build configuration list for PBXNativeTarget "MedbrainTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +670,7 @@
 				3C0FD4FE1D6385E2009427EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C0FD4FF1D6385E2009427EE /* Build configuration list for PBXNativeTarget "MedbrainUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +679,7 @@
 				3C0FD5011D6385E2009427EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
