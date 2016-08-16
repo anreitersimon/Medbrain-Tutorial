@@ -61,6 +61,34 @@ class CreateMedicationAdmistrationViewController: UIViewController {
     }
 
     @IBAction func saveAdministration(sender: AnyObject?) {
+        contentView.userInteractionEnabled = false
+        contentView.alpha = 0.7
+
+
+        let administration = MedicationAdministration(medicationOrder: medicationOrder,
+                                                      patient: SessionManager.shared.patient!,
+                                                      wasTaken: switchControl.on,
+                                                      time: datePicker.date)
+
+        navigationItem.rightBarButtonItem = loadingBarbuttonItem
+        navigationItem.leftBarButtonItem?.enabled = false
+
+
+        administration.create(SessionManager.shared.server) { [weak self] (error) in
+            dispatch_async(dispatch_get_main_queue()) {
+
+                guard let strongSelf = self else { return }
+
+                if error != nil {
+                    strongSelf.contentView.userInteractionEnabled = true
+                    strongSelf.contentView.alpha = 1
+                    strongSelf.navigationItem.rightBarButtonItem = strongSelf.saveBarButtonItem
+
+                } else {
+                    strongSelf.completionHandler?(cancelled: false)
+                }
+            }
+        }
     }
 
 
