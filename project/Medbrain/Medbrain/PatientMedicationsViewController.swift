@@ -77,6 +77,7 @@ class PatientMedicationsViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.backgroundView = statusView
+        tableView.tableFooterView = UIView(frame: .zero)
 
         //configure the statusView for the current state
         configure(forState: state)

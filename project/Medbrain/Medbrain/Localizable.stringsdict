@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>every %d day(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every day</string>
+			<key>other</key>
+			<string>every %d days</string>
+		</dict>
+	</dict>
+	<key>every %d hour(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every hour</string>
+			<key>other</key>
+			<string>every %d hours</string>
+		</dict>
+	</dict>
+	<key>every %d minute(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every minute</string>
+			<key>other</key>
+			<string>every %d minutes</string>
+		</dict>
+	</dict>
+	<key>every %d month(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every month</string>
+			<key>other</key>
+			<string>every %d months</string>
+		</dict>
+	</dict>
+	<key>every %d second(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every second</string>
+			<key>other</key>
+			<string>every %d seconds</string>
+		</dict>
+	</dict>
+	<key>every %d week(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every week</string>
+			<key>other</key>
+			<string>every %d weeks</string>
+		</dict>
+	</dict>
+	<key>every %d year(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>every year</string>
+			<key>other</key>
+			<string>every %d years</string>
+		</dict>
+	</dict>
+	<key>for %d day(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for a day</string>
+			<key>other</key>
+			<string>for %d days</string>
+		</dict>
+	</dict>
+	<key>for %d hour(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for one hour</string>
+			<key>other</key>
+			<string>for %d hours</string>
+		</dict>
+	</dict>
+	<key>for %d minute(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for one minute</string>
+			<key>other</key>
+			<string>for %d minutes</string>
+		</dict>
+	</dict>
+	<key>for %d month(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for a month</string>
+			<key>other</key>
+			<string>for %d months</string>
+		</dict>
+	</dict>
+	<key>for %d second(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for one second</string>
+			<key>other</key>
+			<string>for %d seconds</string>
+		</dict>
+	</dict>
+	<key>for %d week(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for a week</string>
+			<key>other</key>
+			<string>for %d weeks</string>
+		</dict>
+	</dict>
+	<key>for %d year(s)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@value@</string>
+		<key>value</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>for a year</string>
+			<key>other</key>
+			<string>for %d years</string>
+		</dict>
+	</dict>
+	<key>timing_per_(period:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period:%@)_with_event(event:%@)</string>
+	</dict>
+	<key>timing_per_(period:%@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period:%@)_with_event(event:%@)_for_(duration:%@)</string>
+	</dict>
+	<key>timing_per_(period:%@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period:%@)_with_event(event:%@)_for_(duration_range:%@)</string>
+	</dict>
+	<key>timing_per_(period_range:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period_range:%@)_with_event(event:%@)</string>
+	</dict>
+	<key>timing_per_(period_range:%@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period_range:%@)_with_event(event:%@)_for_(duration:%@)</string>
+	</dict>
+	<key>timing_per_(period_range:%@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_per_(period_range:%@)_with_event(event:%@)_for_(duration_range:%@)</string>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ %@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period:%@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period:%@)_with_event(event:%@)_for_(duration_range:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)_for_(duration:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)_for_(duration_range:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)_for_(duration:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_per_(period_range:%@)_with_event(event:%@)_for_(duration_range:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_with_event(event:%@)_for_(duration:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(count:%#@freq@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>timing_times(count:%#@freq@)_with_event(event:%@)_for_(duration_range:%@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@)</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)_with_event(event:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_per_(period_range:%@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_times(range:%#@freq@ to %#@freq_max@)_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@freq@ - %#@freq_max@ %@ %@</string>
+		<key>freq</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1</string>
+			<key>other</key>
+			<string>%d</string>
+			<key>zero</key>
+			<string></string>
+		</dict>
+		<key>freq_max</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>1 time</string>
+			<key>other</key>
+			<string>%d times</string>
+			<key>zero</key>
+			<string>never</string>
+		</dict>
+	</dict>
+	<key>timing_with_event(event:%@)_for_(duration:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%@ %@)</string>
+	</dict>
+	<key>timing_with_event(event:%@)_for_(duration_range:%@)</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%@ %@</string>
+	</dict>
+</dict>
+</plist>
