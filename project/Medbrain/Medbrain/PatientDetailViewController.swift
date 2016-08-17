@@ -63,4 +63,25 @@ class PatientDetailViewController: UIViewController {
         SessionManager.shared.logout()
     }
 
+    @IBAction func loginPressed(sender: AnyObject?) {
+
+    }
+
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showSignIn" {
+            //Get a reference to the signInController
+            let signInController = segue.destinationViewController as! PatientSignInViewController
+
+            //Set the completionHandler
+            signInController.completionHandler = { (patient) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+
+
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }
