@@ -90,22 +90,22 @@ extension SessionManager {
         //This executes a search against the specified server the SMART Framework
         Patient.search(credentials.queryParamters).perform(server) {(bundle, error) in
 
-            let result: Result<Patient>
+            dispatch_async(dispatch_get_main_queue()) {
+                let result: Result<Patient>
 
-            if let patients = bundle?.entry?.flatMap({ $0.resource as? Patient }) where !patients.isEmpty {
-                if patients.count > 1 {
-                    print("warning: multiple patients found. using first")
+                if let patients = bundle?.entry?.flatMap({ $0.resource as? Patient }) where !patients.isEmpty {
+                    if patients.count > 1 {
+                        print("warning: multiple patients found. using first")
+                    }
+
+                    self.patient = patients.first
+                    result = .Success(patients.first!)
+
+
+                } else {
+                    result = .Error(error)
                 }
 
-                self.patient = patients.first
-                result = .Success(patients.first!)
-
-
-            } else {
-                result = .Error(error)
-            }
-
-            dispatch_async(dispatch_get_main_queue()) {
                 completion(result: result)
             }
         }
