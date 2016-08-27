@@ -29,12 +29,9 @@
 \usepackage{color}
 \usepackage[refpage]{nomencl}
 
-
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \usepackage{xcolor}
 
 \newcommand\JSONnumbervaluestyle{\color{blue}}
@@ -44,6 +41,9 @@
 \newif\ifcolonfoundonthisline
 
 \makeatletter
+
+\let\oldPYGdefault\PYGdefault
+\def\PYGdefault#1#2{\hbox{\oldPYGdefault{#1}{#2}}\allowbreak{}}
 
 \lstdefinestyle{json}
 {
@@ -98,7 +98,7 @@
 \subsection{Prerequisites}\label{step1:prerequisites}
 
 \begin{itemize}
-\tightlist
+
 \item
   Installed XCode 7.3 (Current Version as of writing this)
 \end{itemize}
@@ -231,7 +231,7 @@ FHIR-Resources}\label{step3:overview}
 \subsection{Goals}\label{step3:goals}
 
 \begin{itemize}
-\tightlist
+
 \item
   Get a understanding of the resources used in this app.
 \item
@@ -482,7 +482,7 @@ corresponding ViewController implementation.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   Delete the file \texttt{ViewController.swift}
 \item
@@ -495,7 +495,7 @@ corresponding ViewController implementation.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   From the Interface-Builders \texttt{object-library} drag a
   \texttt{Tab\ Bar\ Controller} object onto the storyboard.
@@ -577,7 +577,7 @@ This functionality will be implemented in the
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   From the \texttt{object-library} drag a \texttt{View\ Controller}
   object on to the storyboard.
@@ -624,7 +624,7 @@ implement the sign-in.
 For the implementation we will introduce following classes:
 
 \begin{itemize}
-\tightlist
+
 \item
   \texttt{SessionManager}
 \item
@@ -634,7 +634,7 @@ For the implementation we will introduce following classes:
 \subparagraph{SessionManager}\label{sessionmanager}
 
 \begin{itemize}
-\tightlist
+
 \item
   Implemented as a singleton.
 \item
@@ -646,7 +646,7 @@ For the implementation we will introduce following classes:
 \subparagraph{PatientSignInViewController}\label{patientsigninviewcontroller}
 
 \begin{itemize}
-\tightlist
+
 \item
   Displays a screen in which the user can enter his credentials.
   (i.e. username and password)
@@ -816,14 +816,14 @@ Interface}\label{step5-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   create a new file named \texttt{PatientSignInViewController.swift}
   (\texttt{File-\textgreater{}New-\textgreater{}File})
 \end{enumerate}
 
 \begin{itemize}
-\tightlist
+
 \item
   When prompted to choose a template for the file choose
   \texttt{iOS-\textgreater{}Cocoa\ Touch\ Class}
@@ -836,7 +836,7 @@ Interface}\label{step5-1}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
-\tightlist
+
 \item
   in the \texttt{Main.storyboard} we created the
   \texttt{PatientSignInViewController} but it is not linked to its
@@ -844,7 +844,7 @@ Interface}\label{step5-1}
 \end{enumerate}
 
 \begin{itemize}
-\tightlist
+
 \item
   go to the \texttt{Main.storyboard} and select the
   \texttt{PatientSignInViewController}
@@ -1340,7 +1340,7 @@ In a previous step we set up a segue from
 be assigned an identifier.
 
 \begin{itemize}
-\tightlist
+
 \item
   In the \texttt{Main.storyboard} select the
   \texttt{PatientMedicationsViewController} and in the
@@ -1646,7 +1646,7 @@ order. \textbf{Note:} Each element is optional
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   Frequency
 \item
@@ -1766,7 +1766,7 @@ var medicationOrders: [MedicationOrder] = [] {
 \subsubsection{Creating the MedicationOrderTableViewCell}\label{creating-the-medicationordertableviewcell}
 
 \begin{enumerate}
-\tightlist
+
 \item
   Create a new \texttt{Cocoa\ Touch\ Class} named
   \texttt{MedicationOrderTableViewCell} and make it a subclass of
@@ -2360,7 +2360,7 @@ Add the following to the
 }
 \end{minted}
 
-\subsubsection{Implementing the Chart}\label{implementing-the-chart}
+\subsection{Implementing the Chart}\label{implementing-the-chart}
 
 The charts data is dependent on the
 \texttt{MedicationDetailViewControllers} \texttt{administrations} and
@@ -2376,16 +2376,15 @@ same identifier fall into the same group.
 Consider the following example:
 \begin{itemize}
   \item
-    \texttt{Adminstration1} was administered on (Monday - 15.08.2016)
+    \texttt{Adminstration1} was administered on Monday-15.08.2016
   \item
-    \texttt{Adminstration2} was administered on (Tuesday - 16.08.2016)
+    \texttt{Adminstration2} was administered on Tuesday-16.08.2016
   \item
-    \texttt{Adminstration3} was administered on (Friday - 20.02.2015)
+    \texttt{Adminstration3} was administered on Friday-20.02.2015
 \end{itemize}
 
 The following identifiers will be generated for these
 administration-dates:
-
 
 \begin{tabular}[H]{ |c|c|c|c|c| }
   \hline
@@ -2401,16 +2400,14 @@ administration-dates:
   \texttt{2016-02-20}\\
   \hline
 \end{tabular}
-
+\captionof{table}{Table showing generated identifiers}
 When grouping by \texttt{Year} all administration dates generate the
 same identifier and are therefore in the same group. But when grouping
 by \texttt{Month} only \texttt{Administration1} and
 \texttt{Administration2} fall into the same group.
 
-\paragraph{Generating identifiers}\label{generating-identifiers}
-
-Create a new File named \texttt{NSDate+DateGrouping.swift}
-
+\subsubsection{Generating identifiers}\label{generating-identifiers}
+Create a new File named \texttt{NSDate+DateGrouping.swift}.
 In it add the following implementation:
 
 \begin{minted}{swift}
@@ -2476,7 +2473,7 @@ before the current dates group.
   }
 \end{minted}
 
-\paragraph{Creating the Charts Data-Model}\label{creating-the-charts-data-model}
+\subsubsection{Creating the Charts Data-Model}\label{creating-the-charts-data-model}
 
 The charts Data-Model will be created in a new \texttt{struct} called
 \texttt{GraphData}
@@ -2552,7 +2549,7 @@ var graphData: GraphData =  GraphData([], groupingMode: DateGroupingMode.Day) {
 }
 \end{minted}
 
-\paragraph{Implementing the updateChartData() function}\label{implementing-the-updatechartdata-function}
+\subsubsection{Updating the Chart}\label{implementing-the-updatechartdata-function}
 
 Above the \texttt{updateChartData()} method was defined which gets
 called every time the \texttt{administrations} or the
@@ -2565,7 +2562,7 @@ func updateChartData() {
 }
 \end{minted}
 
-\paragraph{Implementing the ORKGraphChartViewDataSource protocol methods}\label{implementing-the-orkgraphchartviewdatasource-protocol-methods}
+\subsubsection{Implementing the ORKGraphChartViewDataSource protocol methods}\label{implementing-the-orkgraphchartviewdatasource-protocol-methods}
 
 The \texttt{chartView} expects the data to be rendered to be provided by
 a object conforming to the \texttt{ORKGraphChartViewDataSource}.
@@ -2677,11 +2674,16 @@ function is invoked. In this function the selected \texttt{MedicationOrder} is p
 
 \subsection{Conclusion}\label{step7:conclusion}
 
-You: - added a new dependency (\texttt{ResearchKit}) - implemented a
-list showing all \texttt{MedicationAdministrations} - loaded all
-\texttt{MedicationAdministrations} for a specific prescription from a
-remote server - implemented a graph visualizing the timeline of
-administrations
+\begin{itemize}
+  \item
+    added a new dependency (\texttt{ResearchKit})
+  \item
+    implemented a list showing all \texttt{MedicationAdministrations}
+  \item
+    Loaded all \texttt{MedicationAdministrations} for a specific prescription from a remote server
+  \item
+    implemented a graph visualizing the timeline of administrations
+\end{itemize}
 
 \section{Implementing the CreateMedicationAdministrationViewController}\label{step8}
 
@@ -2697,9 +2699,13 @@ To allow the user to track when he/she takes a medication a new
 \texttt{CreateMedicationAdministrationViewController} will be
 implemented.
 
-This Step is split up into two parts: - Building the Interface. -
-Creating the \texttt{MedicationAdministration} on the server.
-
+This Step is split up into two parts:
+\begin{itemize}
+  \item
+    Building the Interface
+  \item
+    Creating the \texttt{MedicationAdministration} on the server
+\end{itemize}
 
 \subsection{Building the Interface}\label{step-8.1---implementing-createmedicationadministrationviewcontroller---building-the-interface}
 
@@ -2726,7 +2732,6 @@ It creates a \texttt{MedicationAdministration} for the \texttt{MedicationOrder} 
 \subsection{Defining the outlets and actions}\label{defining-the-outlets-and-actions}
 
 \begin{enumerate}
-\tightlist
 \item
   Create a \texttt{UITableViewController} subclass named \texttt{CreateMedicationAdministrationViewController}.
 \item
@@ -2755,7 +2760,6 @@ Add the following outlets and actions:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   In the \texttt{Main.storyboard} drag a new \texttt{View\ Controller}
   object on to the storyboard.
@@ -2790,7 +2794,7 @@ Add the following outlets and actions:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
+
 \item
   Add a \texttt{BarButtonItem} to the right side of the
   \texttt{CreateMedicationAdministrationViewController} and set its
@@ -2852,7 +2856,6 @@ var completionHandler :CreateAdministrationCompletionHandler?
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{2}
-\tightlist
 \item
   In the \texttt{MedicationDetailViewController} implement the
   \texttt{prepareForSegue(segue:\ UIStoryboardSegue,\ sender:\ AnyObject?)}
