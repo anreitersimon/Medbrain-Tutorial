@@ -93,9 +93,9 @@
 \tableofcontents
 \newpage
 
-\section{Project Setup}\label{step-1---project-setup}
+\section{Project Setup}\label{step1}
 
-\subsection{Prerequisites}\label{prerequisites}
+\subsection{Prerequisites}\label{step1:prerequisites}
 
 \begin{itemize}
 \tightlist
@@ -103,7 +103,7 @@
   Installed XCode 7.3 (Current Version as of writing this)
 \end{itemize}
 
-\subsection{Getting Started}\label{getting-started}
+\subsection{Getting Started}\label{step1:getting-started}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -154,15 +154,15 @@
   created \textbf{working directory}.
 \end{enumerate}
 
-\subsection{Conclusion}\label{conclusion}
+\subsection{Conclusion}\label{step1:conclusion}
 
 You completed the basic setup for an iOS-App
 
 
 \section{Managing Dependencies with
-CocoaPods\cite{cocoapods}}\label{step-2---managing-dependencies-with-cocoapods}
+CocoaPods\cite{cocoapods}}\label{step2}
 
-\subsection{Prerequisites}\label{prerequisites}
+\subsection{Prerequisites}\label{step2:prerequisites}
 
 Before continuing ensure CocoaPods is installed.
 To install CocoaPods run \texttt{sudo\ gem\ install\ cocoapods} in the terminal.
@@ -171,7 +171,7 @@ If you want to start here you just run \texttt{git\ checkout\ step2}.
 
 The Project is located at \texttt{project/} of the git repository root.
 
-\subsection{Getting Started}\label{getting-started}
+\subsection{Getting Started}\label{step2:getting-started}
 
 CocoaPods is a tool for managing dependencies in iOS and Mac Applications.
 
@@ -218,7 +218,7 @@ run \texttt{pod\ install} in the Terminal.
 This downloads all libraries specified in the Podfile and integrates
 them into the XCode project.
 
-\subsection{Conclusion}\label{conclusion}
+\subsection{Conclusion}\label{step2:conclusion}
 
 You learned how to setup CocoaPods in a iOS-project and install
 dependencies.
@@ -226,9 +226,9 @@ dependencies.
 Next-up is a overview of the used FHIR-Resources
 
 \section{Overview and Explanation of used
-FHIR-Resources}\label{step-3---overview-of-used-fhir-resources}
+FHIR-Resources}\label{step3:overview}
 
-\subsection{Goals}\label{goals}
+\subsection{Goals}\label{step3:goals}
 
 \begin{itemize}
 \tightlist
@@ -256,19 +256,19 @@ The main resources used are:
 \item
   Medication \ref{res:medication}
 \item
-  MedicationOrder \ref{res:medication-order}
+  MedicationOrder \ref{res:medicationorder}
 \item
-  DosageInstructions \ref{res:dosage-instructions}
+  DosageInstructions \ref{res:dosageinstructions}
 \item
   Timing \ref{res:timing}
 \item
-  MedicationAdministration \ref{res:medication-administration}
+  MedicationAdministration \ref{res:medicationadministration}
 \end{itemize}
 
 These will be explained more in depth in the corresponding
 section below.
 
-\subsection{Resources}\label{step-3-resources}
+\subsection{Resources}\label{step3}
 
 \subsubsection{Patient}\label{res:patient}
 The patient-resource has a central role in this app. It contains basic
@@ -285,7 +285,7 @@ context of the app it is assumed that the patient is human.
 \label{fig:structure-patient}
 \end{figure}
 
-\subparagraph{Requirements}\label{requirements}
+\subparagraph{Requirements}\label{res:patient:requirements}
 
 There are no explicit requirements in order for the app to work.
 These requirements are strictly technical and additional constraints may make sense.
@@ -302,13 +302,13 @@ is human & \texttt{patient.animal == null} & yes\tabularnewline
 \bottomrule
 \end{longtable}
 
-\subparagraph{This resources is referenced by:}\label{referenced-by}
+\subparagraph{This resources is referenced by:}\label{res:patient:referenced-by}
 
 \begin{lstlisting}[breaklines]
 Account, AllergyIntolerance, Appointment, AppointmentResponse, AuditEvent, Basic, BodySite, CarePlan, Claim, ClinicalImpression, Communication, CommunicationRequest, Composition, Condition, Contract, Coverage, DetectedIssue, Device, DeviceUseRequest, DeviceUseStatement, DiagnosticOrder, DiagnosticReport, DocumentManifest, DocumentReference, Encounter, EnrollmentRequest, EpisodeOfCare, FamilyMemberHistory, Flag, Goal, Group, ImagingObjectSelection, ImagingStudy, Immunization, ImmunizationRecommendation, List, Media, MedicationAdministration, MedicationDispense, MedicationOrder, MedicationStatement, NutritionOrder, Observation, Order, Person, Procedure, ProcedureRequest, Provenance, QuestionnaireResponse, ReferralRequest, RelatedPerson, RiskAssessment, Schedule, Specimen, SupplyDelivery, SupplyRequest, VisionPrescription
 \end{lstlisting}
 
-\subsubsection{Medication}\label{medication}
+\subsubsection{Medication}\label{res:medication}
 
 Represents a medication.
 
@@ -319,7 +319,7 @@ Represents a medication.
 \label{fig:structure-medication}
 \end{figure}
 
-\paragraph{Requirements}\label{requirements}
+\paragraph{Requirements}\label{res:medication:requirements}
 
 In the context of the app only the medications name is
 displayed, therefore its only requirement is its name.
@@ -334,13 +334,13 @@ has display-name & \texttt{medication.code.coding[0].display != null} & yes\tabu
 \end{longtable}
 
 
-\paragraph{This resource is referenced by:}\label{referenced-by}
+\paragraph{This resource is referenced by:}\label{res:medication:referenced-by}
 
 \begin{lstlisting}[breaklines]
 CarePlan, Group, MedicationAdministration, MedicationDispense, MedicationOrder, MedicationStatement, Procedure, SupplyDelivery, SupplyRequest
 \end{lstlisting}
 
-\subsubsection{MedicationOrder}\label{medicationorder}
+\subsubsection{MedicationOrder}\label{res:medicationorder}
 
 https://www.hl7.org/fhir/medicationorder.html
 
@@ -352,7 +352,7 @@ A \texttt{MedicationOrder} can only be created by a
 Therefore the app only requires read-only access to a patients
 medication-orders
 
-\paragraph{Requirements}\label{requirements}
+\paragraph{Requirements}\label{res:medicationorder:requirements}
 
 \begin{longtable}[bp!]{@{}lll@{}}
 \toprule
@@ -424,7 +424,7 @@ localize the description (generate descriptions in different languages)
 \end{figure}
 
 
-\subsubsection{Timing}\label{timing}
+\subsubsection{Timing}\label{res:timing}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{resources/FHIR/DosageInstructions/Timing-Structure.png}
@@ -433,7 +433,7 @@ localize the description (generate descriptions in different languages)
 \end{figure}
 
 
-\subsection{MedicationAdministration}\label{medicationadministration}
+\subsubsection{MedicationAdministration}\label{res:medicationadministration}
 Represents a medications administration or lack thereof.
 
 The patient creates a \texttt{MedicationAdministration} when he/she takes/doesnt take a \texttt{Medication}
@@ -448,7 +448,7 @@ the \texttt{MedicationAdministration} must reference a
 \label{fig:structure-medication-administration}
 \end{figure}
 
-\paragraph{Requirements}\label{requirements}
+\paragraph{Requirements}\label{res:medicationadministration:requirements}
 \begin{longtable}[]{@{}ll@{}}
 \toprule requirement & expression\tabularnewline
 \midrule
@@ -460,31 +460,23 @@ effectiveTime set & \texttt{patient.effectiveTime\ !=\ null} \tabularnewline
 \end{longtable}
 
 \section{Building the Application
-Structure}\label{step-4---building-the-application-structure}
+Structure}\label{step4}
 
-\subsection{Prerequisites}\label{prerequisites}
-
-Finished \href{STEP2.md}{Step 2} of this Tutorial.
-
-If you want to start here you just run \texttt{git\ checkout\ step4}.
-
+\subsection{Prerequisites}\label{step4:prerequisites}
+Finished Step 2 of this tutorial described in section \ref{step2} of this paper.
+To start here run \texttt{git checkout step4}.
 The Project is located at \texttt{project/} of the git repository root.
 
-\subsection{Goals}\label{goals}
-
+\subsection{Goals}\label{step4:goals}
 In this step each of the apps screens will be added as a placeholder
 implementation. Each screens functionality will be implemented later on.
-
 
 Learn about building User Interfaces utilizing X-Codes Interface-Builder
 and Storyboards.
 
-\subsection{Getting started}\label{getting-started}
-
+\subsection{Getting started}\label{step4:getting-started}
 By default X-Code creates a storyboard name \texttt{Main.storyboard}.
-
 It contains a single \texttt{ViewController}.
-
 We start of by deleting the \texttt{ViewController} and its
 corresponding ViewController implementation.
 
@@ -552,9 +544,7 @@ corresponding ViewController implementation.
   section
 \end{enumerate}
 
-
 \subsection{Adding the SignInViewController}\label{adding-the-signinviewcontroller}
-
 To be able to determine which medications to show the patient has to
 sign-in.
 
@@ -609,21 +599,18 @@ When you are finished the end result should look similar to this:
 \label{fig:storyboard-finished}
 \end{figure}
 
-\subsection{Conclusion}\label{conclusion}
+\subsection{Conclusion}\label{step4:conclusion}
 
 You setup a storyboard showing the apps intended flow.
 
-\section{Implementing SignIn}\label{step-5---implementing-signin}
+\section{Implementing SignIn}\label{step5}
 
-\subsection{Prerequisites}\label{prerequisites}
+\subsection{Prerequisites}\label{step5:prerequisites}
+Finished Step 4 of this tutorial described in section \ref{step4} of this paper.
+To start here run \texttt{git checkout step5}.
+The Project is located at \texttt{project/} of the git repository root.
 
-Finished \href{STEP4.md}{Step 4} of this Tutorial.
-
-If you want to start here you just run \texttt{git\ checkout\ step5}.
-
-The project is located at \texttt{project/} of the git repository root.
-
-\subsection{Goals}\label{goals}
+\subsection{Goals}\label{step5:goals}
 
 
 The data displayed in this app is very specific to the currently signed
@@ -632,7 +619,7 @@ in patient.
 So before building the rest of the app it is the first priority to
 implement the sign-in.
 
-\subsection{Getting started}\label{getting-started}
+\subsection{Getting started}\label{step5:getting-started}
 
 For the implementation we will introduce following classes:
 
@@ -825,7 +812,7 @@ The finished \texttt{SessionManager} implementation can be found
 \href{resources/step5/SessionManager.swift}{here}
 
 \subsection{PatientSignInViewController
-Interface}\label{step-5.1---implementing-signin---patientsigninviewcontroller-interface}
+Interface}\label{step5-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -875,7 +862,7 @@ Interface}\label{step-5.1---implementing-signin---patientsigninviewcontroller-in
 \label{fig:set_signin_class}
 \end{figure}
 
-\subsubsection{Building the Interface}\label{building-the-interface}
+\subsubsection{Building the Interface}\label{step5:building-the-interface}
 
 
 
@@ -899,7 +886,7 @@ connecting elements in the Interface-Builder to the implementation. The
 creation and configuration could also be done programmatically.
 \end{quote}
 
-\subsubsection{Adding outlets to the class implementation}\label{add-the-outlets-to-the-class}
+\subsubsection{Adding outlets to the class implementation}\label{step5:add-the-outlets-to-the-class}
 
 add the following to the \texttt{PatientSignInViewController}
 implementation:
@@ -915,7 +902,7 @@ implementation:
 }
 \end{minted}
 
-\subsubsection{Adding the UI-Elements in the storyboard}\label{in-the-storyboard-add-the-elements.}
+\subsubsection{Adding the UI-Elements in the storyboard}\label{step5:in-the-storyboard-add-the-elements}
 \begin{quote}
 \textbf{Note:} In this tutorial the design will not be handled in depth. Instead
 the required UI-elements will be defined and shown how they need to be
@@ -939,15 +926,15 @@ The end result should look like this:
 Connect the outlets and actions to the corresponding elements.
 \end{enumerate}
 
-\subsection{PatientSignInViewController functionality}\label{step-5.2---implementing-signin---patientsigninviewcontroller-functionality}
+\subsection{PatientSignInViewController functionality}\label{step5-2}
 
 \subparagraph{\texorpdfstring{Import \texttt{SMART}
-framework}{Import SMART framework}}\label{import-smart-framework}
+framework}{Import SMART framework}}\label{step5:import-smart-framework}
 
 add \texttt{import\ SMART} statement to the top of the
 \texttt{PatientSignInViewController}
 
-\subsubsection{Adding a completionHandler}\label{add-a-completionhandler}
+\subsubsection{Adding a completionHandler}\label{step5:add-a-completionhandler}
 
 To inform the initiator of the Sign-In that the task was completed a \texttt{completionHandler} is added.
 This is a new property on the \texttt{PatientSignInViewController}.
@@ -1105,26 +1092,25 @@ used
 The finished \texttt{PatientSignInViewController} implementation can be
 found at \texttt{project/Medbrain/Medbrain/PatientSignInViewController.swift}
 
-\subsection{Conclusion}\label{conclusion}
+\subsection{Conclusion}\label{step5:conclusion}
 
 You built a Log-In Interface and functionality and implemented the
 SessionManager.
 
-\section{Implementing PatientMedicationsViewController}\label{step-6---implementing-patientmedicationsviewcontroller}
+\section{Implementing PatientMedicationsViewController}\label{step6}
 
-\subsection{Prerequisites}\label{prerequisites}
-
-If you want to start here you just run \texttt {git\ checkout\ step6}.
-
+\subsection{Prerequisites}\label{step6:prerequisites}
+Finished Step 5 of this tutorial described in section \ref{step5} of this paper.
+To start here run \texttt{git checkout step6}.
 The Project is located at \texttt{project/} of the git repository root.
 
-\subsection{Goals}\label{goals}
+\subsection{Goals}\label{step6:goals}
 
 Build a \texttt{View\ Controller} which shows a list of prescriptions
 for a specific patient. Additionally if the user is not signed in the
 Log-in Screen should be shown.
 
-\subsection{Getting started}\label{getting-started}
+\subsection{Getting started}\label{step6:getting-started}
 
 This Step is split up into 4 parts:
 
@@ -1170,7 +1156,7 @@ The StatusView has responsibility for displaying:
     empty states
 \end{itemize}
 
-\subsubsection{Defining outlets in the implementation class}\label{define-the-outlets-in-the-implementation.}
+\subsubsection{Defining outlets in the implementation class}\label{step6:define-the-outlets-in-the-implementation.}
 
 The \texttt{StatusView} consists of two elements:
 
@@ -1925,14 +1911,10 @@ func loadContent() {
 
 \section{Implementing the MedicationDetailViewController}\label{step-7---implementing-medicationdetailviewcontroller}
 
-\subsection{Prerequisites}\label{prerequisites}
-
-Finished \href{STEP6.md}{Step 6} of this Tutorial.
-
-If you want to start here you just run \texttt{git\ checkout\ step7}.
-
+\subsection{Prerequisites}\label{step7:prerequisites}
+Finished Step 6 of this tutorial described in section \ref{step6} of this paper.
+To start here run \texttt{git checkout step7}.
 The Project is located at \texttt{project/} of the git repository root.
-
 \subsection{Getting Started}\label{getting-started}
 
 When selecting a item in the \texttt{PatientMedicationsViewController} a
@@ -2014,7 +1996,7 @@ This headerView will contain:
 \end{itemize}
 
 
-\subsubsection{Defining the outlets and actions}\label{defining-the-outlets-and-actions}
+\subsubsection{Defining the outlets and actions}\label{step7:defining-the-outlets-and-actions}
 First import \texttt{ResearchKit}
 
 \begin{minted}{swift}
@@ -2693,7 +2675,7 @@ function is invoked. In this function the selected \texttt{MedicationOrder} is p
     }
 \end{minted}
 
-\subsection{Conclusion}\label{conclusion}
+\subsection{Conclusion}\label{step7:conclusion}
 
 You: - added a new dependency (\texttt{ResearchKit}) - implemented a
 list showing all \texttt{MedicationAdministrations} - loaded all
@@ -2701,17 +2683,14 @@ list showing all \texttt{MedicationAdministrations} - loaded all
 remote server - implemented a graph visualizing the timeline of
 administrations
 
-\section{Implementing the CreateMedicationAdministrationViewController}\label{step-8---implementing-createmedicationadministrationviewcontroller}
+\section{Implementing the CreateMedicationAdministrationViewController}\label{step8}
 
-\subsection{Prerequisites}\label{prerequisites}
-
-Finished \href{STEP7.md}{Step 7} of this Tutorial.
-
-If you want to start here you just run \texttt{git\ checkout\ step8}.
-
+\subsection{Prerequisites}\label{step8:prerequisites}
+Finished Step 7 of this tutorial described in section \ref{step7} of this paper.
+To start here run \texttt{git checkout step8}.
 The Project is located at \texttt{project/} of the git repository root.
 
-\subsection{Goals}\label{goals}
+\subsection{Goals}\label{step8:goals}
 
 To allow the user to track when he/she takes a medication a new
 \texttt{View\ Controller} named
@@ -2772,8 +2751,7 @@ Add the following outlets and actions:
 \end{enumerate}
 
 
-\paragraph{Setting up the
-ViewController}\label{setting-up-the-viewcontroller}
+\paragraph{Setting up the ViewController}\label{setting-up-the-viewcontroller}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
