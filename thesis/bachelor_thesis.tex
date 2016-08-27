@@ -90,8 +90,37 @@
 
 \input{Prak_Titel}
 
+\section*{Abstract}
+This academic paper primarily deals with building an iOS-App helping to manage medications using FHIR.
+The process of building the app will be documented in the form of a tutorial as part of the Bachelor degree at the University of Vienna Faculty of Computer Science in collaboration with the Medical University of Vienna.
+\\
+The resulting project will be maintained as a OpenSource-project and can be found at \url{https://github.com/anreitersimon/Medbrain-Tutorial}.
+\\
+\begin{itemize}
+  \item
+    Setting up a iOS Project
+  \item
+    Describe the used resources
+  \item
+    Read a patients prescriptions stored in a FHIR database
+  \item
+    Create resources in a FHIR databse
+\end{itemize}
+\newpage
+
 \tableofcontents
 \newpage
+
+\section{Introduction}
+\subsection{Health Level 7}
+Health Level 7 (HL7) is a non-profit organization providing a framework and standards for the exchange, integration, sharing and retrieval of health information.
+It supports clinical practice and the management, delivery and evaluation of health services. \citep{hl7}
+
+\subsection{FHIR Fast-Healthcare-Interoperability-Resources}
+FHIR \citep{fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{fhir-wiki}
+
+\subsection{SMART}
+SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \cite{smart}
 
 \section{Project Setup}\label{step1}
 
@@ -209,6 +238,8 @@ The \texttt{pod\ 'SMART'} installs the dependency \texttt{Swift-SMART}\cite{swif
 
 This is a library simplifying the usage of FHIR-Resources within Swift
 Projects.
+\\
+It provides native swift classes representing the corresponding FHIR-resources and provides support for interacting with FHIR REST-APIs.
 
 \subsubsection{Installing the dependencies}
 Now that it is specified which dependencies are to be used in the project they have to be installed.
