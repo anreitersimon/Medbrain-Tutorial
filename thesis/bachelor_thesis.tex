@@ -117,6 +117,35 @@ It supports clinical practice and the management, delivery and evaluation of hea
 \subsection{FHIR Fast-Healthcare-Interoperability-Resources}
 FHIR \citep{fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{fhir-wiki}
 
+\section{Related Work}
+As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications which can be found in the AppStore. For this reason a seperate paper "Literature Research - Medication Management App with FHIR" was created for research purposes. Tis paper covers the following applications in detail:
+
+\subsection{AMTS}
+The AMTS medication-plan is a basis for helping patients manage their med- ications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
+It lists all active pharmaceutical ingredients and the corresponding medication name. The practitioner can indicate the time of day the medication is to be taken (morning, midday, evening) and whether it is to be taken before, with or after a meal.
+The system doesn’t rely on a database or anything similar and therefore is very flexible and changes can be made very quickly. Only the practitioner can enter information into the system which ensures a certain data-quality.
+It does document if a patient takes the medication or not but no reason why a patient has not taken it. The practitioner has to manually input the information provided by the patient into the system.
+
+\subsection{MyTherapy}
+MyTherapy\citep{mytherapy} is an iOS-app with the same goal as the AMTS medication-plan of helping users manage their medication by building a schedule. It has reminders of when medication or measures have to be taken. If one is tracking his blood pressure for example the app will also be able to show an overview of the past week, month, year in form of a graphic of the actual values. The diary function shows the percentage of actions taken - so if one has to take 4 tablets a day and indicates that he has taken one so far the patient has completed 25 percent of the actions of the day.
+MyTherapy has four types of information which can be scheduled. 4
+\begin{itemize}
+  \item
+    Medication
+  \item
+    Measure (e.g. blood pressure)
+  \item
+    Activity
+  \item
+    General Well-Being
+\end{itemize}
+All information in this app has to be input manually. After entering this information the app displays a schedule for the current day and generates notifications reminding the user to perform a task (e.g. take medication, measure blood pressure) at the appropriate time. Upon performing/not performing such a task the user can mark these tasks as done/not done. The app also provides a ”Journal” where the user is shown a history of what tasks where performed/not performed.
+
+\subsection{MediSafe}
+
+MediSafe\citep{medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
+
+
 \subsection{SMART}
 SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \cite{smart}
 
@@ -322,12 +351,12 @@ It is assumed all information contained in the Patient resource is optional exce
 The id must be present in order to search for medications which were prescribed for this specific patient.
 
 These requirements can be formalized like:
-\begin{longtable}[]{@{}lll@{}}
+\begin{longtable}[]{@{}ll@{}}
 \toprule
-requirement & expression & required\tabularnewline
+requirement & expression\tabularnewline
 \midrule
-has id & \texttt{patient.id != null} & yes\tabularnewline
-is human & \texttt{patient.animal == null} & yes\tabularnewline
+has id & \texttt{patient.id != null}\tabularnewline
+is human & \texttt{patient.animal == null}\tabularnewline
 \bottomrule
 \end{longtable}
 
