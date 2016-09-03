@@ -88,9 +88,10 @@
 \input{Prak_Titel}
 
 \section*{Abstract}
-This academic paper primarily deals with the process of building an iOS-App from the very beginning. The purpose of the iOS-App is to integrate the new HL7 healthcare standard “FHIR” in order to create an application which helps to manage medications. This means that the result of this Bachelor Thesis is a complete functioning application allowing one to enter prescribed medications and aid people in taking it on time. In addition the actual process of building the app will be documented in form of a tutorial providing a step by step guide with all required information needed to create an app using “FHIR”.
+This thesis primarily deals with the appliction of "FHIR" in the context of an iOS-App.
+FHIR will be implemented while building an iOS-App from the very beginning. The purpose of the iOS-App is to integrate the new HL7 healthcare standard “FHIR” in order to create an application which helps to manage medications. This means that the result of this Bachelor Thesis is a complete functioning application allowing one to enter prescribed medications and aid people in taking it on time. In addition the actual process of building the app will be documented in form of a tutorial providing a step by step guide with all required information needed to create an app using “FHIR”.
 \\
-This paper was created as part of the Bachelor degree at the University of Vienna Faculty of Computer Science in collaboration with the Medical University of Vienna.
+This thesis was created as part of the Bachelor degree at the University of Vienna Faculty of Computer Science in collaboration with the Medical University of Vienna.
 \\
 The resulting project will be maintained as a OpenSource-project and can be found at \url{https://github.com/anreitersimon/Medbrain-Tutorial}.
 \\
@@ -102,7 +103,7 @@ The resulting project will be maintained as a OpenSource-project and can be foun
   \item
     Read a patients prescriptions stored in a FHIR database
   \item
-    Create resources in a FHIR databse
+    Create resources in a FHIR database
 \end{itemize}
 \newpage
 
@@ -117,8 +118,11 @@ It supports clinical practice and the management, delivery and evaluation of hea
 \subsection{FHIR Fast-Healthcare-Interoperability-Resources}
 FHIR \citep{fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{fhir-wiki}
 
+\subsection{SMART}
+SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \cite{smart}
+
 \section{Related Work}
-As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications which can be found in the AppStore. For this reason a seperate paper "Literature Research - Medication Management App with FHIR" was created for research purposes. Tis paper covers the following applications in detail:
+As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications which can be found in the AppStore. For this reason a seperate paper "Literature Research - Medication Management App with FHIR" was created for research purposes. This paper covers the following applications in detail:
 
 \subsection{AMTS}
 The AMTS medication-plan is a basis for helping patients manage their med- ications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
@@ -146,10 +150,8 @@ All information in this app has to be input manually. After entering this inform
 MediSafe\citep{medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
 
 
-\subsection{SMART}
-SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \cite{smart}
-
-\section{Project Setup}\label{step1}
+\section{A Step by Step Medication Management App Tutorial}
+\subsection{Project Setup}\label{step1}
 
 \subsection{Prerequisites}\label{step1:prerequisites}
 
