@@ -110,28 +110,29 @@ The resulting project will be maintained as a OpenSource-project and can be foun
 \tableofcontents
 \newpage
 
-\section{Introduction}
-\subsection{Health Level 7}
+
+\part{Introduction}
+\section{Health Level 7}
 Health Level 7 (HL7) is a non-profit organization providing a framework and standards for the exchange, integration, sharing and retrieval of health information.
-It supports clinical practice and the management, delivery and evaluation of health services. \citep{hl7}
+It supports clinical practice and the management, delivery and evaluation of health services. \citep{01-hl7}
 
-\subsection{FHIR Fast-Healthcare-Interoperability-Resources}
-FHIR \citep{fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{fhir-wiki}
+\section{FHIR Fast-Healthcare-Interoperability-Resources}
+FHIR \citep{02-fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{03-fhir-wiki}
 
-\subsection{SMART}
-SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \cite{smart}
+\section{SMART}
+SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \citep{04-smart}
 
-\section{Related Work}
+\part{Related Work}
 As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications which can be found in the AppStore. For this reason a seperate paper "Literature Research - Medication Management App with FHIR" was created for research purposes. This paper covers the following applications in detail:
 
-\subsection{AMTS}
-The AMTS medication-plan is a basis for helping patients manage their med- ications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
+\section{AMTS}
+The AMTS\citep{05-amts} medication-plan is a basis for helping patients manage their med- ications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
 It lists all active pharmaceutical ingredients and the corresponding medication name. The practitioner can indicate the time of day the medication is to be taken (morning, midday, evening) and whether it is to be taken before, with or after a meal.
 The system doesn’t rely on a database or anything similar and therefore is very flexible and changes can be made very quickly. Only the practitioner can enter information into the system which ensures a certain data-quality.
 It does document if a patient takes the medication or not but no reason why a patient has not taken it. The practitioner has to manually input the information provided by the patient into the system.
 
-\subsection{MyTherapy}
-MyTherapy\citep{mytherapy} is an iOS-app with the same goal as the AMTS medication-plan of helping users manage their medication by building a schedule. It has reminders of when medication or measures have to be taken. If one is tracking his blood pressure for example the app will also be able to show an overview of the past week, month, year in form of a graphic of the actual values. The diary function shows the percentage of actions taken - so if one has to take 4 tablets a day and indicates that he has taken one so far the patient has completed 25 percent of the actions of the day.
+\section{MyTherapy}
+MyTherapy\citep{06-mytherapy} is an iOS-app with the same goal as the AMTS medication-plan of helping users manage their medication by building a schedule. It has reminders of when medication or measures have to be taken. If one is tracking his blood pressure for example the app will also be able to show an overview of the past week, month, year in form of a graphic of the actual values. The diary function shows the percentage of actions taken - so if one has to take 4 tablets a day and indicates that he has taken one so far the patient has completed 25 percent of the actions of the day.
 MyTherapy has four types of information which can be scheduled. 4
 \begin{itemize}
   \item
@@ -145,13 +146,13 @@ MyTherapy has four types of information which can be scheduled. 4
 \end{itemize}
 All information in this app has to be input manually. After entering this information the app displays a schedule for the current day and generates notifications reminding the user to perform a task (e.g. take medication, measure blood pressure) at the appropriate time. Upon performing/not performing such a task the user can mark these tasks as done/not done. The app also provides a ”Journal” where the user is shown a history of what tasks where performed/not performed.
 
-\subsection{MediSafe}
+\section{MediSafe}
 
-MediSafe\citep{medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
+MediSafe\citep{07-medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
 
 
-\section{A Step by Step Medication Management App Tutorial}
-\subsection{Project Setup}\label{step1}
+\part{A Step by Step Medication Management App Tutorial}
+\section{Project Setup}\label{step1}
 
 \subsection{Prerequisites}\label{step1:prerequisites}
 
@@ -161,7 +162,7 @@ MediSafe\citep{medisafe} is also an iOS-app helping users manage their medicatio
   Installed XCode 7.3 (Current Version as of writing this)
 \end{itemize}
 
-\subsection{Getting Started}\label{step1:getting-started}
+\subsubsection{Getting Started}\label{step1:getting-started}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -218,7 +219,7 @@ You completed the basic setup for an iOS-App
 
 
 \section{Managing Dependencies with
-CocoaPods\cite{cocoapods}}\label{step2}
+CocoaPods}\label{step2}
 
 \subsection{Prerequisites}\label{step2:prerequisites}
 
@@ -231,10 +232,10 @@ The Project is located at \texttt{project/} of the git repository root.
 
 \subsection{Getting Started}\label{step2:getting-started}
 
-CocoaPods is a tool for managing dependencies in iOS and Mac Applications.
-
-A possible alternative is Apples Swift Package-Manager\cite{swift-package-manager}.
-
+CocoaPods\citep{08-cocoapods} is a tool for managing dependencies in iOS and Mac Applications.
+\\
+A possible alternative is Apples Swift Package-Manager\citep{09-swift-package-manager}.
+\\
 Since CocoaPods is already very established and commonly seen as Best
 Practice, and the Swift Package Manager is still in beta
 stage CocoaPods is preferred.
@@ -263,7 +264,7 @@ target 'MedbrainUITests' do
 end
 \end{minted}
 
-The \texttt{pod\ 'SMART'} installs the dependency \texttt{Swift-SMART}\cite{swift-smart}.
+The \texttt{pod\ 'SMART'} installs the dependency \texttt{Swift-SMART}\citep{10-swift-smart}.
 
 This is a library simplifying the usage of FHIR-Resources within Swift
 Projects.
@@ -326,7 +327,7 @@ The main resources used are:
 \end{itemize}
 
 These will be explained more in depth in the corresponding
-section below.
+subsection below.
 
 \subsection{Resources}\label{step3}
 
@@ -337,22 +338,21 @@ information about the person and is often referenced by other resources.
 \textbf{Note:} a patient in FHIR is not necessarily human. but in the
 context of the app it is assumed that the patient is human.
 \end{quote}
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{resources/FHIR/Patient/Patient-UML.png}
 \caption{Structure of the Patient resource}
 \label{fig:structure-patient}
 \end{figure}
-
-\subparagraph{Requirements}\label{res:patient:requirements}
-
+\textbf{Requirements}\label{res:patient:requirements}
+\\
 There are no explicit requirements in order for the app to work.
 These requirements are strictly technical and additional constraints may make sense.
 It is assumed all information contained in the Patient resource is optional except for the id.
 The id must be present in order to search for medications which were prescribed for this specific patient.
-
+\\
 These requirements can be formalized like:
+\\
 \begin{longtable}[]{@{}ll@{}}
 \toprule
 requirement & expression\tabularnewline
@@ -360,107 +360,75 @@ requirement & expression\tabularnewline
 has id & \texttt{patient.id != null}\tabularnewline
 is human & \texttt{patient.animal == null}\tabularnewline
 \bottomrule
+\caption{Formalized requirements for the Patient resource}
 \end{longtable}
-
-\subparagraph{This resources is referenced by:}\label{res:patient:referenced-by}
-
+\textbf{This resources is referenced by:}\label{res:patient:referenced-by}
+\\
 \begin{lstlisting}[breaklines]
 Account, AllergyIntolerance, Appointment, AppointmentResponse, AuditEvent, Basic, BodySite, CarePlan, Claim, ClinicalImpression, Communication, CommunicationRequest, Composition, Condition, Contract, Coverage, DetectedIssue, Device, DeviceUseRequest, DeviceUseStatement, DiagnosticOrder, DiagnosticReport, DocumentManifest, DocumentReference, Encounter, EnrollmentRequest, EpisodeOfCare, FamilyMemberHistory, Flag, Goal, Group, ImagingObjectSelection, ImagingStudy, Immunization, ImmunizationRecommendation, List, Media, MedicationAdministration, MedicationDispense, MedicationOrder, MedicationStatement, NutritionOrder, Observation, Order, Person, Procedure, ProcedureRequest, Provenance, QuestionnaireResponse, ReferralRequest, RelatedPerson, RiskAssessment, Schedule, Specimen, SupplyDelivery, SupplyRequest, VisionPrescription
 \end{lstlisting}
 
 \subsubsection{Medication}\label{res:medication}
-
 Represents a medication.
-
+\\
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{resources/FHIR/Medication/Medication-UML.png}
 \caption{Structure of the Medication resource}
 \label{fig:structure-medication}
 \end{figure}
-
-\paragraph{Requirements}\label{res:medication:requirements}
-
+\textbf{Requirements}\label{res:medication:requirements}
 In the context of the app only the medications name is
 displayed, therefore its only requirement is its name.
 This should not imply it describes a medication sufficiently.
-
-\begin{longtable}[H]{@{}lll@{}}
+\\
+\begin{longtable}[H]{@{}ll@{}}
 \toprule
-requirement & expression & required\tabularnewline
+requirement & expression\\
 \midrule
-has display-name & \texttt{medication.code.coding[0].display != null} & yes\tabularnewline
+has display-name & \texttt{medication.code.coding[0].display != null} \\
 \bottomrule
+\caption{Formalized requirements for the Medication resource}
 \end{longtable}
-
-
-\paragraph{This resource is referenced by:}\label{res:medication:referenced-by}
-
+\textbf{This resource is referenced by:}\label{res:medication:referenced-by}
+\\
 \begin{lstlisting}[breaklines]
 CarePlan, Group, MedicationAdministration, MedicationDispense, MedicationOrder, MedicationStatement, Procedure, SupplyDelivery, SupplyRequest
 \end{lstlisting}
 
 \subsubsection{MedicationOrder}\label{res:medicationorder}
 
-https://www.hl7.org/fhir/medicationorder.html
-
 An order for supply and administration of the medication to a patient.
-
+\\
 A \texttt{MedicationOrder} can only be created by a
 \texttt{Practitioner} and never by a \texttt{Patient}.
-
+\\
 Therefore the app only requires read-only access to a patients
 medication-orders
-
-\paragraph{Requirements}\label{res:medicationorder:requirements}
-
-\begin{longtable}[bp!]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.31\columnwidth}\raggedright\strut
-requirement
-\strut\end{minipage} &
-\begin{minipage}[b]{0.47\columnwidth}\raggedright\strut
-expression
-\strut\end{minipage} &
-\begin{minipage}[b]{0.13\columnwidth}\raggedright\strut
-required
-\strut\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
-at least one dosageInstruction
-\strut\end{minipage} &
-\begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-\texttt{medicationOrder.dosageInstructions{[}0{]}\ !=\ null}
-\strut\end{minipage} &
-\begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
-yes
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
-prescribed for a patient
-\strut\end{minipage} &
-\begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-\texttt{medicationOrder.patient\ !=\ null}
-\strut\end{minipage} &
-\begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
-yes
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
-has medication
-\strut\end{minipage} &
-\begin{minipage}[t]{0.47\columnwidth}\raggedright\strut
-\texttt{medicationOrder.medication\ !=\ null}
-\strut\end{minipage} &
-\begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
-yes
-\strut\end{minipage}\tabularnewline
+\\
+\\
+\textbf{Requirements}\label{res:medicationorder:requirements}
+\\
+\begin{longtable}[H]{@{}ll@{}}
+  \toprule
+    requirement &
+    expression
+  \\
+  \midrule
+    at least one dosageInstruction &
+    \texttt{medicationOrder.dosageInstructions{[}0{]}\ !=\ null}
+  \\
+    prescribed for a patient &
+    \texttt{medicationOrder.patient\ !=\ null}
+  \\
+    has medication &
+    \texttt{medicationOrder.medication\ !=\ null}
+  \\
 \bottomrule
+\caption{Formalized requirements for the MedicationOrder resource}
 \end{longtable}
-
-
-\paragraph{This resource is referenced by:}
-
-\begin{minted}[breakautoindent,tabsize=1,breaklines]{swift}
+\textbf{This resource is referenced by:}
+\begin{minted}[breaklines]{swift}
 CarePlan, Claim, ClinicalImpression, MedicationAdministration, MedicationDispense
 \end{minted}
 
@@ -495,11 +463,10 @@ localize the description (generate descriptions in different languages)
 
 \subsubsection{MedicationAdministration}\label{res:medicationadministration}
 Represents a medications administration or lack thereof.
-
+\\
 The patient creates a \texttt{MedicationAdministration} when he/she takes/doesnt take a \texttt{Medication}
-
-the \texttt{MedicationAdministration} must reference a
-\texttt{MedicationOrder}
+\\\
+the \texttt{MedicationAdministration} must reference a \texttt{MedicationOrder}
 
 \begin{figure}[H]
 \centering
@@ -508,22 +475,34 @@ the \texttt{MedicationAdministration} must reference a
 \label{fig:structure-medication-administration}
 \end{figure}
 
-\paragraph{Requirements}\label{res:medicationadministration:requirements}
-\begin{longtable}[]{@{}ll@{}}
-\toprule requirement & expression\tabularnewline
-\midrule
-references patient & \texttt{administration.patient\ !=\ null} \tabularnewline
-references medication-order & \texttt{administration.prescription\ !=\ null}\tabularnewline
-references medication & \texttt{administration.medication\ !=\ null}\tabularnewline
-effectiveTime set & \texttt{patient.effectiveTime\ !=\ null} \tabularnewline
-\bottomrule
+\textbf{Requirements}\label{res:medicationadministration:requirements}
+\begin{longtable}[H]{@{}ll@{}}
+  \toprule
+    requirement &
+    expression
+  \\
+  \midrule
+    references patient &
+    \texttt{administration.patient\ !=\ null}
+  \\
+    references medication-order &
+    \texttt{administration.prescription\ !=\ null}
+  \\
+    references medication &
+    \texttt{administration.medication\ !=\ null}
+  \\
+    effectiveTime set &
+    \texttt{administration.effectiveTime\ !=\ null}
+  \\
+  \bottomrule
+\caption{Formalized requirements for the MedicationAdministration resource}
 \end{longtable}
 
 \section{Building the Application
 Structure}\label{step4}
 
 \subsection{Prerequisites}\label{step4:prerequisites}
-Finished Step 2 of this tutorial described in section \ref{step2} of this paper.
+Finished Step 2 of this tutorial described in subsection \ref{step2} of this paper.
 To start here run \texttt{git checkout step4}.
 The Project is located at \texttt{project/} of the git repository root.
 
@@ -554,8 +533,6 @@ corresponding ViewController implementation.
 \subsection{Adding a TabBarController}\label{adding-a-tabbarcontroller}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-
 \item
   From the Interface-Builders \texttt{object-library} drag a
   \texttt{Tab\ Bar\ Controller} object onto the storyboard.
@@ -672,7 +649,6 @@ The Project is located at \texttt{project/} of the git repository root.
 
 \subsection{Goals}\label{step5:goals}
 
-
 The data displayed in this app is very specific to the currently signed
 in patient.
 
@@ -687,33 +663,28 @@ For the implementation we will introduce following classes:
 
 \item
   \texttt{SessionManager}
+    \begin{itemize}
+
+    \item
+      Implemented as a singleton.
+    \item
+      Its responsibility is to manage the currently signed in patient.
+    \item
+      Handle log-in and log-out
+    \end{itemize}
+
 \item
   \texttt{PatientSignInViewController}
-\end{itemize}
+    \begin{itemize}
 
-\subparagraph{SessionManager}\label{sessionmanager}
-
-\begin{itemize}
-
-\item
-  Implemented as a singleton.
-\item
-  Its responsibility is to manage the currently signed in patient.
-\item
-  Handle log-in and log-out
-\end{itemize}
-
-\subparagraph{PatientSignInViewController}\label{patientsigninviewcontroller}
-
-\begin{itemize}
-
-\item
-  Displays a screen in which the user can enter his credentials.
-  (i.e. username and password)
-\item
-  Displays loading indicator while the log-in is in progress
-\item
-  Displays a message if a error occurred
+    \item
+      Displays a screen in which the user can enter his credentials.
+      (i.e. username and password)
+    \item
+      Displays loading indicator while the log-in is in progress
+    \item
+      Displays a message if a error occurred
+    \end{itemize}
 \end{itemize}
 
 \subsection{Implementing the
@@ -1993,7 +1964,7 @@ In order to display the graph a new dependency will be introduced.
 graphs:
 
 \subsubsection{Adding the ResearchKit dependency}\label{adding-the-researchkit-dependency}
-ResearchKit\cite{research-kit} is an open source framework introduced by Apple that allows to create apps for medical research.
+ResearchKit\citep{11-research-kit} is an open source framework introduced by Apple that allows to create apps for medical research.
 
 Edit your \texttt{Podfile} as follows:
 
@@ -3054,13 +3025,13 @@ function like this:
 }
 \end{minted}
 
-\section{Conclusion}
+\part{Conclusion}
 The presented iOS Application as well as the corresponding tutorial were generated in order to provide guidance utilizing the HL7 standard "FHIR". The biggest challenge is the genereation of the medication instructions since meaningful sentences need to be auto-generated by the application. The application itself covers basic examples and gives a good structure and base for creating potentially very useful applications. All further steps such as healthcare guidelines or required approvals in order to be able to distribute a medical application have not been covered and need to be considered when creating an official medical application.
-
+\\
 The approach for generating the tutorial was to first create the iOS Application to a satisfactory state and then documenting each step taken in order to receive the complete step by step guide. The tool used to generate the tutorial was Mark-down which allows one to keep the tutorial easily editable but at the same time look nice visually.
 
 The opensource tutorial as well as application require ongoing maintenance and adjustment according to occuring changes within the HL7 standard "FHIR".
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{references}
 \end{document}
