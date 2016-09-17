@@ -16,6 +16,7 @@
 \usepackage{amsfonts} % for the \checkmark command
 \usepackage{pbox}
 \usepackage{graphicx}% http://ctan.org/pkg/graphicx
+\usepackage[export]{adjustbox}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \usepackage{xparse}% http://ctan.org/pkg/xparse
 \usepackage{caption}
@@ -73,7 +74,6 @@
   \lsthk@DetectKeywords%
 }
 
-
 % reset the switch at the end of line
 \lst@AddToHook{EOL}%
   {\global\colonfoundonthislinefalse}
@@ -84,12 +84,11 @@
 \NewDocumentCommand{\rot}{O{60} O{1em} m}{\makebox[#2][l]{\rotatebox{#1}{#3}}}%
 \begin{document}
 
-
 \input{Prak_Titel}
 
 \section*{Abstract}
 This thesis primarily deals with the appliction of "FHIR" in the context of an iOS-App.
-FHIR will be implemented while building an iOS-App from the very beginning. The purpose of the iOS-App is to integrate the new HL7 healthcare standard “FHIR” in order to create an application which helps to manage medications. This means that the result of this Bachelor Thesis is a complete functioning application allowing one to enter prescribed medications and aid people in taking it on time. In addition the actual process of building the app will be documented in form of a tutorial providing a step by step guide with all required information needed to create an app using “FHIR”.
+FHIR will be implemented while building an iOS-App from the very beginning. The purpose of the iOS-App is to integrate the new HL7 healthcare standard “FHIR” in order to create an application which helps to manage the administration of medications. This means that the result of this thesis is a complete functioning application allowing one to enter prescribed medications and aid people in taking them on time. In addition the actual process of building the app will be documented in form of a tutorial providing a step by step guide with all required information needed to create an app using “FHIR”.
 \\
 This thesis was created as part of the Bachelor degree at the University of Vienna Faculty of Computer Science in collaboration with the Medical University of Vienna.
 \\
@@ -110,29 +109,30 @@ The resulting project will be maintained as a OpenSource-project and can be foun
 \tableofcontents
 \newpage
 
-
 \part{Introduction}
+The first part of this thesis covers the required medical standards and platform in order to implement the resulting iOS-App. It is important to understand these terms and their purpose as they are the foundation for retreiving data in an appropriate manner as well as utilizing existing resources and technology in the most efficient way.
+
 \section{Health Level 7}
 Health Level 7 (HL7) is a non-profit organization providing a framework and standards for the exchange, integration, sharing and retrieval of health information.
-It supports clinical practice and the management, delivery and evaluation of health services. \citep{01-hl7}
+It supports clinical practice and the management, delivery and evaluation of health services. \citep{hl7}
 
 \section{FHIR Fast-Healthcare-Interoperability-Resources}
-FHIR \citep{02-fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{03-fhir-wiki}
+FHIR \citep{fhir} is a new HL7 standard created to replace and enhance former HL7 message standards. The aim is to simplify modelling and revolutionize HL7 standards to allow fast design and implementation using modular components called \texttt{Resources} which represent granular clinical concepts. The resources can be managed in isolation or aggregated into complex documents based on XML or JSON structures and have predictable URLs due to a HTTP-based REST-ful protocol. \citep{fhir-wiki}
 
 \section{SMART}
-SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \citep{04-smart}
+SMART Health IT is an open, standards based technology platform that enables innovators to create apps that seamlessly and securely run across the healthcare system. Using an electronic health record (EHR) system or data warehouse that supports the SMART standard, patients, doctors, and healthcare practitioners can draw on this library of apps to improve clinical care, research, and public health. \citep{smart}
 
 \part{Related Work}
-As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications which can be found in the AppStore. For this reason a seperate paper "Literature Research - Medication Management App with FHIR" was created for research purposes. This paper covers the following applications in detail:
+As mentioned previously a fully functional base for an iOS App is provided once the Tutorial is complete. There are multiple further applications with similar functionality which can be found in the AppStore. These applications where used as a reference when deciding which features the app should cover. The research process has been documented in a seperate paper named "Literature Research - Medication Management App with FHIR" covering the detailed description of the following applications:
 
 \section{AMTS}
-The AMTS\citep{05-amts} medication-plan is a basis for helping patients manage their med- ications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
+The AMTS\citep{amts} (Arzneimitteltherapiesicherheit) medication-plan is a basis for helping patients manage their medications. Patients receive paper printed plans which contains the medications for a single day. It has a Bar-Code allowing the medication-plan to be opened on a device to modify the plan.
 It lists all active pharmaceutical ingredients and the corresponding medication name. The practitioner can indicate the time of day the medication is to be taken (morning, midday, evening) and whether it is to be taken before, with or after a meal.
 The system doesn’t rely on a database or anything similar and therefore is very flexible and changes can be made very quickly. Only the practitioner can enter information into the system which ensures a certain data-quality.
 It does document if a patient takes the medication or not but no reason why a patient has not taken it. The practitioner has to manually input the information provided by the patient into the system.
 
 \section{MyTherapy}
-MyTherapy\citep{06-mytherapy} is an iOS-app with the same goal as the AMTS medication-plan of helping users manage their medication by building a schedule. It has reminders of when medication or measures have to be taken. If one is tracking his blood pressure for example the app will also be able to show an overview of the past week, month, year in form of a graphic of the actual values. The diary function shows the percentage of actions taken - so if one has to take 4 tablets a day and indicates that he has taken one so far the patient has completed 25 percent of the actions of the day.
+MyTherapy\citep{mytherapy} is an iOS-app with the same goal as the AMTS medication-plan of helping users manage their medication by building a schedule. It has reminders of when medication or measures have to be taken. If one is tracking his blood pressure for example the app will also be able to show an overview of the past week, month, year in form of a graphic of the actual values. The diary function shows the percentage of actions taken - so if one has to take 4 tablets a day and indicates that he has taken one so far the patient has completed 25 percent of the actions of the day.
 MyTherapy has four types of information which can be scheduled. 4
 \begin{itemize}
   \item
@@ -148,12 +148,74 @@ All information in this app has to be input manually. After entering this inform
 
 \section{MediSafe}
 
-MediSafe\citep{07-medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
+MediSafe\citep{medisafe} is also an iOS-app helping users manage their medications. In this app the user also has to manually enter which medications he/she would like to manage. In addition the app also supports managing other tasks than medications. (e.g. measuring blood pressure)
 
 
 \part{A Step by Step Medication Management App Tutorial}
-\section{Project Setup}\label{step1}
+This part contains a step by step tutorial on how to create a Medication-Management App using FHIR.
+The resulting app will cover these features:
+\begin{itemize}
+  \item
+    Login
+  \item
+    List a logged in patients prescriptions
+  \item
+    Show more details for a specific prescription
+  \item
+    Allow the user to document the administration of medications
+  \item
+    Show a short summary of the users data saved in the FHIR-database
 
+\end{itemize}
+\pagebreak
+When first opening the app the user is presented with the \textbf{Login-Screen}.
+This screen is shown to the user every time he/she tries to access a part of the app where a logged in user is required.
+\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth, frame]{resources/app-screens/01-login.png}
+\caption{Login Screen}
+\label{fig:app_screen:login}
+\end{figure}
+\pagebreak
+After logging in a screen listing the patients prescriptions is shown.
+\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth, frame]{resources/app-screens/02-medications.png}
+\caption{Screen showing the patients prescriptions}
+\label{fig:app_screen:medications}
+\end{figure}
+\pagebreak
+When selecting a prescription in this list the user is taken to the \textbf{MedicationDetail-Screen}.
+\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth, frame]{resources/app-screens/03-medication-detail.png}
+\caption{Screen showing more details for a specific prescription}
+\label{fig:app_screen:medication-detail}
+\end{figure}
+This screen shows the selected prescription in more detail.
+In the top section it shows a graph visualizing administrations of the medication over time.
+The green line represents administered medications.
+It is also possible to document that a medication was not administered.
+These events are shown as the red line.
+\\
+Below the graph all administrations related to the selected prescription are listed.
+\\
+\\
+By clicking the "+"-Button in the upper-right corner the user can document the administration of the medication or lack therof.
+It presents a view allowing the user to specify wether the medication was taken or not and the time of that event.
+\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth, frame]{resources/app-screens/04-administration.png}
+\caption{Screen letting the user document the administration of a medication}
+\label{fig:app_screen:administration}
+\end{figure}
+
+
+\section{Project Setup}\label{step1}
 \subsection{Prerequisites}\label{step1:prerequisites}
 
 \begin{itemize}
@@ -232,9 +294,9 @@ The Project is located at \texttt{project/} of the git repository root.
 
 \subsection{Getting Started}\label{step2:getting-started}
 
-CocoaPods\citep{08-cocoapods} is a tool for managing dependencies in iOS and Mac Applications.
+CocoaPods\citep{cocoapods} is a tool for managing dependencies in iOS and Mac Applications.
 \\
-A possible alternative is Apples Swift Package-Manager\citep{09-swift-package-manager}.
+A possible alternative is Apples Swift Package-Manager\citep{swift-package-manager}.
 \\
 Since CocoaPods is already very established and commonly seen as Best
 Practice, and the Swift Package Manager is still in beta
@@ -264,7 +326,7 @@ target 'MedbrainUITests' do
 end
 \end{minted}
 
-The \texttt{pod\ 'SMART'} installs the dependency \texttt{Swift-SMART}\citep{10-swift-smart}.
+The \texttt{pod\ 'SMART'} installs the dependency \texttt{Swift-SMART}\citep{swift-smart}.
 
 This is a library simplifying the usage of FHIR-Resources within Swift
 Projects.
@@ -340,8 +402,8 @@ context of the app it is assumed that the patient is human.
 \end{quote}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{resources/FHIR/Patient/Patient-UML.png}
-\caption{Structure of the Patient resource}
+\includegraphics[width=\linewidth]{resources/FHIR/Patient.png}
+\caption{Structure of the Patient resource, from \citep{res-patient}}
 \label{fig:structure-patient}
 \end{figure}
 \textbf{Requirements}\label{res:patient:requirements}
@@ -373,8 +435,8 @@ Represents a medication.
 \\
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{resources/FHIR/Medication/Medication-UML.png}
-\caption{Structure of the Medication resource}
+\includegraphics[width=\linewidth]{resources/FHIR/Medication.png}
+\caption{Structure of the Medication resource, from \citep{res-medication}}
 \label{fig:structure-medication}
 \end{figure}
 \textbf{Requirements}\label{res:medication:requirements}
@@ -433,7 +495,6 @@ CarePlan, Claim, ClinicalImpression, MedicationAdministration, MedicationDispens
 \end{minted}
 
 \subsubsection{DosageInstructions}\label{res:dosageinstructions}
-
 Is a substructure of \texttt{MedicationOrder}. Contains information
 about timing and dosageInstructions
 
@@ -444,19 +505,11 @@ generated from the structured data. This provides the possibility to
 localize the description (generate descriptions in different languages)
 \end{quote}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{resources/FHIR/DosageInstructions/DosageInstruction-Structure.png}
-\caption{Structure of the DosageInstructions resource}
-\label{fig:structure-dosageinstructions}
-\end{figure}
-
-
 \subsubsection{Timing}\label{res:timing}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{resources/FHIR/DosageInstructions/Timing-Structure.png}
-\caption{Structure of the Timing resource}
+\includegraphics[width=\linewidth]{resources/FHIR/Timing.png}
+\caption{Structure of the Timing resource, from \citep{res-timing}}
 \label{fig:structure-timing}
 \end{figure}
 
@@ -471,7 +524,7 @@ the \texttt{MedicationAdministration} must reference a \texttt{MedicationOrder}
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{resources/FHIR/MedicationAdministration/MedicationAdministration-UML.png}
-\caption{Structure of the MedicationAdministration resource}
+\caption{Structure of the MedicationAdministration resource, from \citep{res-medicationadministration}}
 \label{fig:structure-medication-administration}
 \end{figure}
 
@@ -1964,7 +2017,7 @@ In order to display the graph a new dependency will be introduced.
 graphs:
 
 \subsubsection{Adding the ResearchKit dependency}\label{adding-the-researchkit-dependency}
-ResearchKit\citep{11-research-kit} is an open source framework introduced by Apple that allows to create apps for medical research.
+ResearchKit\citep{research-kit} is an open source framework introduced by Apple that allows to create apps for medical research.
 
 Edit your \texttt{Podfile} as follows:
 
