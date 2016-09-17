@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicationOrder xmlns="http://hl7.org/fhir">
+    <id value="34"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2016-07-31T12:57:56Z"/>
+    </meta>
+    <identifier>
+        <system value="urn:oid:1.2.40.0.10.1.4.3.4.2.2"/>
+        <value value="2b4x6qA2p40La53i4dyt_4733"/>
+    </identifier>
+    <dateWritten value="2013-03-24T08:20:15+01:00"/>
+    <status value="completed"/>
+    <patient>
+        <reference value="aaf2414d-3e90-4878-a088-40325881fbfd"/>
+    </patient>
+    <prescriber>
+        <reference value="98c06510-0d7e-4411-8d77-14fff3321af6"/>
+    </prescriber>
+    <medicationReference>
+        <reference value="d10b6b19-ee41-4040-a3d4-1196c6e52e73"/>
+        <display value="prescribed medication"/>
+    </medicationReference>
+    <dosageInstruction>
+        <timing>
+            <repeat>
+                <boundsPeriod>
+                    <start value="2013-03-26T11:00:00+01:00"/>
+                    <end value="2013-03-30T10:59:59+01:00"/>
+                </boundsPeriod>
+                <duration value="1"/>
+                <durationUnits value="d"/>
+            </repeat>
+        </timing>
+    </dosageInstruction>
+    <dispenseRequest>
+        <numberOfRepeatsAllowed value="0"/>
+        <quantity>
+            <value value="1"/>
+        </quantity>
+    </dispenseRequest>
+</MedicationOrder>

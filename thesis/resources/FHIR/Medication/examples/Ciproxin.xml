@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+    <id value="53"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2016-07-31T13:55:17Z"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">Ciproxin 400mg</div>
+    </text>
+    <code>
+        <coding>
+            <system value="urn:oid:1.2.40.0.34.4.16"/>
+            <code value="1592830"/>
+            <display value="Ciproxin"/>
+        </coding>
+        <coding>
+            <system value="urn:oid:1.2.40.0.34.4.17"/>
+            <code value="0815"/>
+            <display value="Ciproxin"/>
+        </coding>
+    </code>
+    <product>
+        <form>
+            <coding>
+                <system value="http://hl7.org/fhir/ValueSet/medication-form-codes"/>
+                <code value="385057009"/>
+                <display value="Film-coated tablet"/>
+            </coding>
+        </form>
+        <ingredient>
+            <item>
+                <reference value="ec0fbb08-7d09-4aef-afa0-6c9c38179e92"/>
+                <display value="contained substance"/>
+            </item>
+        </ingredient>
+    </product>
+    <package>
+        <content>
+            <item>
+                <reference value="12eeced2-aa32-45d7-a4fc-3917c2bbb1c0"/>
+            </item>
+            <amount>
+                <value value="30"/>
+                <system value="urn:oid:1.2.40.0.34.10.32"/>
+            </amount>
+        </content>
+    </package>
+</Medication>

@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Titelseite fuer eine Diplomarbeit/Dissertation an der Uni Wien  %%
+%%                     zur Benutzung mit LaTeX                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  Erstellt anhand der Vorlagendefinition von
+%%  http://www.univie.ac.at/Psychologie/cgi-bin/dbman/uploads/download/
+%%      51_infoblatt__titelblatt_wissenschaftliche_arbeit.pdf
+%%
+%% Einzubinden in der eigenen document-Umgebung mittels \input{thesistitle}
+%%
+%% Ueberschriften wie "Titel der Diplomarbeit" oder "Verfasserin" (etc.)
+%% muessen genau so stehen bleiben. Nur der Titel der Arbeit oder die Namen
+%% sind entsprechend beliebig.
+
+% Stephan Paukner, 14.08.2007
+% Obige Vorlagendefinition schlaegt Arial oder eine vergleichbare serifenlose
+% Schriftart vor. Der serifenlose Font von LaTeX, CMSS, hat leider keine
+% fette (bold) Variante. Arial ist allerdings ein kommerzieller Font und unter
+% LaTeX standardmaessig nicht verfuegbar. Am naehesten kommt dem der Font
+% Helvetica, einzubinden via \usepackage[scaled=0.90]{helvet} in der Praeambel.
+
+\begin{titlepage}
+\vspace*{-2cm}  % bei Verwendung von vmargin.sty
+\begin{flushright}
+    \includegraphics{UNI-Logo_RGB_01}
+\end{flushright}
+\vspace{1cm}
+
+\begin{center}  % Diplomarbeit ODER Magisterarbeit ODER Dissertation
+    \Large{\textbf{\textsf{\MakeUppercase{
+        Praktikum Medizininformatik mit Bachelorarbeit
+    }}}}
+    \vspace{2cm}
+
+    \large{\textsf{
+        Titel
+    }}
+    \vspace{.1cm}
+
+    \Large{\textsf{
+        Implementing HL7 FHIR - A Step by Step Medication Management App Tutorial
+    }}
+    \vspace{3cm}
+
+    \large{\textsf{
+        Author
+    }}
+
+    \Large{\textsf{
+        Anreiter Simon a1201759
+    }}
+    \vspace{3cm}
+
+\end{center}
+\vspace{2cm}
+
+\noindent\textsf{Vienna, September 2016}  % <<<<< ORT, MONAT UND JAHR EINTRAGEN
+\vfill
+
+\noindent\begin{tabular}{@{}ll}
+\textsf{Studienkennzahl lt.\ Studienblatt:}
+&
+\textsf{A 521}  % <<<<< STUDIENKENNZAHL EINTRAGEN
+\\
+    % BEI DISSERTATIONEN:
+%\textsf{Dissertationsgebiet lt. Studienblatt:}
+    % ANSONSTEN:
+\textsf{Studienrichtung lt.\ Studienblatt:}
+&
+\textsf{Informatik}  % <<<<< DISSGEBIET/STUDIENRICHTUNG EINTRAGEN
+\\
+% Betreuerin ODER Betreuer:
+\textsf{Erstbetreuer:}
+&
+\textsf{Dipl.-Ing. Dr. Christoph Rinner}  % <<<<< NAME EINTRAGEN
+
+\end{tabular}
+
+\end{titlepage}
